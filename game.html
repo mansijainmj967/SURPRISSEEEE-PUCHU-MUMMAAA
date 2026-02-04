@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wait.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #6b1f2b, #2a0b12);
+      color: #f6efe8;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    main {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-family: "Copperplate", "Papyrus", fantasy;
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      font-family: "Courier New", monospace;
+      font-size: 1.3rem;
+      color: #f1d6c2;
+      margin-bottom: 60px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 40px;
+    }
+
+    button {
+      padding: 18px 48px;
+      font-size: 1.2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .excited {
+      background: #f1d6c2;
+      color: #2a0b12;
+      font-family: "Courier New", monospace;
+    }
+
+    .scared {
+      background: transparent;
+      border: 2px dashed #f6efe8;
+      color: #f6efe8;
+    }
+
+    .message {
+      margin-top: 50px;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      font-family: "Courier New", monospace;
+    }
+
+    .message.show {
+      opacity: 1;
+    }
+
+    .shake {
+      animation: shake 0.4s;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      50% { transform: translateX(6px); }
+      75% { transform: translateX(-6px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+
+<body> <iframe
+  src="player.html"
+  id="music-frame"
+  style="display:none"
+></iframe>
+
+
+
+  <main>
+    <h1>Tell me.</h1>
+    <p class="sub">how are you feeling right now?</p>
+
+    <div class="buttons">
+      <button class="excited" id="excitedBtn">
+        i’m excited 😌
+      </button>
+
+      <button class="scared" id="scaredBtn">
+        i’m scared 🫣
+      </button>
+    </div>
+
+    <div id="msg" class="message"></div>
+  </main>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const scaredBtn = document.getElementById("scaredBtn");
+    const excitedBtn = document.getElementById("excitedBtn");
+    const msg = document.getElementById("msg");
+
+    const messages = [
+      "scared?? of ME??",
+      "bro you’ve survived me for 2 years.",
+      "relax drama king.",
+      "nothing bad is coming. promise.",
+      "okay now stop. click excited 😌"
+    ];
+
+    let count = 0;
+
+    scaredBtn.addEventListener("click", () => {
+      msg.textContent = messages[count % messages.length];
+      msg.classList.add("show");
+
+      scaredBtn.classList.add("shake");
+      setTimeout(() => scaredBtn.classList.remove("shake"), 400);
+
+      scaredBtn.style.transform =
+        `translate(${Math.random() * 60 - 30}px, ${Math.random() * 30 - 15}px)`;
+
+      count++;
+    });
+
+    excitedBtn.addEventListener("click", () => {
+      window.location.href = "game1.html";
+    });
+
+  });
+</script>
+
+
+
+
+</body>
+</html>

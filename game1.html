@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Little Questions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #6b1f2b, #2a0b12);
+      color: #f6efe8;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 30px 140px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-family: "Courier New", monospace;
+      font-size: 1.2rem;
+      color: #f1d6c2;
+      margin-bottom: 60px;
+    }
+
+    /* PLAY AREA */
+    .play-area {
+      position: relative;
+      height: 560px;
+      margin-top: 40px;
+    }
+
+    /* SCRATCH CARD */
+    .scratch-card {
+      position: absolute;
+      width: 300px;
+      height: 190px;
+      border-radius: 18px;
+      background: #fffaf4;
+      border: 4px solid #2a0b12;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+      display: none;
+      overflow: hidden;
+      transform: rotate(var(--rot));
+    }
+
+    .scratch-card.active {
+      display: block;
+      animation: popIn 0.5s ease forwards;
+    }
+
+    .hidden-text {
+      position: absolute;
+      inset: 0;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: "Papyrus", "Copperplate", fantasy;
+      font-size: 1.4rem;
+      color: #2a0b12;
+      z-index: 1;
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9) rotate(var(--rot)); }
+      to { opacity: 1; transform: scale(1) rotate(var(--rot)); }
+    }
+
+    /* FINAL POPUP */
+    .final-popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 8, 12, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+      z-index: 999;
+    }
+
+    .final-popup.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .popup-card {
+      background: #f6efe8;
+      color: #2a0b12;
+      padding: 70px 80px;
+      border-radius: 30px;
+      text-align: center;
+      max-width: 520px;
+      animation: popScale 0.6s ease forwards;
+    }
+
+    .popup-card h2 {
+      font-family: "Copperplate", "Papyrus", fantasy;
+      font-size: 3.2rem;
+      margin-bottom: 14px;
+    }
+
+    .popup-card p {
+      font-family: "Courier New", monospace;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .popup-options {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .popup-options button {
+      padding: 14px 30px;
+      font-size: 1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-family: "Courier New", monospace;
+    }
+
+    .fake {
+      background: #e3c3b3;
+    }
+
+    .real {
+      background: #6b1f2b;
+      color: #fff;
+    }
+
+    .popup-msg {
+      margin-top: 25px;
+      font-family: "Courier New", monospace;
+      font-size: 1.1rem;
+      min-height: 30px;
+    }
+
+    .popup-next {
+      margin-top: 40px;
+      display: none;
+    }
+
+    .popup-next button {
+      background: #6b1f2b;
+      color: #fff;
+      padding: 16px 44px;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    @keyframes popScale {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>  <iframe
+  src="player.html"
+  id="music-frame"
+  style="display:none"
+></iframe>
+
+
+<main>
+  <h1>Little questions.</h1>
+  <p class="subtitle">scratch them. one by one. ✨</p>
+
+  <div class="play-area">
+
+    <div class="scratch-card active" style="top:40px; left:400px; --rot:-3deg;">
+      <div class="hidden-text">What made you fall for me? 💭</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card" style="top:160px; left:120px; --rot:4deg;">
+      <div class="hidden-text">When did this start feeling real? 🫶</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card" style="top:160px; right:120px; --rot:-4deg;">
+      <div class="hidden-text">What’s your favourite us moment? 📸</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card" style="top:320px; left:260px; --rot:3deg;">
+      <div class="hidden-text">What do you love most about us? ❤️</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card" style="top:320px; right:260px; --rot:-2deg;">
+      <div class="hidden-text">Ready for the last question? 👀</div>
+      <canvas></canvas>
+    </div>
+
+  </div>
+</main>
+
+<!-- FINAL POPUP -->
+<div id="finalPopup" class="final-popup">
+  <div class="popup-card">
+    <h2>Final question.</h2>
+    <p>
+      Be honest.<br>
+      Are you ready to keep choosing me —
+      even on the boring days? 😌
+    </p>
+
+    <div class="popup-options">
+      <button class="fake" onclick="wrong()">hmm idk 🤨</button>
+      <button class="real" onclick="right()">obviously yes 🥺</button>
+    </div>
+
+    <div id="popupMsg" class="popup-msg"></div>
+
+    <div id="popupNext" class="popup-next">
+      <button onclick="window.location.href='game2.html'">
+        okay let’s go →
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll(".scratch-card");
+  let current = 0;
+
+  function initCard(index) {
+    const card = cards[index];
+    const canvas = card.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = card.offsetWidth;
+    canvas.height = card.offsetHeight;
+
+    ctx.fillStyle = "#7a2e2e";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    let scratching = false;
+
+    function scratch(x, y) {
+      if (!scratching) return;
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(x, y, 24, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function clearedEnough() {
+      const data = ctx.getImageData(0,0,canvas.width,canvas.height).data;
+      let cleared = 0;
+      for (let i = 3; i < data.length; i += 4) {
+        if (data[i] === 0) cleared++;
+      }
+      return cleared > data.length / 6;
+    }
+
+    canvas.addEventListener("mousedown", () => scratching = true);
+    canvas.addEventListener("mousemove", e => scratch(e.offsetX, e.offsetY));
+    canvas.addEventListener("mouseup", finish);
+    canvas.addEventListener("mouseleave", finish);
+
+    canvas.addEventListener("touchstart", () => scratching = true);
+    canvas.addEventListener("touchmove", e => {
+      const r = canvas.getBoundingClientRect();
+      const t = e.touches[0];
+      scratch(t.clientX - r.left, t.clientY - r.top);
+    });
+    canvas.addEventListener("touchend", finish);
+
+    function finish() {
+      scratching = false;
+      if (!clearedEnough()) return;
+
+      canvas.style.pointerEvents = "none";
+      canvas.style.display = "none";
+
+      if (cards[index + 1]) {
+        cards[index + 1].classList.add("active");
+        initCard(index + 1);
+      } else {
+        setTimeout(() => {
+          document.getElementById("finalPopup").classList.add("show");
+        }, 600);
+      }
+    }
+  }
+
+  initCard(0);
+
+  const popupMsg = document.getElementById("popupMsg");
+  const popupNext = document.getElementById("popupNext");
+
+  function wrong() {
+    popupMsg.textContent = "nice try. think again 😌";
+  }
+
+  function right() {
+    popupMsg.textContent = "good. that was the only correct answer.";
+    popupNext.style.display = "block";
+  }
+
+</script>
+
+
+</body>
+</html>

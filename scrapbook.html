@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top left, #f4e1c1, transparent 40%),
+        radial-gradient(circle at bottom right, #d7bfa8, transparent 45%),
+        #efe6d8;
+      color: #1e1a18;
+    }
+
+    main {
+      max-width: 1800px;
+      margin: auto;
+      padding: 75px 32px 120px;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.2rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.4rem;
+      color: #3a2f2a;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      grid-auto-flow: dense;
+    }
+
+    /* POLAROID CARD */
+    .card {
+      position: relative;
+      background: #fff;
+      padding: 14px 14px 60px;
+      border-radius: 6px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      min-height: 320px;
+      opacity: 0;
+      animation: popIn 0.7s ease forwards;
+  aspect-ratio: 3 / 4; /* keeps proportions pleasing */
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .card span {
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 400;
+      padding: 0 14px;
+      color: #2b1f1b;
+    }
+
+    /* SIZES */
+    /* SIZE SYSTEM */
+.card.small {
+  min-height: 320px;
+}
+
+.card.medium {
+  min-height: 420px;
+}
+
+.card.large {
+  min-height: 520px;
+}
+
+.card.wide {
+  grid-column: span 2;
+  min-height: 380px;
+}
+
+
+    /* ROTATIONS */
+    .r1 { transform: rotate(-2deg); }
+    .r2 { transform: rotate(1.5deg); }
+    .r3 { transform: rotate(-1deg); }
+    .r4 { transform: rotate(2deg); }
+
+    /* ANIMATION STAGGER */
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+    .card:nth-child(7) { animation-delay: 0.7s; }
+    .card:nth-child(8) { animation-delay: 0.8s; }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.96); }
+      to { opacity: 1; }
+    }
+
+    /* LETTER */
+    .letter {
+      margin: 220px auto 160px;
+      max-width: 780px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      line-height: 1.6;
+      color: #2b1f1b;
+    }
+
+    /* OVERLAY */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(32, 18, 16, 0.6);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+      z-index: 999;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .overlay-content {
+      text-align: center;
+      color: #fff;
+      animation: overlayPop 0.6s ease forwards;
+    }
+
+    .overlay-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      margin-bottom: 32px;
+    }
+
+    .overlay-content button {
+      background: #6a2323;
+      color: #fff;
+      border: none;
+      padding: 18px 56px;
+      font-size: 1.3rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    @keyframes overlayPop {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .wide { grid-column: span 1; }
+      main { padding: 60px 24px; }
+      .header h1 { font-size: 3.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<iframe
+  src="player.html"
+  id="music-frame"
+  style="display:none"
+></iframe>
+
+
+  <main>
+    <header class="header">
+      <h1>Us.</h1>
+      <p>Not perfect. Just real.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card medium r1"><img src="assets/images/P1.jpg"><span>Shonu boiii who became my home.</span></div>
+      <div class="card large r2"><img src="assets/images/P2.jpg"><span>You taught me how to love.</span></div>
+      <div class="card smallr3"><img src="assets/images/P3.jpg"><span>You healed parts you never broke.</span></div>
+      <div class="card large r4"><img src="assets/images/P4.jpg"><span>You've made an LDR workkk </span></div>
+      <div class="card larger2"><img src="assets/images/P5.jpg"><span>My duaaon ka asar.</span></div>
+      <div class="card medium r1"><img src="assets/images/P6.jpg"><span>You chose me always, THANKYOUU.</span></div>
+
+      <div class="card medium r3"><img src="assets/images/P7.jpg"><span>You took care of me like a baby.</span></div>
+      <div class="card small r2"><img src="assets/images/P8.jpg"><span>You stay.</span></div>
+      <div class="card large r4"><img src="assets/images/P9.jpg"><span>You made life softer.</span></div>
+      <div class="card small r1"><img src="assets/images/P10.jpg"><span>You made it bigger too.</span></div>
+      <div class="card medium r3"><img src="assets/images/P11.jpg"><span>I’m grateful for you.</span></div>
+      <div class="card large r2"><img src="assets/images/P12.jpg"><span>You feel like home.</span></div>
+      <div class="card medium r4"><img src="assets/images/P13.jpg"><span>Always you.</span></div>
+      <div class="card small r1"><img src="assets/images/P14.jpg"><span>Every version of us.</span></div>
+      <div class="card small r2"><img src="assets/images/P15.jpg"><span>You changed me.</span></div>
+      <div class="card large r3"><img src="assets/images/P16.jpg"><span>In the best ways.</span></div>
+      <div class="card medium r4"><img src="assets/images/P17.jpg"><span>You chose love.</span></div>
+      <div class="card large r1"><img src="assets/images/P18.jpg"><span>My pookie.</span></div>
+      <div class="card medium r2"><img src="assets/images/P19.jpg"><span>Still choosing.</span></div>
+      <div class="card large r3"><img src="assets/images/P20.jpg"><span>Always.</span></div>
+    </section>
+
+    <section class="letter">
+      “You are the best thing that has ever happened to me.”
+    </section>
+  </main>
+
+  <!-- OVERLAY -->
+  <div id="overlay" class="overlay">
+    <div class="overlay-content">
+      <h2>Chalo, ab thorhe aur mazzee karte haiinnnnn.</h2>
+      <button onclick="window.location.href='game.html'">
+        LET’S GOOOO →
+      </button>
+    </div>
+  </div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("overlay").classList.add("show");
+  }, 4000);
+</script>
+
+
+document.addEventListener("click", () => {}, { once: true });
+
+</body>
+</html>
