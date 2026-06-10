@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer Insights — Astra</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="app-body">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
+    <div class="sidebar-section">
+      <a href="dashboard.html" class="nav-item"><span class="ni-icon">▦</span> Overview</a>
+      <a href="brand-brain.html" class="nav-item"><span class="ni-icon">🧠</span> Brand Brain</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Intelligence</div>
+      <a href="campaigns.html" class="nav-item"><span class="ni-icon">⚡</span> Campaign Intelligence</a>
+      <a href="consumers.html" class="nav-item active"><span class="ni-icon">💬</span> Consumer Insights</a>
+      <a href="brand-consistency.html" class="nav-item"><span class="ni-icon">🎯</span> Brand Consistency</a>
+      <a href="war-room.html" class="nav-item"><span class="ni-icon">🔴</span> War Room <span class="ni-badge">3</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Create</div>
+      <a href="deck-builder.html" class="nav-item"><span class="ni-icon">📑</span> Deck Builder</a>
+      <a href="content-engine.html" class="nav-item"><span class="ni-icon">✍️</span> Content Engine</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Data</div>
+      <a href="upload.html" class="nav-item"><span class="ni-icon">📁</span> Upload Center</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="user-widget">
+        <div class="uw-avatar">MJ</div>
+        <div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-wrap">
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title">Consumer Insight Miner</span>
+      <div class="topbar-actions">
+        <button class="btn-outline" onclick="window.location='upload.html'">↑ Upload Data</button>
+        <button class="btn-primary">Run Analysis</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="page-header">
+        <div class="ph-left">
+          <h1>Consumer Insight Miner</h1>
+          <p>Decoded from 4,280 consumer signals across reviews, social, and surveys</p>
+        </div>
+        <div class="ph-actions">
+          <div class="tabs">
+            <div class="tab active">All Sources</div>
+            <div class="tab">Reviews</div>
+            <div class="tab">Social</div>
+            <div class="tab">Surveys</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI NARRATIVE -->
+      <div class="card" style="margin-bottom:24px; border-color:rgba(253,98,41,0.2); background:linear-gradient(135deg,rgba(253,98,41,0.04),transparent)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="color:var(--brand);font-size:16px">✦</span>
+          <span style="font-family:var(--font-heading);font-weight:600;font-size:14px">AI Consumer Narrative</span>
+          <span class="tag tag-brand" style="margin-left:auto">4,280 signals analysed</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px">
+          Consumers are increasingly associating your category with <strong style="color:var(--text)">convenience anxiety</strong> rather than aspiration. The dominant emotional driver has shifted from excitement to <strong style="color:var(--text)">overwhelm and complexity</strong>, particularly among first-time buyers. Positive sentiment clusters strongly around <strong style="color:var(--text)">"feels effortless" and "finally simple"</strong> — signalling a clear messaging opportunity. There is also an emerging unmet need around <strong style="color:var(--text)">trusted guidance</strong>: consumers want the brand to act as a knowledgeable companion, not a product seller. This aligns with your historically conversational brand voice and presents a significant positioning advantage if capitalised on now.
+        </p>
+        <div style="display:flex;gap:10px">
+          <button class="ii-btn primary" onclick="window.location='content-engine.html'">Generate Messaging →</button>
+          <button class="ii-btn secondary" onclick="window.location='deck-builder.html'">Export to Deck</button>
+        </div>
+      </div>
+
+      <!-- METRICS -->
+      <div class="metrics-row" style="margin-bottom:24px">
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Positive Sentiment</span><span>😊</span></div>
+          <div class="mc-value" style="color:var(--green)">68%</div>
+          <div class="mc-change neutral">→ Stable vs last month</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Negative Sentiment</span><span>😟</span></div>
+          <div class="mc-value" style="color:var(--red)">18%</div>
+          <div class="mc-change down">↑ 4pts — rising concern</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Key Themes</span><span>🔍</span></div>
+          <div class="mc-value">12</div>
+          <div class="mc-change up">↑ 3 new this month</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Unmet Needs</span><span>⚡</span></div>
+          <div class="mc-value">5</div>
+          <div class="mc-change neutral">Opportunities identified</div>
+        </div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:24px">
+        <!-- THEMES -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+            <h3 style="font-size:15px;font-weight:600">Dominant Themes</h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+
+            <div class="chart-container" style="padding:16px">
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <div style="width:40px;height:40px;border-radius:8px;background:rgba(240,68,56,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">😰</div>
+                <div style="flex:1">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+                    <span style="font-weight:600;font-size:14px">Convenience Anxiety</span>
+                    <span class="tag tag-red">Dominant</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px">"The process feels overwhelming. I don't know where to start." — recurring pattern in 34% of negative reviews.</p>
+                  <div class="progress-bar"><div class="pb-fill" style="width:34%;background:var(--red)"></div></div>
+                  <div style="font-size:11px;color:var(--text-muted);margin-top:4px">34% of negative sentiment · 1,456 mentions</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-container" style="padding:16px">
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <div style="width:40px;height:40px;border-radius:8px;background:rgba(18,183,106,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">✨</div>
+                <div style="flex:1">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+                    <span style="font-weight:600;font-size:14px">Effortless Experience</span>
+                    <span class="tag tag-green">Opportunity</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px">"This just works. Finally something that doesn't require a manual." — 28% of 5-star reviews include simplicity language.</p>
+                  <div class="progress-bar"><div class="pb-fill" style="width:28%;background:var(--green)"></div></div>
+                  <div style="font-size:11px;color:var(--text-muted);margin-top:4px">28% of positive sentiment · 814 mentions</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-container" style="padding:16px">
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <div style="width:40px;height:40px;border-radius:8px;background:rgba(253,98,41,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🤝</div>
+                <div style="flex:1">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+                    <span style="font-weight:600;font-size:14px">Desire for Guidance</span>
+                    <span class="tag tag-brand">Unmet Need</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px">"I wish they explained the WHY, not just the what." — consumers want trusted companion positioning, not product pitching.</p>
+                  <div class="progress-bar"><div class="pb-fill" style="width:22%;background:var(--brand)"></div></div>
+                  <div style="font-size:11px;color:var(--text-muted);margin-top:4px">22% of conversations · 941 mentions</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-container" style="padding:16px">
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <div style="width:40px;height:40px;border-radius:8px;background:rgba(247,144,9,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚡</div>
+                <div style="flex:1">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+                    <span style="font-weight:600;font-size:14px">Speed Expectations</span>
+                    <span class="tag tag-amber">Rising</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px">Consumers increasingly expect instant results. Delivery anxiety rising 19% month-on-month in support conversations.</p>
+                  <div class="progress-bar"><div class="pb-fill" style="width:19%;background:var(--amber)"></div></div>
+                  <div style="font-size:11px;color:var(--text-muted);margin-top:4px">19% rising · 812 mentions</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <!-- AUDIENCE PERSONAS -->
+          <div class="chart-container">
+            <div style="font-weight:600;font-size:14px;margin-bottom:14px">AI-Generated Personas</div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="background:var(--bg-elevated);border-radius:10px;padding:14px;cursor:pointer" onclick="togglePersona(this)">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:14px">👩</div>
+                  <div>
+                    <div style="font-weight:600;font-size:13px">The Overwhelmed Optimizer</div>
+                    <div style="font-size:11px;color:var(--text-muted)">25–34 · Urban · High-intent</div>
+                  </div>
+                  <span class="tag tag-red" style="margin-left:auto">High Value</span>
+                </div>
+                <p style="font-size:12px;color:var(--text-secondary);line-height:1.5">Wants results but feels anxious about complexity. Responds to simplicity, reassurance, and social proof. Primary driver of "effortless" sentiment.</p>
+              </div>
+              <div style="background:var(--bg-elevated);border-radius:10px;padding:14px;cursor:pointer">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f093fb,#f5576c);display:flex;align-items:center;justify-content:center;font-size:14px">👨</div>
+                  <div>
+                    <div style="font-weight:600;font-size:13px">The Strategic Explorer</div>
+                    <div style="font-size:11px;color:var(--text-muted)">35–45 · Professional · Research-led</div>
+                  </div>
+                  <span class="tag tag-green" style="margin-left:auto">Growing</span>
+                </div>
+                <p style="font-size:12px;color:var(--text-secondary);line-height:1.5">Methodical decision-maker who needs evidence and depth. Responds to case studies, thought leadership, and ROI proof points.</p>
+              </div>
+              <div style="background:var(--bg-elevated);border-radius:10px;padding:14px;cursor:pointer">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;font-size:14px">🧑</div>
+                  <div>
+                    <div style="font-weight:600;font-size:13px">The Aspirational Starter</div>
+                    <div style="font-size:11px;color:var(--text-muted)">18–24 · Gen Z · Value-conscious</div>
+                  </div>
+                  <span class="tag tag-amber" style="margin-left:auto">Emerging</span>
+                </div>
+                <p style="font-size:12px;color:var(--text-secondary);line-height:1.5">Motivated by aspiration and community. Highly influenced by authentic creator content and founder stories. Price-sensitive but brand-loyal when emotionally connected.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SENTIMENT BREAKDOWN -->
+          <div class="chart-container">
+            <div style="font-weight:600;font-size:14px;margin-bottom:14px">Sentiment by Source</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px;font-size:13px">
+                <div style="width:80px;color:var(--text-secondary)">Reviews</div>
+                <div style="flex:1;display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px">
+                  <div style="width:72%;background:var(--green)"></div>
+                  <div style="width:14%;background:var(--amber)"></div>
+                  <div style="width:14%;background:var(--red)"></div>
+                </div>
+                <span style="color:var(--green);font-weight:600;width:30px">72%</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13px">
+                <div style="width:80px;color:var(--text-secondary)">Social</div>
+                <div style="flex:1;display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px">
+                  <div style="width:61%;background:var(--green)"></div>
+                  <div style="width:22%;background:var(--amber)"></div>
+                  <div style="width:17%;background:var(--red)"></div>
+                </div>
+                <span style="color:var(--green);font-weight:600;width:30px">61%</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13px">
+                <div style="width:80px;color:var(--text-secondary)">Surveys</div>
+                <div style="flex:1;display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px">
+                  <div style="width:78%;background:var(--green)"></div>
+                  <div style="width:12%;background:var(--amber)"></div>
+                  <div style="width:10%;background:var(--red)"></div>
+                </div>
+                <span style="color:var(--green);font-weight:600;width:30px">78%</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:12px;font-size:11px">
+              <div style="display:flex;align-items:center;gap:4px"><div style="width:8px;height:8px;border-radius:2px;background:var(--green)"></div>Positive</div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="width:8px;height:8px;border-radius:2px;background:var(--amber)"></div>Neutral</div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="width:8px;height:8px;border-radius:2px;background:var(--red)"></div>Negative</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-chat-bar">
+        <span class="acb-icon">✦</span>
+        <input class="acb-input" type="text" placeholder="Ask: What messaging would resonate most with Gen Z? What are consumers' biggest frustrations? What's the top unmet need?" />
+        <button class="acb-submit">Ask →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

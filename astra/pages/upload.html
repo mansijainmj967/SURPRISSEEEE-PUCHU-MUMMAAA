@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Center — Astra</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="app-body">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
+    <div class="sidebar-section">
+      <a href="dashboard.html" class="nav-item"><span class="ni-icon">▦</span> Overview</a>
+      <a href="brand-brain.html" class="nav-item"><span class="ni-icon">🧠</span> Brand Brain</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Intelligence</div>
+      <a href="campaigns.html" class="nav-item"><span class="ni-icon">⚡</span> Campaign Intelligence</a>
+      <a href="consumers.html" class="nav-item"><span class="ni-icon">💬</span> Consumer Insights</a>
+      <a href="brand-consistency.html" class="nav-item"><span class="ni-icon">🎯</span> Brand Consistency</a>
+      <a href="war-room.html" class="nav-item"><span class="ni-icon">🔴</span> War Room <span class="ni-badge">3</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Create</div>
+      <a href="deck-builder.html" class="nav-item"><span class="ni-icon">📑</span> Deck Builder</a>
+      <a href="content-engine.html" class="nav-item"><span class="ni-icon">✍️</span> Content Engine</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Data</div>
+      <a href="upload.html" class="nav-item active"><span class="ni-icon">📁</span> Upload Center</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="user-widget">
+        <div class="uw-avatar">MJ</div>
+        <div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-wrap">
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title">Upload Center</span>
+    </div>
+
+    <div class="main-content">
+      <div class="page-header">
+        <div class="ph-left">
+          <h1>Upload Center</h1>
+          <p>Feed Astra's Brand Brain — the more context you provide, the smarter the AI becomes</p>
+        </div>
+      </div>
+
+      <!-- MAIN UPLOAD ZONE -->
+      <div style="border:2px dashed var(--border);border-radius:var(--radius-xl);padding:60px;text-align:center;margin-bottom:24px;cursor:pointer;transition:all 0.2s;background:var(--bg-card)"
+        id="mainDrop"
+        ondragover="event.preventDefault();this.style.borderColor='var(--brand)';this.style.background='var(--brand-dim)'"
+        ondragleave="this.style.borderColor='var(--border)';this.style.background='var(--bg-card)'"
+        ondrop="handleMainDrop(event)"
+        onclick="document.getElementById('mainFile').click()">
+        <div style="font-size:48px;margin-bottom:16px">📁</div>
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:8px">Drop anything here</h3>
+        <p style="font-size:15px;color:var(--text-secondary);margin-bottom:16px">Brand guidelines · Campaign reports · Strategy decks · Research · Ad creatives · CSV exports</p>
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
+          <span class="tag tag-muted">CSV</span>
+          <span class="tag tag-muted">XLSX</span>
+          <span class="tag tag-muted">PDF</span>
+          <span class="tag tag-muted">DOCX</span>
+          <span class="tag tag-muted">PPT/PPTX</span>
+          <span class="tag tag-muted">PNG</span>
+          <span class="tag tag-muted">JPG</span>
+        </div>
+        <button class="btn-primary btn-lg" onclick="event.stopPropagation();document.getElementById('mainFile').click()">Browse Files →</button>
+        <input type="file" id="mainFile" style="display:none" multiple onchange="handleFiles(this.files)" />
+      </div>
+
+      <!-- UPLOAD CATEGORIES -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px">
+        <div class="card" style="cursor:pointer" onclick="triggerUpload('brand')">
+          <div style="font-size:28px;margin-bottom:10px">🎨</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">Brand Context</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Guidelines, tone of voice, positioning docs, brand playbooks</div>
+          <div style="font-size:12px;color:var(--brand)">→ Feeds Brand Brain</div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="triggerUpload('campaign')">
+          <div style="font-size:28px;margin-bottom:10px">📊</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">Campaign Data</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Ad reports, analytics exports, performance CSVs, ROAS data</div>
+          <div style="font-size:12px;color:var(--brand)">→ Feeds Campaign Intelligence</div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="triggerUpload('consumer')">
+          <div style="font-size:28px;margin-bottom:10px">💬</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">Consumer Research</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Survey results, reviews, Reddit exports, social comments, interview transcripts</div>
+          <div style="font-size:12px;color:var(--brand)">→ Feeds Consumer Insights</div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="triggerUpload('strategy')">
+          <div style="font-size:28px;margin-bottom:10px">🎯</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">Strategy Docs</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Annual plans, GTM strategies, OKRs, quarterly briefs</div>
+          <div style="font-size:12px;color:var(--brand)">→ Feeds Strategic Context</div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="triggerUpload('creative')">
+          <div style="font-size:28px;margin-bottom:10px">🖼️</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">Creative Assets</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Ad creatives, screenshots, design assets, creative references</div>
+          <div style="font-size:12px;color:var(--brand)">→ Feeds Brand Consistency</div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="triggerUpload('competitor')">
+          <div style="font-size:28px;margin-bottom:10px">🔍</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">Competitor Intel</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Competitor analysis, market research, category reports</div>
+          <div style="font-size:12px;color:var(--brand)">→ Feeds War Room</div>
+        </div>
+      </div>
+
+      <!-- UPLOADED FILES -->
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+          <span style="font-weight:600;font-size:15px">Uploaded Files</span>
+          <span style="font-size:13px;color:var(--text-muted)">14 files · 48.3 MB</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr><th>File</th><th>Type</th><th>Size</th><th>Processed</th><th>Feeds</th><th></th></tr>
+          </thead>
+          <tbody id="fileTable">
+            <tr>
+              <td><span class="val">brand-guidelines-v3.2.pdf</span></td>
+              <td><span class="tag tag-brand">Brand</span></td>
+              <td>2.4 MB</td>
+              <td><span style="color:var(--green)">✓ Processed</span></td>
+              <td><span style="font-size:12px;color:var(--text-muted)">Brand Brain</span></td>
+              <td><button class="ii-btn secondary" style="font-size:11px;padding:3px 8px">Remove</button></td>
+            </tr>
+            <tr>
+              <td><span class="val">q2-2025-campaign-report.xlsx</span></td>
+              <td><span class="tag tag-amber">Campaign</span></td>
+              <td>890 KB</td>
+              <td><span style="color:var(--green)">✓ Processed</span></td>
+              <td><span style="font-size:12px;color:var(--text-muted)">Campaign Intelligence</span></td>
+              <td><button class="ii-btn secondary" style="font-size:11px;padding:3px 8px">Remove</button></td>
+            </tr>
+            <tr>
+              <td><span class="val">consumer-survey-results.pdf</span></td>
+              <td><span class="tag tag-muted">Research</span></td>
+              <td>1.2 MB</td>
+              <td><span style="color:var(--green)">✓ Processed</span></td>
+              <td><span style="font-size:12px;color:var(--text-muted)">Consumer Insights</span></td>
+              <td><button class="ii-btn secondary" style="font-size:11px;padding:3px 8px">Remove</button></td>
+            </tr>
+            <tr>
+              <td><span class="val">meta-ads-export-june.csv</span></td>
+              <td><span class="tag tag-amber">Campaign</span></td>
+              <td>340 KB</td>
+              <td><span style="color:var(--green)">✓ Processed</span></td>
+              <td><span style="font-size:12px;color:var(--text-muted)">Campaign Intelligence</span></td>
+              <td><button class="ii-btn secondary" style="font-size:11px;padding:3px 8px">Remove</button></td>
+            </tr>
+            <tr>
+              <td><span class="val">tone-of-voice-guide.docx</span></td>
+              <td><span class="tag tag-brand">Brand</span></td>
+              <td>560 KB</td>
+              <td><span style="color:var(--green)">✓ Processed</span></td>
+              <td><span style="font-size:12px;color:var(--text-muted)">Brand Brain · Consistency</span></td>
+              <td><button class="ii-btn secondary" style="font-size:11px;padding:3px 8px">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="uploadProgress" style="display:none;margin-top:16px">
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <div class="pulse-dot"></div>
+            <span style="font-weight:600;font-size:14px">Processing uploads...</span>
+          </div>
+          <div id="progressList" style="display:flex;flex-direction:column;gap:8px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+  <script>
+    function handleMainDrop(e) {
+      e.preventDefault();
+      document.getElementById('mainDrop').style.borderColor = 'var(--border)';
+      document.getElementById('mainDrop').style.background = 'var(--bg-card)';
+      handleFiles(e.dataTransfer.files);
+    }
+
+    function handleFiles(files) {
+      if (!files.length) return;
+      const progress = document.getElementById('uploadProgress');
+      const list = document.getElementById('progressList');
+      progress.style.display = 'block';
+      list.innerHTML = '';
+      Array.from(files).forEach((f, i) => {
+        const item = document.createElement('div');
+        item.style.cssText = 'display:flex;align-items:center;gap:10px;font-size:13px;padding:8px;background:var(--bg-elevated);border-radius:6px';
+        item.innerHTML = `<span>📄</span><span style="flex:1">${f.name}</span><span id="stat-${i}" style="color:var(--text-muted)">Uploading...</span>`;
+        list.appendChild(item);
+        setTimeout(() => {
+          document.getElementById(`stat-${i}`).textContent = 'Processing with AI...';
+          document.getElementById(`stat-${i}`).style.color = 'var(--amber)';
+          setTimeout(() => {
+            document.getElementById(`stat-${i}`).textContent = '✓ Done';
+            document.getElementById(`stat-${i}`).style.color = 'var(--green)';
+          }, 2000 + i * 500);
+        }, 1000 + i * 300);
+      });
+    }
+
+    function triggerUpload(type) {
+      document.getElementById('mainFile').click();
+    }
+  </script>
+</body>
+</html>

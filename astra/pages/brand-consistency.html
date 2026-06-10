@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Consistency — Astra</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="app-body">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
+    <div class="sidebar-section">
+      <a href="dashboard.html" class="nav-item"><span class="ni-icon">▦</span> Overview</a>
+      <a href="brand-brain.html" class="nav-item"><span class="ni-icon">🧠</span> Brand Brain</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Intelligence</div>
+      <a href="campaigns.html" class="nav-item"><span class="ni-icon">⚡</span> Campaign Intelligence</a>
+      <a href="consumers.html" class="nav-item"><span class="ni-icon">💬</span> Consumer Insights</a>
+      <a href="brand-consistency.html" class="nav-item active"><span class="ni-icon">🎯</span> Brand Consistency</a>
+      <a href="war-room.html" class="nav-item"><span class="ni-icon">🔴</span> War Room <span class="ni-badge">3</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Create</div>
+      <a href="deck-builder.html" class="nav-item"><span class="ni-icon">📑</span> Deck Builder</a>
+      <a href="content-engine.html" class="nav-item"><span class="ni-icon">✍️</span> Content Engine</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Data</div>
+      <a href="upload.html" class="nav-item"><span class="ni-icon">📁</span> Upload Center</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="user-widget">
+        <div class="uw-avatar">MJ</div>
+        <div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-wrap">
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title">Brand Consistency Engine</span>
+      <div class="topbar-actions">
+        <button class="btn-outline">Analyse New Content</button>
+        <button class="btn-primary">Run Full Audit</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="page-header">
+        <div class="ph-left">
+          <h1>Brand Consistency Engine</h1>
+          <p>AI-powered audit of how well your marketing aligns with your brand's strategic identity</p>
+        </div>
+      </div>
+
+      <!-- SCORE OVERVIEW -->
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:24px;margin-bottom:24px;align-items:center" class="card">
+        <div style="text-align:center;padding:0 20px">
+          <div class="brand-score-ring" style="width:140px;height:140px;margin-bottom:12px">
+            <svg viewBox="0 0 100 100" width="140" height="140" class="bsr-circle">
+              <circle cx="50" cy="50" r="40" class="bsr-bg" />
+              <circle cx="50" cy="50" r="40" class="bsr-fill"
+                stroke="var(--amber)"
+                stroke-dasharray="251.2"
+                stroke-dashoffset="55"
+                id="brandScoreCircle" />
+            </svg>
+            <div class="bsr-text">
+              <div class="bsr-value" style="color:var(--amber);font-size:28px">78</div>
+              <div class="bsr-label">/ 100</div>
+            </div>
+          </div>
+          <div style="font-family:var(--font-heading);font-weight:600;font-size:14px">Brand Health Score</div>
+          <span class="tag tag-amber" style="margin-top:6px;display:inline-block">Attention Needed</span>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <span style="color:var(--brand);font-size:16px">✦</span>
+            <span style="font-family:var(--font-heading);font-weight:600">AI Brand Diagnosis</span>
+          </div>
+          <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:14px">
+            Your brand consistency score of <strong style="color:var(--amber)">78/100</strong> is being held back primarily by tone drift in recent Q4 campaigns. Recent ad copy sounds significantly more corporate and formal than your historically playful, conversational brand voice — which historically drove your strongest engagement. Visual consistency remains strong at 91%, and your positioning alignment is solid at 84%. The priority fix is a tone recalibration across your current live campaigns.
+          </p>
+          <div style="display:flex;gap:10px">
+            <button class="ii-btn primary" onclick="window.location='content-engine.html'">Fix Tone →</button>
+            <button class="ii-btn secondary">Download Report</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIMENSION SCORES -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px">
+        <div class="card" style="text-align:center">
+          <div style="font-size:32px;font-weight:800;color:var(--red);font-family:var(--font-heading)">61</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px">Tone Consistency</div>
+          <div class="progress-bar"><div class="pb-fill" style="width:61%;background:var(--red)"></div></div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px">↓ 40% toward corporate</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:32px;font-weight:800;color:var(--green);font-family:var(--font-heading)">84</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px">Positioning Alignment</div>
+          <div class="progress-bar"><div class="pb-fill" style="width:84%;background:var(--green)"></div></div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px">Strong · On strategy</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:32px;font-weight:800;color:var(--green);font-family:var(--font-heading)">91</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px">Visual Consistency</div>
+          <div class="progress-bar"><div class="pb-fill" style="width:91%;background:var(--green)"></div></div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px">Excellent · Consistent</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:32px;font-weight:800;color:var(--amber);font-family:var(--font-heading)">76</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px">CTA Consistency</div>
+          <div class="progress-bar"><div class="pb-fill" style="width:76%;background:var(--amber)"></div></div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px">Mixed across channels</div>
+        </div>
+      </div>
+
+      <!-- CONTENT AUDIT TABLE -->
+      <div class="chart-container" style="margin-bottom:24px">
+        <div class="chart-header">
+          <span class="chart-title">Recent Content Audit</span>
+          <button class="btn-outline" style="font-size:12px;padding:6px 12px">Analyse New →</button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Content</th>
+              <th>Channel</th>
+              <th>Tone Score</th>
+              <th>Positioning</th>
+              <th>Overall</th>
+              <th>AI Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="val">Q4 Product Launch Ad</span></td>
+              <td>Meta Ads</td>
+              <td><span style="color:var(--red)">52/100</span></td>
+              <td><span style="color:var(--amber)">79/100</span></td>
+              <td><span class="val" style="color:var(--red)">61/100</span></td>
+              <td><span class="tag tag-red">Drift Detected</span></td>
+            </tr>
+            <tr>
+              <td><span class="val">Founder Story Post</span></td>
+              <td>LinkedIn</td>
+              <td><span style="color:var(--green)">94/100</span></td>
+              <td><span style="color:var(--green)">91/100</span></td>
+              <td><span class="val" style="color:var(--green)">93/100</span></td>
+              <td><span class="tag tag-green">On Brand</span></td>
+            </tr>
+            <tr>
+              <td><span class="val">Email Newsletter #12</span></td>
+              <td>Email</td>
+              <td><span style="color:var(--green)">88/100</span></td>
+              <td><span style="color:var(--green)">85/100</span></td>
+              <td><span class="val" style="color:var(--green)">87/100</span></td>
+              <td><span class="tag tag-green">On Brand</span></td>
+            </tr>
+            <tr>
+              <td><span class="val">Holiday Campaign Copy</span></td>
+              <td>Google Ads</td>
+              <td><span style="color:var(--amber)">68/100</span></td>
+              <td><span style="color:var(--green)">82/100</span></td>
+              <td><span class="val" style="color:var(--amber)">74/100</span></td>
+              <td><span class="tag tag-amber">Minor Drift</span></td>
+            </tr>
+            <tr>
+              <td><span class="val">UGC Creator Brief</span></td>
+              <td>TikTok</td>
+              <td><span style="color:var(--green)">91/100</span></td>
+              <td><span style="color:var(--green)">88/100</span></td>
+              <td><span class="val" style="color:var(--green)">90/100</span></td>
+              <td><span class="tag tag-green">On Brand</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TONE DRIFT DETAIL -->
+      <div class="card" style="margin-bottom:24px; border-color:rgba(240,68,56,0.15)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+          <span style="color:var(--red);font-size:16px">⚠</span>
+          <span style="font-family:var(--font-heading);font-weight:600">Tone Drift Analysis — Q4 Product Launch Ad</span>
+          <span class="tag tag-red" style="margin-left:auto">52/100</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--red);margin-bottom:8px;letter-spacing:0.06em">ACTUAL COPY (DRIFTED)</div>
+            <div style="background:rgba(240,68,56,0.05);border:1px solid rgba(240,68,56,0.15);border-radius:8px;padding:14px;font-size:13px;color:var(--text-secondary);line-height:1.6;font-style:italic">
+              "Leverage our world-class, enterprise-grade platform to optimise your marketing stack and drive scalable ROI for your organisation."
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:8px;letter-spacing:0.06em">AI REWRITE (ON BRAND)</div>
+            <div style="background:rgba(18,183,106,0.05);border:1px solid rgba(18,183,106,0.15);border-radius:8px;padding:14px;font-size:13px;color:var(--text-secondary);line-height:1.6;font-style:italic">
+              "Finally, a way to make your marketing work smarter — without the overwhelm. Built for teams who'd rather spend time on strategy than spreadsheets."
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:10px">
+          <button class="ii-btn primary" onclick="window.location='content-engine.html'">Apply AI Rewrite →</button>
+          <button class="ii-btn secondary">Ignore</button>
+        </div>
+      </div>
+
+      <div class="ai-chat-bar">
+        <span class="acb-icon">✦</span>
+        <input class="acb-input" type="text" placeholder="Paste any copy here for instant brand consistency check — or ask: Is this headline on brand? Rewrite this email in our tone." />
+        <button class="acb-submit">Check →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

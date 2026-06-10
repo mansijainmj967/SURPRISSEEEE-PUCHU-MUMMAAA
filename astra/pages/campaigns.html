@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Intelligence — Astra</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="app-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-mark">✦</span>
+      <span class="logo-text">Astra</span>
+    </div>
+    <div class="sidebar-section">
+      <a href="dashboard.html" class="nav-item"><span class="ni-icon">▦</span> Overview</a>
+      <a href="brand-brain.html" class="nav-item"><span class="ni-icon">🧠</span> Brand Brain</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Intelligence</div>
+      <a href="campaigns.html" class="nav-item active"><span class="ni-icon">⚡</span> Campaign Intelligence</a>
+      <a href="consumers.html" class="nav-item"><span class="ni-icon">💬</span> Consumer Insights</a>
+      <a href="brand-consistency.html" class="nav-item"><span class="ni-icon">🎯</span> Brand Consistency</a>
+      <a href="war-room.html" class="nav-item"><span class="ni-icon">🔴</span> War Room <span class="ni-badge">3</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Create</div>
+      <a href="deck-builder.html" class="nav-item"><span class="ni-icon">📑</span> Deck Builder</a>
+      <a href="content-engine.html" class="nav-item"><span class="ni-icon">✍️</span> Content Engine</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Data</div>
+      <a href="upload.html" class="nav-item"><span class="ni-icon">📁</span> Upload Center</a>
+      <a href="#" class="nav-item"><span class="ni-icon">⚙️</span> Settings</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="user-widget">
+        <div class="uw-avatar">MJ</div>
+        <div class="uw-info">
+          <div class="uw-name">Mansi Jain</div>
+          <div class="uw-role">Marketing Lead</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-wrap">
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title">Campaign Intelligence</span>
+      <div class="topbar-actions">
+        <div class="topbar-search">
+          <span class="ts-icon">🔍</span>
+          <input type="text" placeholder="Ask about your campaigns..." />
+        </div>
+        <button class="btn-primary" onclick="window.location='upload.html'">↑ Upload Data</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="page-header">
+        <div class="ph-left">
+          <h1>Campaign Intelligence</h1>
+          <p>AI-powered strategic diagnosis of your marketing performance</p>
+        </div>
+        <div class="ph-actions">
+          <div class="tabs">
+            <div class="tab active">All Channels</div>
+            <div class="tab">Meta</div>
+            <div class="tab">Google</div>
+            <div class="tab">LinkedIn</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI DIAGNOSIS BANNER -->
+      <div class="card" style="margin-bottom:24px; border-color:rgba(253,98,41,0.2); background:linear-gradient(135deg, rgba(253,98,41,0.05), transparent)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+          <span style="color:var(--brand); font-size:16px">✦</span>
+          <span style="font-family:var(--font-heading); font-weight:600; font-size:14px">AI Campaign Diagnosis · June 2025</span>
+          <span class="tag tag-brand" style="margin-left:auto">Strategic Summary</span>
+        </div>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:16px">
+          <strong style="color:var(--text)">Overall: Strong momentum with a critical creative risk.</strong> Your Meta campaigns are delivering 4.2× ROAS — 18% above last month — driven by UGC formats in the 25–34 segment. However, Studio Set B is showing significant fatigue after 47 days. Google Search is performing efficiently but under-invested relative to intent volumes. LinkedIn is generating qualified pipeline but CPC is 34% above benchmark. <strong style="color:var(--text)">Priority action: immediate Meta creative rotation, and reallocate 15–20% of LinkedIn budget to top-performing Search terms.</strong>
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="ii-btn primary">Apply Recommendations</button>
+          <button class="ii-btn secondary">Export Analysis</button>
+          <button class="ii-btn secondary" onclick="window.location='deck-builder.html'">Build Deck</button>
+        </div>
+      </div>
+
+      <!-- METRICS ROW -->
+      <div class="metrics-row" style="margin-bottom:24px">
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Total Spend</span><span class="mc-icon">💰</span></div>
+          <div class="mc-value">$48.2K</div>
+          <div class="mc-change up">↑ 12% vs last period</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Blended ROAS</span><span class="mc-icon">📈</span></div>
+          <div class="mc-value">4.2×</div>
+          <div class="mc-change up">↑ 18% vs last period</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Total Conversions</span><span class="mc-icon">🎯</span></div>
+          <div class="mc-value">1,847</div>
+          <div class="mc-change up">↑ 24% vs last period</div>
+        </div>
+        <div class="metric-card">
+          <div class="mc-header"><span class="mc-label">Avg. CAC</span><span class="mc-icon">👤</span></div>
+          <div class="mc-value">$26.1</div>
+          <div class="mc-change down">↓ 18% — improving</div>
+        </div>
+      </div>
+
+      <!-- CHANNEL PERFORMANCE TABLE -->
+      <div class="chart-container" style="margin-bottom:24px">
+        <div class="chart-header">
+          <span class="chart-title">Channel Performance Overview</span>
+          <span style="font-size:12px; color:var(--text-muted)">Last 30 days</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Spend</th>
+              <th>Impressions</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+              <th>Conversions</th>
+              <th>ROAS</th>
+              <th>AI Signal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div style="display:flex;align-items:center;gap:8px"><div style="width:8px;height:8px;border-radius:50%;background:#1877f2"></div><span class="val">Meta Ads</span></div></td>
+              <td>$22,400</td>
+              <td>1.2M</td>
+              <td>38,400</td>
+              <td><span class="val" style="color:var(--green)">3.2%</span></td>
+              <td>962</td>
+              <td><span class="val" style="color:var(--green)">5.1×</span></td>
+              <td><span class="tag tag-amber">Creative Fatigue</span></td>
+            </tr>
+            <tr>
+              <td><div style="display:flex;align-items:center;gap:8px"><div style="width:8px;height:8px;border-radius:50%;background:#4285f4"></div><span class="val">Google Ads</span></div></td>
+              <td>$16,800</td>
+              <td>680K</td>
+              <td>14,280</td>
+              <td><span class="val">2.1%</span></td>
+              <td>571</td>
+              <td><span class="val" style="color:var(--green)">3.9×</span></td>
+              <td><span class="tag tag-green">Efficient</span></td>
+            </tr>
+            <tr>
+              <td><div style="display:flex;align-items:center;gap:8px"><div style="width:8px;height:8px;border-radius:50%;background:#0077b5"></div><span class="val">LinkedIn Ads</span></div></td>
+              <td>$9,000</td>
+              <td>220K</td>
+              <td>2,420</td>
+              <td><span class="val">1.1%</span></td>
+              <td>314</td>
+              <td><span class="val" style="color:var(--amber)">2.8×</span></td>
+              <td><span class="tag tag-red">High CPC</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CREATIVE PERFORMANCE -->
+      <div class="two-col-equal" style="margin-bottom:24px">
+        <div class="chart-container">
+          <div class="chart-header">
+            <span class="chart-title">Creative Performance</span>
+            <span class="tag tag-red">Fatigue Alert</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
+                <div>
+                  <div style="font-size:13px; font-weight:500">UGC Creator Pack A</div>
+                  <div style="font-size:11px; color:var(--text-muted)">12 days · 3.8% CTR</div>
+                </div>
+                <span class="tag tag-green">Scaling ↑</span>
+              </div>
+              <div class="progress-bar"><div class="pb-fill" style="width:88%; background:var(--green)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
+                <div>
+                  <div style="font-size:13px; font-weight:500">Lifestyle Video Series</div>
+                  <div style="font-size:11px; color:var(--text-muted)">28 days · 2.4% CTR</div>
+                </div>
+                <span class="tag tag-amber">Watch</span>
+              </div>
+              <div class="progress-bar"><div class="pb-fill" style="width:62%; background:var(--amber)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
+                <div>
+                  <div style="font-size:13px; font-weight:500">Studio Set B — Product</div>
+                  <div style="font-size:11px; color:var(--text-muted)">47 days · 1.1% CTR</div>
+                </div>
+                <span class="tag tag-red">Fatigue</span>
+              </div>
+              <div class="progress-bar"><div class="pb-fill" style="width:28%; background:var(--red)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
+                <div>
+                  <div style="font-size:13px; font-weight:500">Founder Story — Organic</div>
+                  <div style="font-size:11px; color:var(--text-muted)">5 days · 4.2% CTR</div>
+                </div>
+                <span class="tag tag-green">Top Performer</span>
+              </div>
+              <div class="progress-bar"><div class="pb-fill" style="width:95%; background:var(--brand)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <span class="chart-title">Spend Distribution</span>
+          </div>
+          <!-- Donut chart simulated -->
+          <div style="display:flex; flex-direction:column; align-items:center; padding:8px 0">
+            <div style="position:relative; width:120px; height:120px; margin-bottom:20px">
+              <svg viewBox="0 0 100 100" width="120" height="120">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="var(--bg-elevated)" stroke-width="14" />
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#1877f2" stroke-width="14"
+                  stroke-dasharray="219.9" stroke-dashoffset="0"
+                  transform="rotate(-90 50 50)" />
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#4285f4" stroke-width="14"
+                  stroke-dasharray="219.9" stroke-dashoffset="154" opacity="0.85"
+                  transform="rotate(-90 50 50)" />
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#0077b5" stroke-width="14"
+                  stroke-dasharray="219.9" stroke-dashoffset="189" opacity="0.7"
+                  transform="rotate(-90 50 50)" />
+              </svg>
+              <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center">
+                <div style="font-family:var(--font-heading); font-weight:700; font-size:16px">$48.2K</div>
+                <div style="font-size:10px; color:var(--text-muted)">Total</div>
+              </div>
+            </div>
+            <div style="width:100%; display:flex; flex-direction:column; gap:8px">
+              <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px">
+                <div style="display:flex; align-items:center; gap:8px"><div style="width:10px;height:10px;border-radius:2px;background:#1877f2"></div>Meta Ads</div>
+                <span style="font-weight:600">46.5% — $22.4K</span>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px">
+                <div style="display:flex; align-items:center; gap:8px"><div style="width:10px;height:10px;border-radius:2px;background:#4285f4"></div>Google Ads</div>
+                <span style="font-weight:600">34.8% — $16.8K</span>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px">
+                <div style="display:flex; align-items:center; gap:8px"><div style="width:10px;height:10px;border-radius:2px;background:#0077b5"></div>LinkedIn Ads</div>
+                <span style="font-weight:600">18.7% — $9.0K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI RECOMMENDATIONS -->
+      <div class="card" style="margin-bottom:24px">
+        <div style="font-family:var(--font-heading); font-weight:600; font-size:15px; margin-bottom:16px">
+          ✦ AI Recommendations
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px">
+          <div style="background:var(--bg-elevated); border-radius:10px; padding:16px; border-left:3px solid var(--red)">
+            <div style="font-size:10px; font-weight:700; color:var(--red); letter-spacing:0.1em; margin-bottom:6px">URGENT</div>
+            <div style="font-size:13px; font-weight:600; margin-bottom:6px">Rotate Studio Set B</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.5">Replace fatigued studio creative with 3–5 new UGC variants targeting 25–34 segment. Expected CTR recovery: +40%.</div>
+          </div>
+          <div style="background:var(--bg-elevated); border-radius:10px; padding:16px; border-left:3px solid var(--amber)">
+            <div style="font-size:10px; font-weight:700; color:var(--amber); letter-spacing:0.1em; margin-bottom:6px">MEDIUM</div>
+            <div style="font-size:13px; font-weight:600; margin-bottom:6px">Reallocate LinkedIn Budget</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.5">Shift 15–20% of LinkedIn budget toward top Google Search terms. High-intent signals outperforming.</div>
+          </div>
+          <div style="background:var(--bg-elevated); border-radius:10px; padding:16px; border-left:3px solid var(--green)">
+            <div style="font-size:10px; font-weight:700; color:var(--green); letter-spacing:0.1em; margin-bottom:6px">OPPORTUNITY</div>
+            <div style="font-size:13px; font-weight:600; margin-bottom:6px">Scale Founder Content</div>
+            <div style="font-size:12px; color:var(--text-secondary); line-height:1.5">Founder story content is your top performer at 4.2% CTR. Recommend 3× budget increase and replicate format.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI CHAT -->
+      <div class="ai-chat-bar">
+        <span class="acb-icon">✦</span>
+        <input class="acb-input" type="text" placeholder="Ask: Why did our Meta ROAS improve? Which audience segment is most efficient? What creative should we scale?" />
+        <button class="acb-submit">Ask →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
