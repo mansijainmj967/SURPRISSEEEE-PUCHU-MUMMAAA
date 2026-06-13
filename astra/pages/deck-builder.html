@@ -4,53 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deck Builder — Astra</title>
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/astra.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     .deck-layout { display: grid; grid-template-columns: 320px 1fr; gap: 20px; height: calc(100vh - 56px - 56px); }
     .deck-sidebar { overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
     .deck-main { overflow-y: auto; }
-    .slide-thumb {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px;
-      cursor: pointer;
-      transition: all 0.15s;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
+    .slide-thumb { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; cursor: pointer; transition: all 0.15s; display: flex; gap: 10px; align-items: flex-start; }
     .slide-thumb.active { border-color: var(--brand); background: var(--brand-dim); }
     .slide-thumb:hover { border-color: rgba(255,255,255,0.1); }
     .st-num { font-size: 11px; font-weight: 700; color: var(--text-muted); min-width: 20px; }
     .st-title { font-size: 12px; font-weight: 600; }
     .st-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-    .slide-preview {
-      background: #0a0a0f;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      min-height: 400px;
-    }
+    .slide-preview { background: #0a0a0f; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); min-height: 400px; }
     .sp-inner { padding: 48px 56px; min-height: 400px; }
     .slide-nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-top: 1px solid var(--border); }
-    .template-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-align: center;
-    }
+    .template-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; cursor: pointer; transition: all 0.2s; text-align: center; }
     .template-card:hover { border-color: var(--brand); }
     .template-card.selected { border-color: var(--brand); background: var(--brand-dim); }
   </style>
 </head>
 <body class="app-body">
-
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
     <div class="sidebar-section">
@@ -93,114 +67,50 @@
       </div>
     </div>
 
-    <!-- BUILD OR VIEW TOGGLE -->
     <div id="deckBuildView" style="display:none;padding:28px">
       <div style="text-align:center;margin-bottom:32px">
         <h2 style="font-size:22px;font-weight:700;margin-bottom:8px">What deck do you need?</h2>
         <p style="font-size:14px;color:var(--text-secondary)">Astra will generate a consulting-quality deck from your data and insights.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:800px;margin:0 auto 32px">
-        <div class="template-card selected" onclick="selectTemplate(this)">
-          <div style="font-size:28px;margin-bottom:8px">📊</div>
-          <div style="font-weight:600;font-size:14px;margin-bottom:4px">Campaign Review</div>
-          <div style="font-size:12px;color:var(--text-secondary)">Executive campaign performance narrative</div>
-        </div>
-        <div class="template-card" onclick="selectTemplate(this)">
-          <div style="font-size:28px;margin-bottom:8px">🧠</div>
-          <div style="font-weight:600;font-size:14px;margin-bottom:4px">Consumer Research</div>
-          <div style="font-size:12px;color:var(--text-secondary)">Insight synthesis and audience analysis</div>
-        </div>
-        <div class="template-card" onclick="selectTemplate(this)">
-          <div style="font-size:28px;margin-bottom:8px">🎯</div>
-          <div style="font-weight:600;font-size:14px;margin-bottom:4px">Strategic Brief</div>
-          <div style="font-size:12px;color:var(--text-secondary)">Quarterly strategy and recommendations</div>
-        </div>
-        <div class="template-card" onclick="selectTemplate(this)">
-          <div style="font-size:28px;margin-bottom:8px">📈</div>
-          <div style="font-weight:600;font-size:14px;margin-bottom:4px">Brand Health</div>
-          <div style="font-size:12px;color:var(--text-secondary)">Consistency audit and brand score</div>
-        </div>
-        <div class="template-card" onclick="selectTemplate(this)">
-          <div style="font-size:28px;margin-bottom:8px">⚡</div>
-          <div style="font-weight:600;font-size:14px;margin-bottom:4px">War Room Brief</div>
-          <div style="font-size:12px;color:var(--text-secondary)">Competitive landscape and response plan</div>
-        </div>
-        <div class="template-card" onclick="selectTemplate(this)">
-          <div style="font-size:28px;margin-bottom:8px">✍️</div>
-          <div style="font-weight:600;font-size:14px;margin-bottom:4px">Custom Deck</div>
-          <div style="font-size:12px;color:var(--text-secondary)">AI builds from your brief</div>
-        </div>
+        <div class="template-card selected" onclick="selectTemplate(this)"><div style="font-size:28px;margin-bottom:8px">📊</div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Campaign Review</div><div style="font-size:12px;color:var(--text-secondary)">Executive campaign performance narrative</div></div>
+        <div class="template-card" onclick="selectTemplate(this)"><div style="font-size:28px;margin-bottom:8px">🧠</div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Consumer Research</div><div style="font-size:12px;color:var(--text-secondary)">Insight synthesis and audience analysis</div></div>
+        <div class="template-card" onclick="selectTemplate(this)"><div style="font-size:28px;margin-bottom:8px">🎯</div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Strategic Brief</div><div style="font-size:12px;color:var(--text-secondary)">Quarterly strategy and recommendations</div></div>
+        <div class="template-card" onclick="selectTemplate(this)"><div style="font-size:28px;margin-bottom:8px">📈</div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Brand Health</div><div style="font-size:12px;color:var(--text-secondary)">Consistency audit and brand score</div></div>
+        <div class="template-card" onclick="selectTemplate(this)"><div style="font-size:28px;margin-bottom:8px">⚡</div><div style="font-weight:600;font-size:14px;margin-bottom:4px">War Room Brief</div><div style="font-size:12px;color:var(--text-secondary)">Competitive landscape and response plan</div></div>
+        <div class="template-card" onclick="selectTemplate(this)"><div style="font-size:28px;margin-bottom:8px">✍️</div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Custom Deck</div><div style="font-size:12px;color:var(--text-secondary)">AI builds from your brief</div></div>
       </div>
-      <div style="text-align:center">
-        <button class="btn-primary btn-lg" onclick="generateDeck()">Generate Deck with AI →</button>
-      </div>
+      <div style="text-align:center"><button class="btn-primary btn-lg" onclick="generateDeck()">Generate Deck with AI →</button></div>
     </div>
 
     <div id="deckEditorView" class="main-content" style="padding:20px">
       <div class="deck-layout">
-        <!-- SLIDE LIST -->
         <div class="deck-sidebar">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
             <span style="font-size:12px;font-weight:600;color:var(--text-muted)">SLIDES · 8</span>
             <button class="btn-ghost" style="font-size:12px;padding:4px 8px">+ Add</button>
           </div>
-          <div class="slide-thumb active" onclick="showSlide(0,this)">
-            <div class="st-num">1</div>
-            <div><div class="st-title">Title Slide</div><div class="st-sub">Campaign Review · June 2025</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(1,this)">
-            <div class="st-num">2</div>
-            <div><div class="st-title">Executive Summary</div><div class="st-sub">Key findings & recommendations</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(2,this)">
-            <div class="st-num">3</div>
-            <div><div class="st-title">Performance Overview</div><div class="st-sub">ROAS, CAC, impressions</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(3,this)">
-            <div class="st-num">4</div>
-            <div><div class="st-title">Channel Analysis</div><div class="st-sub">Meta vs Google vs LinkedIn</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(4,this)">
-            <div class="st-num">5</div>
-            <div><div class="st-title">Creative Performance</div><div class="st-sub">What worked and why</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(5,this)">
-            <div class="st-num">6</div>
-            <div><div class="st-title">Consumer Insights</div><div class="st-sub">Audience themes & tension</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(6,this)">
-            <div class="st-num">7</div>
-            <div><div class="st-title">Strategic Recommendations</div><div class="st-sub">3 priority actions</div></div>
-          </div>
-          <div class="slide-thumb" onclick="showSlide(7,this)">
-            <div class="st-num">8</div>
-            <div><div class="st-title">Next Steps</div><div class="st-sub">Timeline & owners</div></div>
-          </div>
+          <div class="slide-thumb active" onclick="showSlide(0,this)"><div class="st-num">1</div><div><div class="st-title">Title Slide</div><div class="st-sub">Campaign Review · June 2025</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(1,this)"><div class="st-num">2</div><div><div class="st-title">Executive Summary</div><div class="st-sub">Key findings &amp; recommendations</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(2,this)"><div class="st-num">3</div><div><div class="st-title">Performance Overview</div><div class="st-sub">ROAS, CAC, impressions</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(3,this)"><div class="st-num">4</div><div><div class="st-title">Channel Analysis</div><div class="st-sub">Meta vs Google vs LinkedIn</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(4,this)"><div class="st-num">5</div><div><div class="st-title">Creative Performance</div><div class="st-sub">What worked and why</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(5,this)"><div class="st-num">6</div><div><div class="st-title">Consumer Insights</div><div class="st-sub">Audience themes &amp; tension</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(6,this)"><div class="st-num">7</div><div><div class="st-title">Strategic Recommendations</div><div class="st-sub">3 priority actions</div></div></div>
+          <div class="slide-thumb" onclick="showSlide(7,this)"><div class="st-num">8</div><div><div class="st-title">Next Steps</div><div class="st-sub">Timeline &amp; owners</div></div></div>
         </div>
-
-        <!-- SLIDE PREVIEW -->
         <div style="display:flex;flex-direction:column">
           <div class="slide-preview" id="slidePreview">
             <div class="sp-inner" id="slideContent">
-              <!-- Slide 0: Title -->
               <div style="height:100%;display:flex;flex-direction:column;justify-content:center">
                 <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Momentum · Marketing Intelligence</div>
                 <h1 style="font-size:48px;font-weight:800;line-height:1.1;margin-bottom:16px">Q2 2025<br/>Campaign Review</h1>
                 <div style="width:60px;height:3px;background:var(--brand);margin-bottom:24px;border-radius:2px"></div>
                 <p style="font-size:16px;color:var(--text-secondary)">Prepared by Astra AI · June 2025</p>
                 <div style="margin-top:40px;display:flex;gap:32px">
-                  <div>
-                    <div style="font-size:36px;font-weight:800;color:var(--green)">4.2×</div>
-                    <div style="font-size:12px;color:var(--text-muted)">Blended ROAS</div>
-                  </div>
-                  <div>
-                    <div style="font-size:36px;font-weight:800">2.1M</div>
-                    <div style="font-size:12px;color:var(--text-muted)">Total Impressions</div>
-                  </div>
-                  <div>
-                    <div style="font-size:36px;font-weight:800;color:var(--amber)">↓18%</div>
-                    <div style="font-size:12px;color:var(--text-muted)">CAC Reduction</div>
-                  </div>
+                  <div><div style="font-size:36px;font-weight:800;color:var(--green)">4.2×</div><div style="font-size:12px;color:var(--text-muted)">Blended ROAS</div></div>
+                  <div><div style="font-size:36px;font-weight:800">2.1M</div><div style="font-size:12px;color:var(--text-muted)">Total Impressions</div></div>
+                  <div><div style="font-size:36px;font-weight:800;color:var(--amber)">↑18%</div><div style="font-size:12px;color:var(--text-muted)">CAC Reduction</div></div>
                 </div>
               </div>
             </div>
@@ -215,216 +125,20 @@
     </div>
   </div>
 
-  <script src="../js/dashboard.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     const slides = [
-      `<div style="height:100%;display:flex;flex-direction:column;justify-content:center">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Momentum · Marketing Intelligence</div>
-        <h1 style="font-size:48px;font-weight:800;line-height:1.1;margin-bottom:16px">Q2 2025<br/>Campaign Review</h1>
-        <div style="width:60px;height:3px;background:var(--brand);margin-bottom:24px;border-radius:2px"></div>
-        <p style="font-size:16px;color:var(--text-secondary)">Prepared by Astra AI · June 2025</p>
-        <div style="margin-top:40px;display:flex;gap:32px">
-          <div><div style="font-size:36px;font-weight:800;color:var(--green)">4.2×</div><div style="font-size:12px;color:var(--text-muted)">Blended ROAS</div></div>
-          <div><div style="font-size:36px;font-weight:800">2.1M</div><div style="font-size:12px;color:var(--text-muted)">Total Impressions</div></div>
-          <div><div style="font-size:36px;font-weight:800;color:var(--amber)">↓18%</div><div style="font-size:12px;color:var(--text-muted)">CAC Reduction</div></div>
-        </div>
-      </div>`,
-
-      `<div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Executive Summary</div>
-        <h2 style="font-size:28px;font-weight:700;margin-bottom:24px;line-height:1.3">Strong momentum. One critical risk.</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-          <div style="background:rgba(18,183,106,0.06);border:1px solid rgba(18,183,106,0.15);border-radius:10px;padding:20px">
-            <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px;letter-spacing:0.08em">WINS</div>
-            <ul style="font-size:13px;color:var(--text-secondary);line-height:2;list-style:none">
-              <li>↑ ROAS up 18% to 4.2× blended</li>
-              <li>↑ UGC formats outperforming studio 2.3×</li>
-              <li>↑ CAC reduced by 18% MoM</li>
-              <li>↑ Founder content driving 4.2% CTR</li>
-            </ul>
-          </div>
-          <div style="background:rgba(240,68,56,0.06);border:1px solid rgba(240,68,56,0.15);border-radius:10px;padding:20px">
-            <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:10px;letter-spacing:0.08em">RISKS</div>
-            <ul style="font-size:13px;color:var(--text-secondary);line-height:2;list-style:none">
-              <li>⚠ Studio Set B critical creative fatigue</li>
-              <li>⚠ Brand tone drift — 40% toward corporate</li>
-              <li>⚠ LinkedIn CPC 34% above benchmark</li>
-              <li>⚠ Competitor pivoting to trust messaging</li>
-            </ul>
-          </div>
-        </div>
-        <div style="margin-top:20px;padding:16px;background:rgba(253,98,41,0.06);border:1px solid rgba(253,98,41,0.2);border-radius:8px">
-          <div style="font-size:12px;font-weight:700;color:var(--brand);margin-bottom:6px">✦ ASTRA RECOMMENDATION</div>
-          <div style="font-size:13px;color:var(--text-secondary)">Immediate creative rotation on Meta + tone recalibration across all live campaigns before competitor narrative solidifies.</div>
-        </div>
-      </div>`,
-
-      `<div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Performance Overview</div>
-        <h2 style="font-size:28px;font-weight:700;margin-bottom:24px">Key Metrics · June 2025</h2>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px">
-          <div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:36px;font-weight:800;color:var(--green);font-family:var(--font-heading)">4.2×</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Blended ROAS</div>
-            <div style="font-size:11px;color:var(--green)">↑ 18%</div>
-          </div>
-          <div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:36px;font-weight:800;font-family:var(--font-heading)">$48.2K</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Total Spend</div>
-            <div style="font-size:11px;color:var(--amber)">↑ 12%</div>
-          </div>
-          <div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:36px;font-weight:800;font-family:var(--font-heading)">1,847</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Conversions</div>
-            <div style="font-size:11px;color:var(--green)">↑ 24%</div>
-          </div>
-          <div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:36px;font-weight:800;color:var(--green);font-family:var(--font-heading)">$26</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Avg. CAC</div>
-            <div style="font-size:11px;color:var(--green)">↓ 18%</div>
-          </div>
-        </div>
-        <div style="font-size:13px;color:var(--text-secondary);font-style:italic;padding:16px;background:var(--bg-elevated);border-radius:8px">
-          ✦ Astra: "Performance improvement is driven primarily by format shift toward UGC. The efficiency gain in CAC is structural — expect it to sustain if creative quality is maintained."
-        </div>
-      </div>`,
-
-      `<div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Channel Analysis</div>
-        <h2 style="font-size:28px;font-weight:700;margin-bottom:24px">Where your budget is working</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
-          <div style="border:1px solid rgba(24,119,242,0.3);border-radius:10px;padding:20px;background:rgba(24,119,242,0.04)">
-            <div style="font-size:11px;font-weight:700;color:#4895ef;margin-bottom:10px">META ADS</div>
-            <div style="font-size:28px;font-weight:800;margin-bottom:4px">5.1×</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:16px">ROAS · $22.4K spend</div>
-            <div style="font-size:12px;color:var(--text-secondary)">Strong but creative fatigue risk. UGC driving the majority of results. Studio content needs immediate rotation.</div>
-            <div style="margin-top:12px"><span class="tag tag-amber">Action Required</span></div>
-          </div>
-          <div style="border:1px solid rgba(66,133,244,0.3);border-radius:10px;padding:20px;background:rgba(66,133,244,0.04)">
-            <div style="font-size:11px;font-weight:700;color:#4285f4;margin-bottom:10px">GOOGLE ADS</div>
-            <div style="font-size:28px;font-weight:800;margin-bottom:4px">3.9×</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:16px">ROAS · $16.8K spend</div>
-            <div style="font-size:12px;color:var(--text-secondary)">Efficient and under-invested. High-intent search terms available. Recommend 15% budget increase from LinkedIn reallocation.</div>
-            <div style="margin-top:12px"><span class="tag tag-green">Scale Up</span></div>
-          </div>
-          <div style="border:1px solid rgba(0,119,181,0.3);border-radius:10px;padding:20px;background:rgba(0,119,181,0.04)">
-            <div style="font-size:11px;font-weight:700;color:#0077b5;margin-bottom:10px">LINKEDIN ADS</div>
-            <div style="font-size:28px;font-weight:800;margin-bottom:4px">2.8×</div>
-            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:16px">ROAS · $9.0K spend</div>
-            <div style="font-size:12px;color:var(--text-secondary)">CPC running 34% above benchmark. Pipeline quality is good but cost is high. Reallocate 20% to Google.</div>
-            <div style="margin-top:12px"><span class="tag tag-red">Optimise</span></div>
-          </div>
-        </div>
-      </div>`,
-
-      `<div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Creative Performance</div>
-        <h2 style="font-size:28px;font-weight:700;margin-bottom:8px">Authenticity wins. Consistently.</h2>
-        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px">UGC and founder formats are outperforming polished studio content 2.3× across all channels.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-          <div style="padding:20px;background:rgba(18,183,106,0.06);border:1px solid rgba(18,183,106,0.15);border-radius:10px">
-            <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px">TOP PERFORMERS</div>
-            <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text-secondary)">
-              <div>🥇 Founder Story — 4.2% CTR · 5.8× ROAS</div>
-              <div>🥈 UGC Creator Pack A — 3.8% CTR · 4.9× ROAS</div>
-              <div>🥉 Customer Testimonial Series — 3.1% CTR</div>
-            </div>
-          </div>
-          <div style="padding:20px;background:rgba(240,68,56,0.06);border:1px solid rgba(240,68,56,0.15);border-radius:10px">
-            <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:10px">UNDERPERFORMING</div>
-            <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text-secondary)">
-              <div>⚠ Studio Set B — 1.1% CTR · 47 days live</div>
-              <div>⚠ Brand Manifesto Video — 0.8% CTR</div>
-              <div>⚠ Product Feature Carousel — 1.4% CTR</div>
-            </div>
-          </div>
-        </div>
-        <div style="margin-top:20px;font-size:13px;color:var(--text-secondary);font-style:italic;padding:16px;background:var(--bg-elevated);border-radius:8px">
-          ✦ Astra: "The pattern is clear — consumers are responding to authenticity over production value. This aligns with Momentum's core positioning of making things feel effortless and human."
-        </div>
-      </div>`,
-
-      `<div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Consumer Insights</div>
-        <h2 style="font-size:28px;font-weight:700;margin-bottom:8px">What consumers are really feeling</h2>
-        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px">Decoded from 4,280 signals — reviews, social, surveys, and support.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px">
-          <div style="padding:20px;background:var(--bg-elevated);border-radius:10px;text-align:center">
-            <div style="font-size:32px;margin-bottom:8px">😰</div>
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Convenience Anxiety</div>
-            <div style="font-size:11px;color:var(--text-muted)">34% of negative sentiment</div>
-          </div>
-          <div style="padding:20px;background:var(--bg-elevated);border-radius:10px;text-align:center">
-            <div style="font-size:32px;margin-bottom:8px">✨</div>
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Effortless Experience</div>
-            <div style="font-size:11px;color:var(--text-muted)">28% of positive sentiment</div>
-          </div>
-          <div style="padding:20px;background:var(--bg-elevated);border-radius:10px;text-align:center">
-            <div style="font-size:32px;margin-bottom:8px">🤝</div>
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Guidance Needed</div>
-            <div style="font-size:11px;color:var(--text-muted)">Key unmet need</div>
-          </div>
-        </div>
-        <div style="font-size:13px;color:var(--text-secondary);font-style:italic;padding:16px;background:var(--bg-elevated);border-radius:8px">
-          ✦ Astra: "The shift from aspiration to anxiety is a significant strategic signal. Brands that pivot toward reassurance messaging now will capture hesitant buyers ahead of the competition."
-        </div>
-      </div>`,
-
-      `<div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Strategic Recommendations</div>
-        <h2 style="font-size:28px;font-weight:700;margin-bottom:24px">Three priorities for Q3</h2>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--red);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:18px;flex-shrink:0">1</div>
-            <div>
-              <div style="font-weight:700;font-size:16px;margin-bottom:4px">Immediate: Creative rotation + tone reset</div>
-              <div style="font-size:13px;color:var(--text-secondary)">Replace Studio Set B with 3–5 new UGC variants. Recalibrate all campaign copy against brand voice guidelines. Estimated ROAS impact: +15–20%.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--amber);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:18px;flex-shrink:0">2</div>
-            <div>
-              <div style="font-weight:700;font-size:16px;margin-bottom:4px">Short-term: Budget reallocation</div>
-              <div style="font-size:13px;color:var(--text-secondary)">Shift 20% of LinkedIn budget to Google Search. Increase Meta UGC budget by 30%. Estimated CAC improvement: $22 target by month end.</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:700;font-size:18px;flex-shrink:0">3</div>
-            <div>
-              <div style="font-weight:700;font-size:16px;margin-bottom:4px">Strategic: Own the simplicity narrative</div>
-              <div style="font-size:13px;color:var(--text-secondary)">Launch founder-led content series around "the effortless way." Move category conversation from anxiety to reassurance before competitors. 4-week campaign window.</div>
-            </div>
-          </div>
-        </div>
-      </div>`,
-
-      `<div style="height:100%;display:flex;flex-direction:column;justify-content:center;text-align:center">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Next Steps</div>
-        <h2 style="font-size:36px;font-weight:800;margin-bottom:8px">Act before the window closes.</h2>
-        <p style="font-size:16px;color:var(--text-secondary);margin-bottom:40px">The competitive landscape is shifting. Move fast on the three priority actions.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left">
-          <div style="padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px">THIS WEEK</div>
-            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Creative Rotation</div>
-            <div style="font-size:12px;color:var(--text-secondary)">Brief UGC creators, pause Studio Set B, deploy new variants by Friday</div>
-          </div>
-          <div style="padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px">WITHIN 2 WEEKS</div>
-            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Budget Shift</div>
-            <div style="font-size:12px;color:var(--text-secondary)">Reallocate LinkedIn budget, scale Google Search top terms, adjust Meta targeting</div>
-          </div>
-          <div style="padding:20px;border:1px solid var(--border);border-radius:10px">
-            <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px">WITHIN 4 WEEKS</div>
-            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Campaign Launch</div>
-            <div style="font-size:12px;color:var(--text-secondary)">Launch founder-led simplicity narrative campaign across Meta and LinkedIn</div>
-          </div>
-        </div>
-        <div style="margin-top:32px;font-size:13px;color:var(--text-muted)">Generated by Astra · June 2025 · Momentum Brand</div>
-      </div>`
+      `<div style="height:100%;display:flex;flex-direction:column;justify-content:center"><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Momentum · Marketing Intelligence</div><h1 style="font-size:48px;font-weight:800;line-height:1.1;margin-bottom:16px">Q2 2025<br/>Campaign Review</h1><div style="width:60px;height:3px;background:var(--brand);margin-bottom:24px;border-radius:2px"></div><p style="font-size:16px;color:var(--text-secondary)">Prepared by Astra AI · June 2025</p><div style="margin-top:40px;display:flex;gap:32px"><div><div style="font-size:36px;font-weight:800;color:var(--green)">4.2×</div><div style="font-size:12px;color:var(--text-muted)">Blended ROAS</div></div><div><div style="font-size:36px;font-weight:800">2.1M</div><div style="font-size:12px;color:var(--text-muted)">Total Impressions</div></div><div><div style="font-size:36px;font-weight:800;color:var(--amber)">↑18%</div><div style="font-size:12px;color:var(--text-muted)">CAC Reduction</div></div></div></div>`,
+      `<div><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Executive Summary</div><h2 style="font-size:28px;font-weight:700;margin-bottom:24px;line-height:1.3">Strong momentum. One critical risk.</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:20px"><div style="background:rgba(18,183,106,0.06);border:1px solid rgba(18,183,106,0.15);border-radius:10px;padding:20px"><div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px;letter-spacing:0.08em">WINS</div><ul style="font-size:13px;color:var(--text-secondary);line-height:2;list-style:none"><li>↑ ROAS up 18% to 4.2× blended</li><li>↑ UGC formats outperforming studio 2.3×</li><li>↑ CAC reduced by 18% MoM</li><li>↑ Founder content driving 4.2% CTR</li></ul></div><div style="background:rgba(240,68,56,0.06);border:1px solid rgba(240,68,56,0.15);border-radius:10px;padding:20px"><div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:10px;letter-spacing:0.08em">RISKS</div><ul style="font-size:13px;color:var(--text-secondary);line-height:2;list-style:none"><li>⚠ Studio Set B critical creative fatigue</li><li>⚠ Brand tone drift — 40% toward corporate</li><li>⚠ LinkedIn CPC 34% above benchmark</li><li>⚠ Competitor pivoting to trust messaging</li></ul></div></div><div style="margin-top:20px;padding:16px;background:rgba(253,98,41,0.06);border:1px solid rgba(253,98,41,0.2);border-radius:8px"><div style="font-size:12px;font-weight:700;color:var(--brand);margin-bottom:6px">✦ ASTRA RECOMMENDATION</div><div style="font-size:13px;color:var(--text-secondary)">Immediate creative rotation on Meta + tone recalibration across all live campaigns before competitor narrative solidifies.</div></div></div>`,
+      `<div><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Performance Overview</div><h2 style="font-size:28px;font-weight:700;margin-bottom:24px">Key Metrics · June 2025</h2><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px"><div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:36px;font-weight:800;color:var(--green)">4.2×</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Blended ROAS</div><div style="font-size:11px;color:var(--green)">↑ 18%</div></div><div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:36px;font-weight:800">$48.2K</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Total Spend</div><div style="font-size:11px;color:var(--amber)">↑ 12%</div></div><div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:36px;font-weight:800">1,847</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Conversions</div><div style="font-size:11px;color:var(--green)">↑ 24%</div></div><div style="text-align:center;padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:36px;font-weight:800;color:var(--green)">$26</div><div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Avg. CAC</div><div style="font-size:11px;color:var(--green)">↓ 18%</div></div></div><div style="font-size:13px;color:var(--text-secondary);font-style:italic;padding:16px;background:var(--bg-elevated);border-radius:8px">✦ Astra: &quot;Performance improvement is driven primarily by format shift toward UGC. The efficiency gain in CAC is structural.&quot;</div></div>`,
+      `<div><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Channel Analysis</div><h2 style="font-size:28px;font-weight:700;margin-bottom:24px">Where your budget is working</h2><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px"><div style="border:1px solid rgba(24,119,242,0.3);border-radius:10px;padding:20px;background:rgba(24,119,242,0.04)"><div style="font-size:11px;font-weight:700;color:#4895ef;margin-bottom:10px">META ADS</div><div style="font-size:28px;font-weight:800;margin-bottom:4px">5.1×</div><div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">ROAS · $22.4K spend</div><span class="tag tag-amber">Action Required</span></div><div style="border:1px solid rgba(66,133,244,0.3);border-radius:10px;padding:20px;background:rgba(66,133,244,0.04)"><div style="font-size:11px;font-weight:700;color:#4285f4;margin-bottom:10px">GOOGLE ADS</div><div style="font-size:28px;font-weight:800;margin-bottom:4px">3.9×</div><div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">ROAS · $16.8K spend</div><span class="tag tag-green">Scale Up</span></div><div style="border:1px solid rgba(0,119,181,0.3);border-radius:10px;padding:20px;background:rgba(0,119,181,0.04)"><div style="font-size:11px;font-weight:700;color:#0077b5;margin-bottom:10px">LINKEDIN ADS</div><div style="font-size:28px;font-weight:800;margin-bottom:4px">2.8×</div><div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">ROAS · $9.0K spend</div><span class="tag tag-red">Optimise</span></div></div></div>`,
+      `<div><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Creative Performance</div><h2 style="font-size:28px;font-weight:700;margin-bottom:8px">Authenticity wins. Consistently.</h2><p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px">UGC and founder formats are outperforming polished studio content 2.3× across all channels.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div style="padding:20px;background:rgba(18,183,106,0.06);border:1px solid rgba(18,183,106,0.15);border-radius:10px"><div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px">TOP PERFORMERS</div><div style="font-size:13px;color:var(--text-secondary);line-height:2">🥇 Founder Story — 4.2% CTR<br/>🥈 UGC Creator Pack A — 3.8% CTR<br/>🥉 Customer Testimonial — 3.1% CTR</div></div><div style="padding:20px;background:rgba(240,68,56,0.06);border:1px solid rgba(240,68,56,0.15);border-radius:10px"><div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:10px">UNDERPERFORMING</div><div style="font-size:13px;color:var(--text-secondary);line-height:2">⚠ Studio Set B — 1.1% CTR · 47 days<br/>⚠ Brand Manifesto Video — 0.8% CTR<br/>⚠ Product Feature Carousel — 1.4% CTR</div></div></div></div>`,
+      `<div><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Consumer Insights</div><h2 style="font-size:28px;font-weight:700;margin-bottom:8px">What consumers are really feeling</h2><p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px">Decoded from 4,280 signals — reviews, social, surveys, and support.</p><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px"><div style="padding:20px;background:var(--bg-elevated);border-radius:10px;text-align:center"><div style="font-size:32px;margin-bottom:8px">😰</div><div style="font-weight:600;font-size:13px;margin-bottom:4px">Convenience Anxiety</div><div style="font-size:11px;color:var(--text-muted)">34% of negative sentiment</div></div><div style="padding:20px;background:var(--bg-elevated);border-radius:10px;text-align:center"><div style="font-size:32px;margin-bottom:8px">✨</div><div style="font-weight:600;font-size:13px;margin-bottom:4px">Effortless Experience</div><div style="font-size:11px;color:var(--text-muted)">28% of positive sentiment</div></div><div style="padding:20px;background:var(--bg-elevated);border-radius:10px;text-align:center"><div style="font-size:32px;margin-bottom:8px">🤝</div><div style="font-weight:600;font-size:13px;margin-bottom:4px">Guidance Needed</div><div style="font-size:11px;color:var(--text-muted)">Key unmet need</div></div></div></div>`,
+      `<div><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Strategic Recommendations</div><h2 style="font-size:28px;font-weight:700;margin-bottom:24px">Three priorities for Q3</h2><div style="display:flex;flex-direction:column;gap:16px"><div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:50%;background:var(--red);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">1</div><div><div style="font-weight:700;font-size:16px;margin-bottom:4px">Immediate: Creative rotation + tone reset</div><div style="font-size:13px;color:var(--text-secondary)">Replace Studio Set B with 3–5 new UGC variants. Recalibrate all campaign copy. Estimated ROAS impact: +15–20%.</div></div></div><div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:50%;background:var(--amber);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">2</div><div><div style="font-weight:700;font-size:16px;margin-bottom:4px">Short-term: Budget reallocation</div><div style="font-size:13px;color:var(--text-secondary)">Shift 20% LinkedIn budget to Google. Increase Meta UGC by 30%. CAC target: $22.</div></div></div><div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">3</div><div><div style="font-weight:700;font-size:16px;margin-bottom:4px">Strategic: Own the simplicity narrative</div><div style="font-size:13px;color:var(--text-secondary)">Launch founder-led content series. Move category from anxiety to reassurance. 4-week window.</div></div></div></div></div>`,
+      `<div style="height:100%;display:flex;flex-direction:column;justify-content:center;text-align:center"><div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--brand);margin-bottom:20px;text-transform:uppercase">Next Steps</div><h2 style="font-size:36px;font-weight:800;margin-bottom:8px">Act before the window closes.</h2><p style="font-size:16px;color:var(--text-secondary);margin-bottom:40px">The competitive landscape is shifting. Move fast on three priority actions.</p><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left"><div style="padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:11px;color:var(--text-muted);margin-bottom:6px">THIS WEEK</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">Creative Rotation</div><div style="font-size:12px;color:var(--text-secondary)">Brief UGC creators, pause Studio Set B, deploy new variants</div></div><div style="padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:11px;color:var(--text-muted);margin-bottom:6px">WITHIN 2 WEEKS</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">Budget Shift</div><div style="font-size:12px;color:var(--text-secondary)">Reallocate LinkedIn, scale Google, adjust Meta targeting</div></div><div style="padding:20px;border:1px solid var(--border);border-radius:10px"><div style="font-size:11px;color:var(--text-muted);margin-bottom:6px">WITHIN 4 WEEKS</div><div style="font-size:14px;font-weight:600;margin-bottom:4px">Campaign Launch</div><div style="font-size:12px;color:var(--text-secondary)">Launch founder-led simplicity narrative across Meta and LinkedIn</div></div></div><div style="margin-top:32px;font-size:13px;color:var(--text-muted)">Generated by Astra · June 2025 · Momentum Brand</div></div>`
     ];
 
     let currentSlide = 0;
-
     function showSlide(idx, el) {
       currentSlide = idx;
       document.querySelectorAll('.slide-thumb').forEach(t => t.classList.remove('active'));
@@ -432,25 +146,10 @@
       document.getElementById('slideContent').innerHTML = slides[idx];
       document.getElementById('slideCounter').textContent = `Slide ${idx+1} of ${slides.length}`;
     }
-
-    function nextSlide() {
-      const next = (currentSlide + 1) % slides.length;
-      showSlide(next, document.querySelectorAll('.slide-thumb')[next]);
-    }
-    function prevSlide() {
-      const prev = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(prev, document.querySelectorAll('.slide-thumb')[prev]);
-    }
-
-    function selectTemplate(el) {
-      document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
-      el.classList.add('selected');
-    }
-
-    function generateDeck() {
-      document.getElementById('deckBuildView').style.display = 'none';
-      document.getElementById('deckEditorView').style.display = 'block';
-    }
+    function nextSlide() { const n=(currentSlide+1)%slides.length; showSlide(n,document.querySelectorAll('.slide-thumb')[n]); }
+    function prevSlide() { const p=(currentSlide-1+slides.length)%slides.length; showSlide(p,document.querySelectorAll('.slide-thumb')[p]); }
+    function selectTemplate(el) { document.querySelectorAll('.template-card').forEach(c=>c.classList.remove('selected')); el.classList.add('selected'); }
+    function generateDeck() { document.getElementById('deckBuildView').style.display='none'; document.getElementById('deckEditorView').style.display='block'; }
   </script>
 </body>
 </html>
