@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>War Room — Astra</title>
+  
+  <link rel="stylesheet" href="../css/astra.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .wr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .wr-alert {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .wr-alert::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+    }
+    .wr-alert.critical::before { background: var(--red); }
+    .wr-alert.warning::before { background: var(--amber); }
+    .wr-alert.opportunity::before { background: var(--green); }
+    .wr-alert.info::before { background: var(--brand); }
+    .wr-alert:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+    .wa-type { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .wa-type.critical { color: var(--red); }
+    .wa-type.warning { color: var(--amber); }
+    .wa-type.opportunity { color: var(--green); }
+    .wa-type.info { color: var(--brand); }
+    .wa-title { font-weight: 600; font-size: 14px; margin-bottom: 8px; line-height: 1.4; }
+    .wa-body { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+    .wa-meta { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--text-muted); }
+    .war-room-header {
+      background: linear-gradient(135deg, rgba(240,68,56,0.06), transparent);
+      border: 1px solid rgba(240,68,56,0.15);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .live-feed {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .lf-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lf-item {
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .lf-item:hover { background: var(--bg-elevated); }
+    .lf-item:last-child { border-bottom: none; }
+    .lf-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .lf-text { flex: 1; font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+    .lf-time { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+  </style>
+</head>
+<body class="app-body">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
+    <div class="sidebar-section">
+      <a href="dashboard.html" class="nav-item"><span class="ni-icon">▦</span> Overview</a>
+      <a href="brand-brain.html" class="nav-item"><span class="ni-icon">🧠</span> Brand Brain</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Intelligence</div>
+      <a href="campaigns.html" class="nav-item"><span class="ni-icon">⚡</span> Campaign Intelligence</a>
+      <a href="consumers.html" class="nav-item"><span class="ni-icon">💬</span> Consumer Insights</a>
+      <a href="brand-consistency.html" class="nav-item"><span class="ni-icon">🎯</span> Brand Consistency</a>
+      <a href="war-room.html" class="nav-item active"><span class="ni-icon">🔴</span> War Room <span class="ni-badge">3</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Create</div>
+      <a href="deck-builder.html" class="nav-item"><span class="ni-icon">📑</span> Deck Builder</a>
+      <a href="content-engine.html" class="nav-item"><span class="ni-icon">✍️</span> Content Engine</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Data</div>
+      <a href="upload.html" class="nav-item"><span class="ni-icon">📁</span> Upload Center</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="user-widget">
+        <div class="uw-avatar">MJ</div>
+        <div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-wrap">
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title">AI Marketing War Room</span>
+      <div class="topbar-actions">
+        <div class="status-live">Live Monitoring</div>
+        <button class="btn-primary">Configure Alerts</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="war-room-header">
+        <div>
+          <h1 style="font-size:22px;font-weight:700;margin-bottom:6px">🔴 Strategic Command Centre</h1>
+          <p style="font-size:14px;color:var(--text-secondary)">Real-time signals across market, competitors, and brand — interpreted strategically.</p>
+        </div>
+        <div style="display:flex;gap:24px;text-align:center">
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:24px;color:var(--red)">3</div>
+            <div style="font-size:11px;color:var(--text-muted)">Critical</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:24px;color:var(--amber)">5</div>
+            <div style="font-size:11px;color:var(--text-muted)">Warnings</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:24px;color:var(--green)">4</div>
+            <div style="font-size:11px;color:var(--text-muted)">Opportunities</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <h3 style="font-size:15px;font-weight:600">Active Strategic Alerts</h3>
+          <div class="tabs" style="transform:scale(0.9);transform-origin:right">
+            <div class="tab active">All</div>
+            <div class="tab">Competitor</div>
+            <div class="tab">Sentiment</div>
+            <div class="tab">Trends</div>
+          </div>
+        </div>
+        <div class="wr-grid">
+          <div class="wr-alert critical">
+            <div class="wa-type critical">⚠ Critical · Competitor</div>
+            <div class="wa-title">Rival brand pivoting to trust-based messaging</div>
+            <div class="wa-body">Competitor has increased trust and reliability messaging by 68% in the last 7 days. This directly targets the authenticity positioning your brand currently holds. Strategic window: 2–3 weeks before market narrative shifts.</div>
+            <div class="wa-meta">
+              <div style="display:flex;gap:8px">
+                <button class="ii-btn primary">Strategic Response →</button>
+                <button class="ii-btn secondary">Monitor</button>
+              </div>
+              <span>2h ago</span>
+            </div>
+          </div>
+          <div class="wr-alert warning">
+            <div class="wa-type warning">⚡ Warning · Sentiment</div>
+            <div class="wa-title">Negative sentiment spike around delivery experience</div>
+            <div class="wa-body">19% increase in delivery-related complaints in the past 14 days. Sentiment is clustering around "slow," "uncertain," and "no updates." Risk of reputation damage if unaddressed in next 7 days.</div>
+            <div class="wa-meta">
+              <div style="display:flex;gap:8px">
+                <button class="ii-btn secondary">View Signals</button>
+              </div>
+              <span>4h ago</span>
+            </div>
+          </div>
+          <div class="wr-alert opportunity">
+            <div class="wa-type opportunity">↑ Opportunity · Trend</div>
+            <div class="wa-title">Founder-led content outperforming branded campaigns 3×</div>
+            <div class="wa-body">Across your category, founder and founder-adjacent storytelling content is generating 3× higher engagement than polished brand campaigns. Three competitors have pivoted to this format in the last 30 days.</div>
+            <div class="wa-meta">
+              <div style="display:flex;gap:8px">
+                <button class="ii-btn primary" onclick="window.location='content-engine.html'">Create Content →</button>
+              </div>
+              <span>6h ago</span>
+            </div>
+          </div>
+          <div class="wr-alert opportunity">
+            <div class="wa-type opportunity">↑ Opportunity · Market</div>
+            <div class="wa-title">Simplicity narrative becoming dominant category theme</div>
+            <div class="wa-body">The "effortless and simple" narrative has seen a 44% increase in consumer conversations. Your brand's historical positioning around accessible complexity is well-placed to own this narrative ahead of competitors.</div>
+            <div class="wa-meta">
+              <div style="display:flex;gap:8px">
+                <button class="ii-btn secondary">Develop Strategy</button>
+              </div>
+              <span>12h ago</span>
+            </div>
+          </div>
+          <div class="wr-alert warning">
+            <div class="wa-type warning">⚡ Warning · Brand</div>
+            <div class="wa-title">Category conversation shifting toward anxiety vs aspiration</div>
+            <div class="wa-body">Consumer sentiment across the category has shifted from aspirational to anxiety-led over the past 6 weeks. 34% of negative conversation clusters around overwhelm. Brands that pivot messaging to reassurance now will capture hesitant buyers.</div>
+            <div class="wa-meta">
+              <div style="display:flex;gap:8px">
+                <button class="ii-btn secondary">View Analysis</button>
+              </div>
+              <span>1d ago</span>
+            </div>
+          </div>
+          <div class="wr-alert info">
+            <div class="wa-type info">ℹ Info · Market</div>
+            <div class="wa-title">Seasonal search intent rising 22% ahead of peak period</div>
+            <div class="wa-body">Search intent data shows a 22% increase in category-relevant queries compared to the same period last year. Recommend increasing paid budget by 15–25% over the next 3 weeks to capture intent before competition intensifies.</div>
+            <div class="wa-meta">
+              <div style="display:flex;gap:8px">
+                <button class="ii-btn secondary">Budget Planner</button>
+              </div>
+              <span>2d ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col-equal" style="margin-bottom:24px">
+        <div class="live-feed">
+          <div class="lf-header">
+            <div class="status-live">Live Signal Feed</div>
+            <span style="font-size:12px;color:var(--text-muted);margin-left:auto">Auto-updating</span>
+          </div>
+          <div id="liveFeed">
+            <div class="lf-item"><div class="lf-dot" style="background:var(--red)"></div><div class="lf-text">Competitor @BrandX launched new product page emphasising "trusted by 100K"</div><div class="lf-time">3m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--amber)"></div><div class="lf-text">Reddit thread "which brand is actually reliable?" gaining traction — 847 upvotes</div><div class="lf-time">12m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--green)"></div><div class="lf-text">Your founder post received 3× average engagement — "authentic" appearing in 40% of comments</div><div class="lf-time">28m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--brand)"></div><div class="lf-text">Category keyword "simplify [category]" trending +34% on Google this week</div><div class="lf-time">45m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--amber)"></div><div class="lf-text">Customer support ticket volume up 14% — majority related to onboarding confusion</div><div class="lf-time">1h ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--green)"></div><div class="lf-text">LinkedIn poll on "what matters most in [category]" — simplicity winning at 62%</div><div class="lf-time">2h ago</div></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="chart-container">
+            <div style="font-weight:600;font-size:14px;margin-bottom:14px">Competitor Pulse</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px"><div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">B</div><div style="flex:1"><div style="font-size:13px;font-weight:600;margin-bottom:2px">BrandX</div><div style="font-size:11px;color:var(--text-muted)">Trust messaging ↑68%</div></div><span class="tag tag-red">Watch</span></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px"><div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">C</div><div style="flex:1"><div style="font-size:13px;font-weight:600;margin-bottom:2px">CompeteCo</div><div style="font-size:11px;color:var(--text-muted)">Founder content series launched</div></div><span class="tag tag-amber">Monitor</span></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px"><div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">R</div><div style="flex:1"><div style="font-size:13px;font-weight:600;margin-bottom:2px">RivalBrand</div><div style="font-size:11px;color:var(--text-muted)">Pricing change detected</div></div><span class="tag tag-muted">Low</span></div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <div style="font-weight:600;font-size:14px;margin-bottom:14px">Trend Tracker</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Founder storytelling</span><span style="color:var(--green);font-weight:600">↑ 340%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Simplicity messaging</span><span style="color:var(--green);font-weight:600">↑ 44%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">UGC formats</span><span style="color:var(--green);font-weight:600">↑ 128%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Polished brand ads</span><span style="color:var(--red);font-weight:600">↓ 18%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Corporate tone</span><span style="color:var(--red);font-weight:600">↓ 31%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-chat-bar">
+        <span class="acb-icon">✦</span>
+        <input class="acb-input" type="text" placeholder="Ask: What's our biggest competitive threat right now? How should we respond to BrandX's trust messaging?" />
+        <button class="acb-submit">Ask →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script>
+    const feedItems = [
+      { color: 'var(--green)', text: 'New 5-star review mentioning "finally simple and effortless"', time: 'Just now' },
+      { color: 'var(--amber)', text: 'TikTok UGC creator @sarah_creates tagged your brand in viral review', time: '1m ago' },
+      { color: 'var(--red)', text: 'BrandX running aggressive retargeting against your audience segments', time: '5m ago' },
+    ];
+    let feedIdx = 0;
+    setInterval(() => {
+      const feed = document.getElementById('liveFeed');
+      if (!feed) return;
+      const item = feedItems[feedIdx % feedItems.length];
+      const el = document.createElement('div');
+      el.className = 'lf-item';
+      el.style.opacity = '0';
+      el.innerHTML = `<div class="lf-dot" style="background:${item.color}"></div><div class="lf-text">${item.text}</div><div class="lf-time">${item.time}</div>`;
+      feed.insertBefore(el, feed.firstChild);
+      requestAnimationFrame(() => { el.style.transition = 'opacity 0.5s'; el.style.opacity = '1'; });
+      if (feed.children.length > 8) feed.removeChild(feed.lastChild);
+      feedIdx++;
+    }, 8000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Brand Brain — Astra</title><link rel="stylesheet" href="../css/astra.css"/>
+<style>
+.brain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.brain-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rl);padding:20px}
+.bc-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.bc-icon-wrap{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.bc-name{font-weight:600;font-size:14px} .bc-conf{font-size:11px;color:var(--text-muted)}
+.bc-content{font-size:13px;color:var(--text-secondary);line-height:1.7}
+.bb-tag{display:inline-block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:3px 10px;font-size:11px;color:var(--text-secondary);margin:3px 3px 3px 0;cursor:pointer;transition:all 0.15s}
+.bb-tag:hover{border-color:var(--brand);color:var(--brand)}
+.memory-feed{display:flex;flex-direction:column;gap:8px}
+.mf-item{display:flex;align-items:flex-start;gap:10px;padding:12px;background:var(--bg-elevated);border-radius:8px;font-size:13px}
+.mf-icon{font-size:14px;flex-shrink:0;margin-top:1px} .mf-text{flex:1;color:var(--text-secondary);line-height:1.5} .mf-time{font-size:11px;color:var(--text-muted);flex-shrink:0}
+.dna-section{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rl);padding:24px}
+.dna-title{font-weight:600;font-size:15px;margin-bottom:16px}
+</style>
+</head>
+<body class="app-body">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo"><span class="logo-mark">+</span><span class="logo-text">Astra</span></div>
+  <div class="sidebar-section"><a href="dashboard.html" class="nav-item"><span class="ni-icon">+</span><span>Overview</span></a><a href="brand-brain.html" class="nav-item active"><span class="ni-icon">@</span><span>Brand Brain</span></a></div>
+  <div class="sidebar-section"><div class="sidebar-label">Intelligence</div><a href="campaigns.html" class="nav-item"><span class="ni-icon">!</span><span>Campaign Intelligence</span></a><a href="consumers.html" class="nav-item"><span class="ni-icon">*</span><span>Consumer Insights</span></a><a href="brand-consistency.html" class="nav-item"><span class="ni-icon">#</span><span>Brand Consistency</span></a><a href="war-room.html" class="nav-item"><span class="ni-icon">!</span><span>War Room</span><span class="ni-badge">3</span></a></div>
+  <div class="sidebar-section"><div class="sidebar-label">Create</div><a href="deck-builder.html" class="nav-item"><span class="ni-icon">%</span><span>Deck Builder</span></a><a href="content-engine.html" class="nav-item"><span class="ni-icon">/</span><span>Content Engine</span></a></div>
+  <div class="sidebar-section"><div class="sidebar-label">Data</div><a href="upload.html" class="nav-item"><span class="ni-icon">^</span><span>Upload Center</span></a></div>
+  <div class="sidebar-footer"><div class="user-widget"><div class="uw-avatar">MJ</div><div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div></div></div>
+</aside>
+<div class="main-wrap">
+  <div class="topbar"><button class="icon-btn" onclick="toggleSidebar()">+</button><span class="topbar-title">Brand Brain</span><div class="topbar-actions"><span class="tag tag-green">Active &middot; Learning</span><button class="btn btn-outline" onclick="window.location='upload.html'">Add Context</button><button class="btn btn-primary">Retrain</button></div></div>
+  <div class="main-content">
+    <div class="page-header"><div class="ph-left"><h1>Momentum's Brand Brain</h1><p>Continuously learning &middot; 14 documents &middot; 4 connected accounts &middot; Last updated 2h ago</p></div><div class="ph-actions"><div style="text-align:right"><div style="font-family:var(--font-h);font-weight:700;font-size:28px;color:var(--green)">87<span style="font-size:14px;color:var(--text-secondary)">/100</span></div><div style="font-size:12px;color:var(--text-muted)">Brain Confidence Score</div></div></div></div>
+    <div class="card" style="margin-bottom:24px;border-color:rgba(253,98,41,0.15);background:linear-gradient(135deg,rgba(253,98,41,0.04),transparent)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px"><span style="color:var(--brand);font-size:18px">+</span><span style="font-weight:600;font-size:15px">AI Brand Summary</span></div>
+      <p style="font-size:14px;color:var(--text-secondary);line-height:1.8"><strong style="color:var(--text)">Momentum</strong> is a brand with a historically conversational, witty, and accessible tone that has driven strong engagement with urban 25-34 consumers. The brand's positioning centres on <strong style="color:var(--text)">making complex things feel effortless</strong>, with a core audience psychology of achievement-motivated individuals who want to look knowledgeable without feeling overwhelmed. Peak performance has consistently come from <strong style="color:var(--text)">authentic, founder-adjacent content</strong> and UGC formats rather than polished studio production.</p>
+    </div>
+    <div class="brain-grid">
+      <div class="brain-card"><div class="bc-header"><div class="bc-icon-wrap" style="background:rgba(253,98,41,0.1)">@</div><div><div class="bc-name">Brand Tone &amp; Voice</div><div class="bc-conf">92% confidence</div></div></div><div class="bc-content">Conversational, witty, intelligent. Talks to readers as smart equals, not students. Avoids jargon. Uses first-person plural to create community.</div><div style="margin-top:12px"><div class="bb-tag">Conversational</div><div class="bb-tag">Witty</div><div class="bb-tag">Accessible</div><div class="bb-tag">Intelligent</div><div class="bb-tag">Warm</div></div></div>
+      <div class="brain-card"><div class="bc-header"><div class="bc-icon-wrap" style="background:rgba(99,102,241,0.1)">*</div><div><div class="bc-name">Core Audience</div><div class="bc-conf">88% confidence</div></div></div><div class="bc-content">Urban 25-34, achievement-motivated. Want to look smart and be efficient. Slightly overwhelmed by complexity, deeply respond to simplicity and validation.</div><div style="margin-top:12px"><div class="bb-tag">Urban 25-34</div><div class="bb-tag">Achievement-driven</div><div class="bb-tag">Simplicity-seeking</div></div></div>
+      <div class="brain-card"><div class="bc-header"><div class="bc-icon-wrap" style="background:rgba(18,183,106,0.1)">#</div><div><div class="bc-name">Positioning</div><div class="bc-conf">95% confidence</div></div></div><div class="bc-content">"Making things effortless for people who want to look like they've always known what they're doing." Competes on accessibility vs premium incumbents.</div><div style="margin-top:12px"><div class="bb-tag">Effortless</div><div class="bb-tag">Accessible</div><div class="bb-tag">Anti-intimidation</div></div></div>
+      <div class="brain-card"><div class="bc-header"><div class="bc-icon-wrap" style="background:rgba(247,144,9,0.1)">!</div><div><div class="bc-name">Winning Creatives</div><div class="bc-conf">91% confidence</div></div></div><div class="bc-content">UGC and authentic creator content consistently outperforms. Founder stories generate 3-4x engagement. Testimonials with specificity beat generic social proof.</div><div style="margin-top:12px"><div class="bb-tag">UGC-first</div><div class="bb-tag">Founder stories</div><div class="bb-tag">Specific testimonials</div></div></div>
+      <div class="brain-card"><div class="bc-header"><div class="bc-icon-wrap" style="background:rgba(240,68,56,0.1)">%</div><div><div class="bc-name">Performance History</div><div class="bc-conf">84% confidence</div></div></div><div class="bc-content">Peak ROAS (5.8x) during Q2 2024 campaign using UGC + simplicity messaging. Lowest ROAS (1.9x) on Q3 2024 corporate-tone campaign. CTR averages 2.8% &mdash; spikes to 4%+ with authentic formats.</div></div>
+      <div class="brain-card"><div class="bc-header"><div class="bc-icon-wrap" style="background:rgba(99,102,241,0.1)">^</div><div><div class="bc-name">Strategic Priorities</div><div class="bc-conf">79% confidence</div></div></div><div class="bc-content">Grow 25-34 segment by 30% this year. Establish thought leadership through content. Reduce CAC by 20% through creative efficiency.</div></div>
+    </div>
+    <div class="two-col" style="margin-bottom:24px">
+      <div class="dna-section">
+        <div class="dna-title">Brand Vocabulary</div>
+        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px">Words and phrases that define Momentum's communication style.</p>
+        <div style="margin-bottom:16px"><div style="font-size:11px;color:var(--green);font-weight:600;letter-spacing:0.08em;margin-bottom:8px">USE THESE</div><div><div class="bb-tag" style="border-color:rgba(18,183,106,0.2);color:var(--green)">effortless</div><div class="bb-tag" style="border-color:rgba(18,183,106,0.2);color:var(--green)">finally</div><div class="bb-tag" style="border-color:rgba(18,183,106,0.2);color:var(--green)">the smart way</div><div class="bb-tag" style="border-color:rgba(18,183,106,0.2);color:var(--green)">without the overwhelm</div><div class="bb-tag" style="border-color:rgba(18,183,106,0.2);color:var(--green)">actually works</div></div></div>
+        <div><div style="font-size:11px;color:var(--red);font-weight:600;letter-spacing:0.08em;margin-bottom:8px">AVOID THESE</div><div><div class="bb-tag" style="border-color:rgba(240,68,56,0.2);color:var(--red)">world-class</div><div class="bb-tag" style="border-color:rgba(240,68,56,0.2);color:var(--red)">best-in-class</div><div class="bb-tag" style="border-color:rgba(240,68,56,0.2);color:var(--red)">scalable solutions</div><div class="bb-tag" style="border-color:rgba(240,68,56,0.2);color:var(--red)">leveraging synergies</div></div></div>
+      </div>
+      <div class="dna-section">
+        <div class="dna-title">Recent Brain Updates</div>
+        <div class="memory-feed">
+          <div class="mf-item"><div class="mf-icon">+</div><div class="mf-text">Processed Q1 Campaign Report &mdash; updated performance benchmarks and winning creative patterns</div><div class="mf-time">2h ago</div></div>
+          <div class="mf-item"><div class="mf-icon">=</div><div class="mf-text">Meta Ads data synced &mdash; identified UGC vs Studio performance differential</div><div class="mf-time">4h ago</div></div>
+          <div class="mf-item"><div class="mf-icon">*</div><div class="mf-text">Consumer review analysis &mdash; detected emerging "convenience anxiety" theme</div><div class="mf-time">6h ago</div></div>
+          <div class="mf-item"><div class="mf-icon">/</div><div class="mf-text">Brand guidelines v3.2 uploaded &mdash; refreshed tone and vocabulary definitions</div><div class="mf-time">1d ago</div></div>
+          <div class="mf-item"><div class="mf-icon">#</div><div class="mf-text">Campaign copy analysis &mdash; flagged corporate language drift across 3 new ads</div><div class="mf-time">2d ago</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ai-chat-bar"><span class="acb-icon">+</span><input class="acb-input" type="text" placeholder="Ask the Brand Brain: What tone should our next campaign use? Write a headline for our Q3 launch."/><button class="acb-submit">Ask</button></div>
+  </div>
+</div>
+<div id="aiModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;padding:24px"><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rxl);max-width:640px;width:100%;padding:30px;position:relative;max-height:80vh;overflow-y:auto"><button onclick="document.getElementById('aiModal').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px">x</button><div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><span style="color:var(--brand)">+</span><span style="font-family:var(--font-h);font-weight:600">Astra's Response</span><span class="tag tag-brand" style="margin-left:auto">AI Analysis</span></div><div id="aiResp" style="font-size:14px;color:var(--text-secondary);line-height:1.8"></div><div style="margin-top:18px"><button class="btn btn-primary" onclick="document.getElementById('aiModal').style.display='none'">Got it</button></div></div></div>
+<script src="../js/app.js"></script>
+</body></html>

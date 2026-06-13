@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Campaign Intelligence — Astra</title><link rel="stylesheet" href="../css/astra.css"/></head><body class="app-body">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo"><span class="logo-mark">+</span><span class="logo-text">Astra</span></div>
+  <div class="sidebar-section">
+    <a href="dashboard.html" class="nav-item"><span class="ni-icon">+</span><span>Overview</span></a>
+    <a href="brand-brain.html" class="nav-item"><span class="ni-icon">@</span><span>Brand Brain</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Intelligence</div>
+    <a href="campaigns.html" class="nav-item active"><span class="ni-icon">!</span><span>Campaign Intelligence</span></a>
+    <a href="consumers.html" class="nav-item"><span class="ni-icon">*</span><span>Consumer Insights</span></a>
+    <a href="brand-consistency.html" class="nav-item"><span class="ni-icon">#</span><span>Brand Consistency</span></a>
+    <a href="war-room.html" class="nav-item"><span class="ni-icon">!</span><span>War Room</span><span class="ni-badge">3</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Create</div>
+    <a href="deck-builder.html" class="nav-item"><span class="ni-icon">%</span><span>Deck Builder</span></a>
+    <a href="content-engine.html" class="nav-item"><span class="ni-icon">/</span><span>Content Engine</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Data</div>
+    <a href="upload.html" class="nav-item"><span class="ni-icon">^</span><span>Upload Center</span></a>
+  </div>
+  <div class="sidebar-footer"><div class="user-widget"><div class="uw-avatar">MJ</div><div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div></div></div>
+</aside>
+<div class="main-wrap">
+  <div class="topbar">
+    <button class="icon-btn" onclick="document.getElementById('sidebar').classList.toggle('collapsed')">+</button>
+    <span class="topbar-title">Campaign Intelligence</span>
+    <div class="topbar-actions">
+      <div class="topbar-search"><span class="ts-icon">?</span><input type="text" placeholder="Ask about your campaigns..."/></div>
+      <a href="upload.html" class="btn btn-primary">Upload Data</a>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="page-header">
+      <div class="ph-left"><h1>Campaign Intelligence</h1><p>AI-powered strategic diagnosis of your marketing performance</p></div>
+      <div class="ph-actions"><div class="tabs"><div class="tab active">All Channels</div><div class="tab">Meta</div><div class="tab">Google</div><div class="tab">LinkedIn</div></div></div>
+    </div>
+    <div class="card" style="margin-bottom:20px;border-color:rgba(253,98,41,.2);background:linear-gradient(135deg,rgba(253,98,41,.05),transparent)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:11px"><span style="color:var(--brand)">+</span><span style="font-family:var(--font-h);font-weight:600;font-size:14px">AI Campaign Diagnosis &middot; June 2025</span><span class="tag tag-brand" style="margin-left:auto">Strategic Summary</span></div>
+      <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:14px"><strong style="color:var(--text)">Overall: Strong momentum with a critical creative risk.</strong> Your Meta campaigns are delivering 4.2x ROAS &mdash; 18% above last month &mdash; driven by UGC formats in the 25-34 segment. However, Studio Set B is showing significant fatigue after 47 days. Google Search is performing efficiently but under-invested relative to intent volumes. LinkedIn CPC is 34% above benchmark. <strong style="color:var(--text)">Priority: immediate Meta creative rotation + reallocate 15-20% of LinkedIn budget to top Google Search terms.</strong></p>
+      <div style="display:flex;gap:9px"><button class="ii-btn primary">Apply Recommendations</button><button class="ii-btn secondary">Export Analysis</button><button class="ii-btn secondary" onclick="window.location='deck-builder.html'">Build Deck</button></div>
+    </div>
+    <div class="metrics-row">
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Total Spend</span></div><div class="mc-value">$48.2K</div><div class="mc-change up">+12% vs last period</div></div>
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Blended ROAS</span></div><div class="mc-value">4.2x</div><div class="mc-change up">+18% vs last period</div></div>
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Total Conversions</span></div><div class="mc-value">1,847</div><div class="mc-change up">+24% vs last period</div></div>
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Avg. CAC</span></div><div class="mc-value">$26.1</div><div class="mc-change down">-18% improving</div></div>
+    </div>
+    <div class="chart-container" style="margin-bottom:18px">
+      <div class="chart-header"><span class="chart-title">Channel Performance Overview</span><span style="font-size:12px;color:var(--text-muted)">Last 30 days</span></div>
+      <table class="data-table">
+        <thead><tr><th>Channel</th><th>Spend</th><th>Impressions</th><th>CTR</th><th>Conversions</th><th>ROAS</th><th>AI Signal</th></tr></thead>
+        <tbody>
+          <tr><td><span class="val">Meta Ads</span></td><td>$22,400</td><td>1.2M</td><td><span class="val" style="color:var(--green)">3.2%</span></td><td>962</td><td><span class="val" style="color:var(--green)">5.1x</span></td><td><span class="tag tag-amber">Creative Fatigue</span></td></tr>
+          <tr><td><span class="val">Google Ads</span></td><td>$16,800</td><td>680K</td><td><span class="val">2.1%</span></td><td>571</td><td><span class="val" style="color:var(--green)">3.9x</span></td><td><span class="tag tag-green">Efficient</span></td></tr>
+          <tr><td><span class="val">LinkedIn Ads</span></td><td>$9,000</td><td>220K</td><td><span class="val">1.1%</span></td><td>314</td><td><span class="val" style="color:var(--amber)">2.8x</span></td><td><span class="tag tag-red">High CPC</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="two-col-equal" style="margin-bottom:18px">
+      <div class="chart-container">
+        <div class="chart-header"><span class="chart-title">Creative Performance</span><span class="tag tag-red">Fatigue Alert</span></div>
+        <div style="display:flex;flex-direction:column;gap:13px">
+          <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div><div style="font-size:13px;font-weight:500">Founder Story Video</div><div style="font-size:11px;color:var(--text-muted)">5 days &middot; 4.2% CTR</div></div><span class="tag tag-brand">Top</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--brand)" data-w="95%"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div><div style="font-size:13px;font-weight:500">UGC Creator Pack A</div><div style="font-size:11px;color:var(--text-muted)">12 days &middot; 3.8% CTR</div></div><span class="tag tag-green">Scaling</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--green)" data-w="88%"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div><div style="font-size:13px;font-weight:500">Lifestyle Video Series</div><div style="font-size:11px;color:var(--text-muted)">28 days &middot; 2.4% CTR</div></div><span class="tag tag-amber">Watch</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--amber)" data-w="60%"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div><div style="font-size:13px;font-weight:500">Studio Set B &mdash; Product</div><div style="font-size:11px;color:var(--text-muted)">47 days &middot; 1.1% CTR</div></div><span class="tag tag-red">Fatigue</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--red)" data-w="27%"></div></div></div>
+        </div>
+      </div>
+      <div class="chart-container">
+        <div class="chart-header"><span class="chart-title">AI Recommendations</span></div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="background:rgba(240,68,56,.06);border:1px solid rgba(240,68,56,.15);border-left:3px solid var(--red);border-radius:8px;padding:14px"><div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:5px">URGENT</div><div style="font-size:13px;font-weight:600;margin-bottom:4px">Rotate Studio Set B</div><div style="font-size:12px;color:var(--text-secondary)">Replace with 3-5 new UGC variants targeting 25-34. Expected CTR recovery: +40%.</div></div>
+          <div style="background:rgba(247,144,9,.06);border:1px solid rgba(247,144,9,.15);border-left:3px solid var(--amber);border-radius:8px;padding:14px"><div style="font-size:10px;font-weight:700;color:var(--amber);margin-bottom:5px">MEDIUM</div><div style="font-size:13px;font-weight:600;margin-bottom:4px">Reallocate LinkedIn Budget</div><div style="font-size:12px;color:var(--text-secondary)">Shift 15-20% toward top Google Search terms. High-intent signals outperforming.</div></div>
+          <div style="background:rgba(18,183,106,.06);border:1px solid rgba(18,183,106,.15);border-left:3px solid var(--green);border-radius:8px;padding:14px"><div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:5px">OPPORTUNITY</div><div style="font-size:13px;font-weight:600;margin-bottom:4px">Scale Founder Content</div><div style="font-size:12px;color:var(--text-secondary)">Founder story at 4.2% CTR. Recommend 3x budget increase and replicate format.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ai-chat-bar"><span class="acb-icon">+</span><input class="acb-input" type="text" placeholder="Ask: Why did our Meta ROAS improve? Which audience segment is most efficient? What creative should we scale?"/><button class="acb-submit">Ask</button></div>
+  </div>
+</div>
+<div id="aiModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;padding:24px"><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rxl);max-width:640px;width:100%;padding:30px;position:relative;max-height:80vh;overflow-y:auto"><button onclick="document.getElementById('aiModal').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px">x</button><div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><span style="color:var(--brand);font-size:20px">+</span><span style="font-family:var(--font-h);font-weight:600">Astra's Response</span><span class="tag tag-brand" style="margin-left:auto">AI Analysis</span></div><div id="aiResp" style="font-size:14px;color:var(--text-secondary);line-height:1.8"></div><div style="margin-top:18px;display:flex;gap:8px"><button class="btn btn-primary" onclick="document.getElementById('aiModal').style.display='none'">Got it</button></div></div></div>
+<script src="../js/app.js"></script><script>window.addEventListener('load',animateBars)</script>
+</body></html>

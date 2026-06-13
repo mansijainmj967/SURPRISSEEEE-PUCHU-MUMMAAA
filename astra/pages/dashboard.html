@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Overview — Astra</title>
+<link rel="stylesheet" href="../css/astra.css"/>
+</head>
+<body class="app-body">
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo"><span class="logo-mark">+</span><span class="logo-text">Astra</span></div>
+  <div class="sidebar-section">
+    <a href="dashboard.html" class="nav-item active"><span class="ni-icon">+</span><span>Overview</span></a>
+    <a href="brand-brain.html" class="nav-item"><span class="ni-icon">@</span><span>Brand Brain</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Intelligence</div>
+    <a href="campaigns.html" class="nav-item"><span class="ni-icon">!</span><span>Campaign Intelligence</span></a>
+    <a href="consumers.html" class="nav-item"><span class="ni-icon">*</span><span>Consumer Insights</span></a>
+    <a href="brand-consistency.html" class="nav-item"><span class="ni-icon">#</span><span>Brand Consistency</span></a>
+    <a href="war-room.html" class="nav-item"><span class="ni-icon">!</span><span>War Room</span><span class="ni-badge">3</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Create</div>
+    <a href="deck-builder.html" class="nav-item"><span class="ni-icon">%</span><span>Deck Builder</span></a>
+    <a href="content-engine.html" class="nav-item"><span class="ni-icon">/</span><span>Content Engine</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Data</div>
+    <a href="upload.html" class="nav-item"><span class="ni-icon">^</span><span>Upload Center</span></a>
+    <a href="#" class="nav-item"><span class="ni-icon">=</span><span>Reports</span></a>
+    <a href="#" class="nav-item"><span class="ni-icon">&</span><span>Settings</span></a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-widget">
+      <div class="uw-avatar">MJ</div>
+      <div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div>
+    </div>
+  </div>
+</aside>
+
+<div class="main-wrap">
+  <div class="topbar">
+    <button class="icon-btn" onclick="document.getElementById('sidebar').classList.toggle('collapsed')">+</button>
+    <span class="topbar-title">Strategic Overview</span>
+    <span class="topbar-sub">Tuesday, 10 June 2025</span>
+    <div class="topbar-actions">
+      <div class="topbar-search">
+        <span class="ts-icon">?</span>
+        <input type="text" placeholder="Ask Astra anything..." id="topSearch" onkeydown="if(event.key==='Enter')openAI(this.value)"/>
+      </div>
+      <div class="ws-switcher"><div class="ws-dot"></div>Momentum<span>v</span></div>
+      <button class="icon-btn" onclick="window.location='upload.html'" title="Upload">^</button>
+      <button class="icon-btn" onclick="showToast('3 new insights from Astra.')" title="Notifications" style="position:relative">!</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="page-header">
+      <div class="ph-left">
+        <h1>Good morning, Mansi.</h1>
+        <p>3 new strategic insights &middot; 1 brand alert &middot; War Room has active signals</p>
+      </div>
+      <div class="ph-actions">
+        <div class="status-live">AI Live</div>
+        <a href="upload.html" class="btn btn-outline">Upload Data</a>
+        <button class="btn btn-primary" onclick="window.location='deck-builder.html'">Generate Report</button>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Total ROAS</span></div><div class="mc-value">4.2x</div><div class="mc-change up">+18% vs last month</div><div class="mc-sub">Across all campaigns</div></div>
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Total Impressions</span></div><div class="mc-value">2.1M</div><div class="mc-change up">+32% vs last month</div><div class="mc-sub">Organic + Paid</div></div>
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Brand Score</span></div><div class="mc-value">78<span style="font-size:13px;color:var(--text-secondary)">/100</span></div><div class="mc-change down">-4pts &mdash; tone drift detected</div><div class="mc-sub">Consistency vs guidelines</div></div>
+      <div class="metric-card"><div class="mc-header"><span class="mc-label">Customer Sentiment</span></div><div class="mc-value">68%</div><div class="mc-change neutral">Stable &middot; 3 themes emerging</div><div class="mc-sub">Positive sentiment share</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;border-color:rgba(253,98,41,.2);background:linear-gradient(135deg,rgba(253,98,41,.05),transparent)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px">
+        <span style="color:var(--brand);font-size:18px">+</span>
+        <span style="font-family:var(--font-h);font-weight:600;font-size:14px">Astra's Strategic Brief &middot; Today</span>
+        <span class="tag tag-brand" style="margin-left:auto">AI Generated</span>
+      </div>
+      <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:14px">
+        Your Meta campaigns are showing strong momentum &mdash; ROAS is up 18% driven primarily by UGC formats in the 25-34 segment. However, there's a strategic tension emerging: your brand's tone has drifted 40% toward more corporate language across recent campaigns, which diverges from the conversational positioning that historically drove your strongest performance. War Room is tracking a competitor pivot toward trust-based messaging that represents a short-term threat to your authenticity narrative. <strong style="color:var(--text)">Recommended: prioritise a creative refresh and tone recalibration before end of month.</strong>
+      </p>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <button class="ii-btn primary" onclick="window.location='campaigns.html'">Campaign Detail</button>
+        <button class="ii-btn secondary" onclick="window.location='brand-consistency.html'">Brand Score</button>
+        <button class="ii-btn secondary" onclick="window.location='war-room.html'">War Room</button>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:20px">
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <h3 style="font-size:15px;font-weight:600">Strategic Insights</h3>
+          <a href="campaigns.html" style="font-size:13px;color:var(--brand)">View all</a>
+        </div>
+        <div class="insight-item ph">
+          <div class="ii-header"><div class="ii-icon o">!</div><div style="flex:1"><div class="ii-title">Creative fatigue detected on Meta Studio Set B</div><div class="ii-module">Campaign Intelligence</div></div><div class="ii-meta"><span class="tag tag-red">High</span><span class="ii-time">2h ago</span></div></div>
+          <div class="ii-body">Studio creative Set B has been active 47 days. Engagement drop of 34% detected in the last 7 days. Recommend immediate rotation with UGC alternatives.</div>
+          <div class="ii-actions"><span class="ii-btn primary" onclick="window.location='campaigns.html'">View Analysis</span><span class="ii-btn secondary">Dismiss</span></div>
+        </div>
+        <div class="insight-item pm">
+          <div class="ii-header"><div class="ii-icon a">*</div><div style="flex:1"><div class="ii-title">Emerging consumer theme: convenience anxiety</div><div class="ii-module">Consumer Insights</div></div><div class="ii-meta"><span class="tag tag-amber">Medium</span><span class="ii-time">5h ago</span></div></div>
+          <div class="ii-body">34% of negative sentiment in the last 14 days clusters around complexity and overwhelm. Messaging pivot toward simplicity and reassurance recommended.</div>
+          <div class="ii-actions"><span class="ii-btn primary" onclick="window.location='consumers.html'">Explore</span><span class="ii-btn secondary">Save</span></div>
+        </div>
+        <div class="insight-item pm">
+          <div class="ii-header"><div class="ii-icon o">#</div><div style="flex:1"><div class="ii-title">Brand tone drift detected in Q4 campaigns</div><div class="ii-module">Brand Consistency</div></div><div class="ii-meta"><span class="tag tag-amber">Medium</span><span class="ii-time">1d ago</span></div></div>
+          <div class="ii-body">Recent campaigns score 61/100 for brand alignment. Tone has shifted 40% toward corporate language, diverging from your historically conversational positioning.</div>
+          <div class="ii-actions"><span class="ii-btn primary" onclick="window.location='brand-consistency.html'">View Score</span><span class="ii-btn secondary">Save</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><span style="font-weight:600;font-size:14px">Brand Health Score</span><a href="brand-consistency.html" style="font-size:12px;color:var(--brand)">Detail</a></div>
+          <div class="brand-score-ring" style="width:110px;height:110px">
+            <svg viewBox="0 0 100 100" width="110" height="110" class="bsr-circle">
+              <circle cx="50" cy="50" r="40" class="bsr-bg"/>
+              <circle cx="50" cy="50" r="40" class="bsr-fill" stroke="var(--amber)" stroke-dasharray="251.2" stroke-dashoffset="55"/>
+            </svg>
+            <div class="bsr-text"><div class="bsr-value" style="color:var(--amber)">78</div><div class="bsr-label">/100</div></div>
+          </div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="color:var(--text-secondary)">Tone Consistency</span><span style="color:var(--red)">61%</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--red)" data-w="61%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="color:var(--text-secondary)">Positioning Alignment</span><span style="color:var(--green)">84%</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--green)" data-w="84%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="color:var(--text-secondary)">Visual Consistency</span><span style="color:var(--green)">91%</span></div><div class="progress-bar"><div class="pb-fill" style="width:0;background:var(--green)" data-w="91%"></div></div></div>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(240,68,56,.15)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px"><span style="font-weight:600;font-size:14px">War Room</span><div class="status-live">Live</div></div>
+          <div style="display:flex;flex-direction:column;gap:9px">
+            <div style="background:rgba(240,68,56,.06);border:1px solid rgba(240,68,56,.15);border-radius:7px;padding:11px"><div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:4px">COMPETITOR SIGNAL</div><div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Competitor shifting to trust-based messaging &mdash; 68% increase in 7 days</div></div>
+            <div style="background:rgba(247,144,9,.06);border:1px solid rgba(247,144,9,.15);border-radius:7px;padding:11px"><div style="font-size:10px;font-weight:700;color:var(--amber);margin-bottom:4px">TREND ALERT</div><div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Founder-led content outperforming branded campaigns 3x across category</div></div>
+            <a href="war-room.html" class="ii-btn secondary" style="justify-content:center;text-align:center;display:block">View War Room</a>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-weight:600;font-size:14px;margin-bottom:11px">Quick Actions</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <a href="deck-builder.html" class="nav-item" style="border-radius:7px;border:1px solid var(--border);padding:9px 11px"><span class="ni-icon">%</span><span>Build executive deck</span></a>
+            <a href="upload.html" class="nav-item" style="border-radius:7px;border:1px solid var(--border);padding:9px 11px"><span class="ni-icon">^</span><span>Upload campaign data</span></a>
+            <a href="content-engine.html" class="nav-item" style="border-radius:7px;border:1px solid var(--border);padding:9px 11px"><span class="ni-icon">/</span><span>Generate content</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-chat-bar">
+      <span class="acb-icon">+</span>
+      <input class="acb-input" type="text" id="chatIn" placeholder="Ask Astra: Why did our ROAS drop last week? What's causing the brand tone drift? Which creatives should we scale?" onkeydown="if(event.key==='Enter')openAI(this.value)"/>
+      <button class="acb-submit" onclick="openAI(document.getElementById('chatIn').value)">Ask</button>
+    </div>
+  </div>
+</div>
+
+<div id="aiModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;padding:24px">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rxl);max-width:640px;width:100%;padding:30px;position:relative;max-height:80vh;overflow-y:auto">
+    <button onclick="document.getElementById('aiModal').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px">x</button>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+      <span style="color:var(--brand);font-size:20px">+</span>
+      <span style="font-family:var(--font-h);font-weight:600">Astra's Response</span>
+      <span class="tag tag-brand" style="margin-left:auto">AI Analysis</span>
+    </div>
+    <div id="aiResp" style="font-size:14px;color:var(--text-secondary);line-height:1.8"></div>
+    <div style="margin-top:18px;display:flex;gap:8px">
+      <button class="btn btn-primary" onclick="document.getElementById('aiModal').style.display='none'">Got it</button>
+      <button class="btn btn-outline" onclick="document.getElementById('aiModal').style.display='none'">Save to Report</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
