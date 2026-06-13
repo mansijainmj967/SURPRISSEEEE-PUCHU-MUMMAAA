@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>War Room — Astra</title>
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/dashboard.css" />
+  
+  <link rel="stylesheet" href="../css/astra.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     .wr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
@@ -120,7 +120,6 @@
     </div>
 
     <div class="main-content">
-      <!-- WAR ROOM HEADER -->
       <div class="war-room-header">
         <div>
           <h1 style="font-size:22px;font-weight:700;margin-bottom:6px">🔴 Strategic Command Centre</h1>
@@ -142,7 +141,6 @@
         </div>
       </div>
 
-      <!-- STRATEGIC ALERTS GRID -->
       <div style="margin-bottom:16px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
           <h3 style="font-size:15px;font-weight:600">Active Strategic Alerts</h3>
@@ -154,7 +152,6 @@
           </div>
         </div>
         <div class="wr-grid">
-
           <div class="wr-alert critical">
             <div class="wa-type critical">⚠ Critical · Competitor</div>
             <div class="wa-title">Rival brand pivoting to trust-based messaging</div>
@@ -167,7 +164,6 @@
               <span>2h ago</span>
             </div>
           </div>
-
           <div class="wr-alert warning">
             <div class="wa-type warning">⚡ Warning · Sentiment</div>
             <div class="wa-title">Negative sentiment spike around delivery experience</div>
@@ -179,11 +175,10 @@
               <span>4h ago</span>
             </div>
           </div>
-
           <div class="wr-alert opportunity">
             <div class="wa-type opportunity">↑ Opportunity · Trend</div>
             <div class="wa-title">Founder-led content outperforming branded campaigns 3×</div>
-            <div class="wa-body">Across your category, founder and founder-adjacent storytelling content is generating 3× higher engagement than polished brand campaigns. Three competitors have pivoted to this format in the last 30 days. Strategic window is still open for your brand.</div>
+            <div class="wa-body">Across your category, founder and founder-adjacent storytelling content is generating 3× higher engagement than polished brand campaigns. Three competitors have pivoted to this format in the last 30 days.</div>
             <div class="wa-meta">
               <div style="display:flex;gap:8px">
                 <button class="ii-btn primary" onclick="window.location='content-engine.html'">Create Content →</button>
@@ -191,7 +186,6 @@
               <span>6h ago</span>
             </div>
           </div>
-
           <div class="wr-alert opportunity">
             <div class="wa-type opportunity">↑ Opportunity · Market</div>
             <div class="wa-title">Simplicity narrative becoming dominant category theme</div>
@@ -203,7 +197,6 @@
               <span>12h ago</span>
             </div>
           </div>
-
           <div class="wr-alert warning">
             <div class="wa-type warning">⚡ Warning · Brand</div>
             <div class="wa-title">Category conversation shifting toward anxiety vs aspiration</div>
@@ -215,7 +208,6 @@
               <span>1d ago</span>
             </div>
           </div>
-
           <div class="wr-alert info">
             <div class="wa-type info">ℹ Info · Market</div>
             <div class="wa-title">Seasonal search intent rising 22% ahead of peak period</div>
@@ -227,11 +219,9 @@
               <span>2d ago</span>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- LIVE SIGNAL FEED -->
       <div class="two-col-equal" style="margin-bottom:24px">
         <div class="live-feed">
           <div class="lf-header">
@@ -239,93 +229,31 @@
             <span style="font-size:12px;color:var(--text-muted);margin-left:auto">Auto-updating</span>
           </div>
           <div id="liveFeed">
-            <div class="lf-item">
-              <div class="lf-dot" style="background:var(--red)"></div>
-              <div class="lf-text">Competitor @BrandX launched new product page emphasising "trusted by 100K"</div>
-              <div class="lf-time">3m ago</div>
-            </div>
-            <div class="lf-item">
-              <div class="lf-dot" style="background:var(--amber)"></div>
-              <div class="lf-text">Reddit thread "which brand is actually reliable?" gaining traction — 847 upvotes</div>
-              <div class="lf-time">12m ago</div>
-            </div>
-            <div class="lf-item">
-              <div class="lf-dot" style="background:var(--green)"></div>
-              <div class="lf-text">Your founder post received 3× average engagement — "authentic" appearing in 40% of comments</div>
-              <div class="lf-time">28m ago</div>
-            </div>
-            <div class="lf-item">
-              <div class="lf-dot" style="background:var(--brand)"></div>
-              <div class="lf-text">Category keyword "simplify [category]" trending +34% on Google this week</div>
-              <div class="lf-time">45m ago</div>
-            </div>
-            <div class="lf-item">
-              <div class="lf-dot" style="background:var(--amber)"></div>
-              <div class="lf-text">Customer support ticket volume up 14% — majority related to onboarding confusion</div>
-              <div class="lf-time">1h ago</div>
-            </div>
-            <div class="lf-item">
-              <div class="lf-dot" style="background:var(--green)"></div>
-              <div class="lf-text">LinkedIn poll on "what matters most in [category]" — simplicity winning at 62%</div>
-              <div class="lf-time">2h ago</div>
-            </div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--red)"></div><div class="lf-text">Competitor @BrandX launched new product page emphasising "trusted by 100K"</div><div class="lf-time">3m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--amber)"></div><div class="lf-text">Reddit thread "which brand is actually reliable?" gaining traction — 847 upvotes</div><div class="lf-time">12m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--green)"></div><div class="lf-text">Your founder post received 3× average engagement — "authentic" appearing in 40% of comments</div><div class="lf-time">28m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--brand)"></div><div class="lf-text">Category keyword "simplify [category]" trending +34% on Google this week</div><div class="lf-time">45m ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--amber)"></div><div class="lf-text">Customer support ticket volume up 14% — majority related to onboarding confusion</div><div class="lf-time">1h ago</div></div>
+            <div class="lf-item"><div class="lf-dot" style="background:var(--green)"></div><div class="lf-text">LinkedIn poll on "what matters most in [category]" — simplicity winning at 62%</div><div class="lf-time">2h ago</div></div>
           </div>
         </div>
-
         <div style="display:flex;flex-direction:column;gap:16px">
           <div class="chart-container">
             <div style="font-weight:600;font-size:14px;margin-bottom:14px">Competitor Pulse</div>
             <div style="display:flex;flex-direction:column;gap:10px">
-              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px">
-                <div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">B</div>
-                <div style="flex:1">
-                  <div style="font-size:13px;font-weight:600;margin-bottom:2px">BrandX</div>
-                  <div style="font-size:11px;color:var(--text-muted)">Trust messaging ↑68%</div>
-                </div>
-                <span class="tag tag-red">Watch</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px">
-                <div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">C</div>
-                <div style="flex:1">
-                  <div style="font-size:13px;font-weight:600;margin-bottom:2px">CompeteCo</div>
-                  <div style="font-size:11px;color:var(--text-muted)">Founder content series launched</div>
-                </div>
-                <span class="tag tag-amber">Monitor</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px">
-                <div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">R</div>
-                <div style="flex:1">
-                  <div style="font-size:13px;font-weight:600;margin-bottom:2px">RivalBrand</div>
-                  <div style="font-size:11px;color:var(--text-muted)">Pricing change detected</div>
-                </div>
-                <span class="tag tag-muted">Low</span>
-              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px"><div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">B</div><div style="flex:1"><div style="font-size:13px;font-weight:600;margin-bottom:2px">BrandX</div><div style="font-size:11px;color:var(--text-muted)">Trust messaging ↑68%</div></div><span class="tag tag-red">Watch</span></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px"><div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">C</div><div style="flex:1"><div style="font-size:13px;font-weight:600;margin-bottom:2px">CompeteCo</div><div style="font-size:11px;color:var(--text-muted)">Founder content series launched</div></div><span class="tag tag-amber">Monitor</span></div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-elevated);border-radius:8px"><div style="width:32px;height:32px;border-radius:8px;background:var(--bg-card-2);display:flex;align-items:center;justify-content:center;font-size:14px">R</div><div style="flex:1"><div style="font-size:13px;font-weight:600;margin-bottom:2px">RivalBrand</div><div style="font-size:11px;color:var(--text-muted)">Pricing change detected</div></div><span class="tag tag-muted">Low</span></div>
             </div>
           </div>
-
           <div class="chart-container">
             <div style="font-weight:600;font-size:14px;margin-bottom:14px">Trend Tracker</div>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px">
-                <span style="color:var(--text-secondary)">Founder storytelling</span>
-                <span style="color:var(--green);font-weight:600">↑ 340%</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px">
-                <span style="color:var(--text-secondary)">Simplicity messaging</span>
-                <span style="color:var(--green);font-weight:600">↑ 44%</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px">
-                <span style="color:var(--text-secondary)">UGC formats</span>
-                <span style="color:var(--green);font-weight:600">↑ 128%</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px">
-                <span style="color:var(--text-secondary)">Polished brand ads</span>
-                <span style="color:var(--red);font-weight:600">↓ 18%</span>
-              </div>
-              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px">
-                <span style="color:var(--text-secondary)">Corporate tone</span>
-                <span style="color:var(--red);font-weight:600">↓ 31%</span>
-              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Founder storytelling</span><span style="color:var(--green);font-weight:600">↑ 340%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Simplicity messaging</span><span style="color:var(--green);font-weight:600">↑ 44%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">UGC formats</span><span style="color:var(--green);font-weight:600">↑ 128%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Polished brand ads</span><span style="color:var(--red);font-weight:600">↓ 18%</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span style="color:var(--text-secondary)">Corporate tone</span><span style="color:var(--red);font-weight:600">↓ 31%</span></div>
             </div>
           </div>
         </div>
@@ -333,15 +261,14 @@
 
       <div class="ai-chat-bar">
         <span class="acb-icon">✦</span>
-        <input class="acb-input" type="text" placeholder="Ask: What's our biggest competitive threat right now? How should we respond to BrandX's trust messaging? What trend should we act on?" />
+        <input class="acb-input" type="text" placeholder="Ask: What's our biggest competitive threat right now? How should we respond to BrandX's trust messaging?" />
         <button class="acb-submit">Ask →</button>
       </div>
     </div>
   </div>
 
-  <script src="../js/dashboard.js"></script>
+  <script src="../js/app.js"></script>
   <script>
-    // Auto-add live feed items
     const feedItems = [
       { color: 'var(--green)', text: 'New 5-star review mentioning "finally simple and effortless"', time: 'Just now' },
       { color: 'var(--amber)', text: 'TikTok UGC creator @sarah_creates tagged your brand in viral review', time: '1m ago' },
