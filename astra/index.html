@@ -1,403 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Astra — AI Strategic Copilot for Marketing</title>
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/landing.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Astra — AI Strategic Copilot for Marketing</title>
+<link rel="stylesheet" href="css/astra.css"/>
 </head>
-<body class="landing-body">
+<body>
 
-  <!-- NAV -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">✦</span>
-        <span class="logo-text">Astra</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#brand-brain">Brand Brain</a></li>
-        <li><a href="#workflow">Workflow</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">+</span><span class="logo-text">Astra</span></a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#brain">Brand Brain</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="pages/login.html" class="btn-ghost">Sign in</a>
+      <a href="pages/onboarding.html" class="btn btn-primary">Start free</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>AI-Native Marketing OS &middot; Now in Beta</div>
+    <h1 class="hero-headline">Turn Marketing Chaos<br/>Into Strategic<br/><span class="headline-accent">Intelligence.</span></h1>
+    <p class="hero-sub">Analyze campaigns, understand consumers, monitor brand consistency,<br/>and generate executive-ready strategy &mdash; powered by AI.</p>
+    <div class="hero-ctas">
+      <a href="pages/onboarding.html" class="btn btn-primary btn-lg">Start Analysis</a>
+      <a href="pages/dashboard.html" class="btn btn-outline btn-lg">View Demo</a>
+    </div>
+    <div class="hero-social-proof">
+      <div class="avatars"><div class="avatar av1"></div><div class="avatar av2"></div><div class="avatar av3"></div><div class="avatar av4"></div></div>
+      <p>Trusted by <strong>2,400+</strong> marketing teams globally</p>
+    </div>
+  </div>
+  <div class="hero-preview">
+    <div class="preview-window">
+      <div class="preview-topbar">
+        <div class="window-dots"><span></span><span></span><span></span></div>
+        <div class="preview-url">astra.ai / dashboard</div>
+        <div style="width:60px"></div>
+      </div>
+      <div class="preview-content">
+        <div class="preview-sidebar">
+          <div class="ps-logo">+ Astra</div>
+          <div class="ps-item active">Overview</div>
+          <div class="ps-item">Brand Brain</div>
+          <div class="ps-item">Campaigns</div>
+          <div class="ps-item">Consumers</div>
+          <div class="ps-item">War Room</div>
+        </div>
+        <div class="preview-main">
+          <div class="pm-header">
+            <span class="pm-title">Strategic Overview</span>
+            <span class="pm-badge">AI LIVE</span>
+          </div>
+          <div class="pm-insight">
+            <div class="pi-label">AI INSIGHT</div>
+            <div class="pi-text">UGC-led creatives are outperforming studio content by 2.3x among Gen Z. Recommending budget reallocation to authentic creator formats.</div>
+            <div class="pi-btns"><span class="pi-btn">Apply</span><span class="pi-btn-g">Analyse</span></div>
+          </div>
+          <div class="pm-metrics">
+            <div class="pm-metric"><div class="pmm-val">34%</div><div class="pmm-label">ROAS</div></div>
+            <div class="pm-metric"><div class="pmm-val">2.1M</div><div class="pmm-label">Impressions</div></div>
+            <div class="pm-metric"><div class="pmm-val" style="color:var(--green)">-18%</div><div class="pmm-label">CAC</div></div>
+          </div>
+          <div class="pm-chart" id="heroChart">
+            <div class="chart-bar" style="height:0" data-h="45%"></div>
+            <div class="chart-bar" style="height:0" data-h="62%"></div>
+            <div class="chart-bar" style="height:0" data-h="40%"></div>
+            <div class="chart-bar" style="height:0" data-h="80%"></div>
+            <div class="chart-bar hl" style="height:0" data-h="95%"></div>
+            <div class="chart-bar" style="height:0" data-h="70%"></div>
+            <div class="chart-bar" style="height:0" data-h="84%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logos-strip">
+  <p class="logos-label">Integrates with your entire marketing stack</p>
+  <div class="logos-row">
+    <div class="logo-chip">Meta Ads</div><div class="logo-chip">Google Ads</div><div class="logo-chip">GA4</div>
+    <div class="logo-chip">LinkedIn</div><div class="logo-chip">HubSpot</div><div class="logo-chip">Shopify</div>
+    <div class="logo-chip">Salesforce</div><div class="logo-chip">Notion</div><div class="logo-chip">Slack</div>
+    <div class="logo-chip">TikTok Ads</div><div class="logo-chip">YouTube</div><div class="logo-chip">Stripe</div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-label">Core Capability</div>
+    <h2 class="section-title">Not just what happened.<br/><span class="accent">What it means. What to do next.</span></h2>
+    <p class="section-sub">Most tools stop at metrics. Astra starts at meaning &mdash; synthesising data into strategic intelligence.</p>
+    <div class="features-grid">
+      <div class="feature-card fc-large fade-in">
+        <div class="fc-icon">+</div>
+        <h3>Campaign Intelligence Copilot</h3>
+        <p>Diagnose why campaigns underperform, identify creative fatigue, and get strategic recommendations &mdash; not just metric summaries.</p>
+        <div class="fc-example"><div class="fce-label">AI OUTPUT</div><div class="fce-text">"UGC content is driving 2.3x higher CTR among 25-34 segment. Creative fatigue detected on Studio Set B. Recommend immediate rotation with founder-led formats."</div></div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="fc-icon">@</div>
+        <h3>Brand Brain</h3>
+        <p>A continuously evolving memory layer that makes Astra feel like a strategist who has worked on your brand for years.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="fc-icon">*</div>
+        <h3>Consumer Insight Miner</h3>
+        <p>Extract emotional drivers, unmet needs, and audience tensions from reviews, comments, and social conversations.</p>
+      </div>
+      <div class="feature-card fc-large fc-right fade-in">
+        <div class="fc-icon">#</div>
+        <h3>AI Marketing War Room</h3>
+        <p>A real-time strategic command centre that surfaces emerging narratives, competitor signals, and market shifts &mdash; with strategic implications, not just alerts.</p>
+        <div class="fc-example"><div class="fce-label">WAR ROOM ALERT</div><div class="fce-text">"Competitor shifting messaging toward trust &amp; reliability &mdash; 68% increase in 7 days. Your brand has a first-mover advantage in authenticity positioning."</div></div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="fc-icon">%</div>
+        <h3>Brand Consistency Engine</h3>
+        <p>Score every campaign against your brand's strategic identity. Catch tone drift before it erodes positioning.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="fc-icon">^</div>
+        <h3>AI Deck Builder</h3>
+        <p>Transform intelligence into McKinsey-style executive presentations. From data to boardroom narrative in minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brain" style="background:var(--bg-card-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner brain-inner">
+    <div class="brain-left">
+      <div class="section-label">Brand Memory System</div>
+      <h2 class="section-title">The Brand Brain.<br/><span class="accent">Your AI that never forgets.</span></h2>
+      <p class="section-sub">Astra builds a continuously evolving understanding of your brand &mdash; tone, history, positioning, audience, creative performance &mdash; creating an AI strategist with institutional memory.</p>
+      <ul class="brain-features">
+        <li><span class="bf-dot"></span>Brand tone &amp; vocabulary learning</li>
+        <li><span class="bf-dot"></span>Campaign history &amp; performance patterns</li>
+        <li><span class="bf-dot"></span>Audience psychology mapping</li>
+        <li><span class="bf-dot"></span>Strategic priority tracking</li>
+        <li><span class="bf-dot"></span>Competitive context awareness</li>
+        <li><span class="bf-dot"></span>Creative performance memory</li>
       </ul>
-      <div class="nav-actions">
-        <a href="pages/login.html" class="btn-ghost">Sign in</a>
-        <a href="pages/onboarding.html" class="btn-primary">Start free →</a>
+      <a href="pages/onboarding.html" class="btn btn-primary">Build Your Brand Brain</a>
+    </div>
+    <div class="brain-right">
+      <div class="brain-visual">
+        <div class="brain-center">
+          <div style="font-size:20px;color:var(--brand)">+</div>
+          <div class="bc-lbl">Brand Brain</div>
+        </div>
+        <div class="brain-orbit">
+          <div class="bo-node" style="--a:0deg">Tone</div>
+          <div class="bo-node" style="--a:60deg">Voice</div>
+          <div class="bo-node" style="--a:120deg">Audience</div>
+          <div class="bo-node" style="--a:180deg">History</div>
+          <div class="bo-node" style="--a:240deg">Strategy</div>
+          <div class="bo-node" style="--a:300deg">Creative</div>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
+<section class="section" id="workflow">
+  <div class="section-inner">
+    <div class="section-label">Workflow Compression</div>
+    <h2 class="section-title">From raw data to<br/><span class="accent">board-ready strategy.</span></h2>
+    <p class="section-sub">Astra eliminates context-switching and compresses your entire marketing intelligence workflow.</p>
+    <div class="workflow-steps">
+      <div class="ws-step fade-in"><div class="ws-num">01</div><h4>Connect or Upload</h4><p>Link ad accounts, analytics platforms, or upload CSVs, PDFs, decks, and brand docs.</p></div>
+      <div class="ws-arrow">></div>
+      <div class="ws-step fade-in"><div class="ws-num">02</div><h4>AI Synthesises</h4><p>Astra processes everything through your Brand Brain, finding patterns humans miss.</p></div>
+      <div class="ws-arrow">></div>
+      <div class="ws-step fade-in"><div class="ws-num">03</div><h4>Strategic Output</h4><p>Receive executive insights, recommendations, decks, and content &mdash; instantly.</p></div>
+      <div class="ws-arrow">></div>
+      <div class="ws-step fade-in"><div class="ws-num">04</div><h4>Execute &amp; Learn</h4><p>Apply recommendations. Astra learns from outcomes to sharpen future strategy.</p></div>
     </div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        AI-Native Marketing OS · Now in Beta
-      </div>
-      <h1 class="hero-headline">
-        Turn Marketing Chaos<br/>
-        Into Strategic<br/>
-        <span class="headline-accent">Intelligence.</span>
-      </h1>
-      <p class="hero-sub">
-        Analyze campaigns, understand consumers, monitor brand consistency,<br/>
-        and generate executive-ready strategy — powered by AI.
-      </p>
-      <div class="hero-ctas">
-        <a href="pages/onboarding.html" class="btn-primary btn-lg">
-          Start Analysis
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="pages/dashboard.html" class="btn-outline btn-lg">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 5.5l4 2.5-4 2.5V5.5z" fill="currentColor"/></svg>
-          View Demo
-        </a>
-      </div>
-      <div class="hero-social-proof">
-        <div class="avatars">
-          <div class="avatar av1"></div>
-          <div class="avatar av2"></div>
-          <div class="avatar av3"></div>
-          <div class="avatar av4"></div>
-        </div>
-        <p>Trusted by <strong>2,400+</strong> marketing teams globally</p>
-      </div>
-    </div>
+  </div>
+</section>
 
-    <!-- HERO PRODUCT PREVIEW -->
-    <div class="hero-preview">
-      <div class="preview-window">
-        <div class="preview-topbar">
-          <div class="window-dots">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="preview-url">astra.ai / dashboard</div>
-          <div style="width:60px"></div>
-        </div>
-        <div class="preview-content">
-          <div class="preview-sidebar">
-            <div class="ps-logo">✦ Astra</div>
-            <div class="ps-item active">Overview</div>
-            <div class="ps-item">Brand Brain</div>
-            <div class="ps-item">Campaigns</div>
-            <div class="ps-item">Consumers</div>
-            <div class="ps-item">War Room</div>
-          </div>
-          <div class="preview-main">
-            <div class="pm-header">
-              <span class="pm-title">Strategic Overview</span>
-              <span class="pm-badge">AI LIVE</span>
-            </div>
-            <div class="pm-insight-card">
-              <div class="pic-label">↑ AI INSIGHT</div>
-              <div class="pic-text">UGC-led creatives are outperforming studio content by 2.3× among Gen Z. Recommending budget reallocation to authentic creator formats.</div>
-              <div class="pic-actions">
-                <span class="pic-btn">Apply →</span>
-                <span class="pic-btn-ghost">Analyse</span>
-              </div>
-            </div>
-            <div class="pm-metrics">
-              <div class="pm-metric">
-                <div class="pmm-val">↑ 34%</div>
-                <div class="pmm-label">ROAS</div>
-              </div>
-              <div class="pm-metric">
-                <div class="pmm-val">2.1M</div>
-                <div class="pmm-label">Impressions</div>
-              </div>
-              <div class="pm-metric">
-                <div class="pmm-val">↓ 18%</div>
-                <div class="pmm-label">CAC</div>
-              </div>
-            </div>
-            <div class="pm-chart">
-              <div class="chart-bar" style="height:45%"></div>
-              <div class="chart-bar" style="height:60%"></div>
-              <div class="chart-bar" style="height:40%"></div>
-              <div class="chart-bar" style="height:80%"></div>
-              <div class="chart-bar highlight" style="height:95%"></div>
-              <div class="chart-bar" style="height:70%"></div>
-              <div class="chart-bar" style="height:85%"></div>
-            </div>
-          </div>
-        </div>
+<section class="section" style="background:var(--bg-card-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="section-label">Intelligence Examples</div>
+    <h2 class="section-title">The kind of insights<br/><span class="accent">your team needs to hear.</span></h2>
+    <div class="insights-grid">
+      <div class="insight-card fade-in"><div class="ic-module">Campaign Intelligence</div><div class="ic-text">"Spend efficiency is declining on Meta primarily due to creative saturation in the 18-24 cohort. The top 3 ads have been active 47+ days. Recommend immediate creative refresh with UGC-first direction."</div><div class="ic-meta">Actionable &middot; 3 recommendations attached</div></div>
+      <div class="insight-card fade-in"><div class="ic-module">Consumer Insights</div><div class="ic-text">"Consumers increasingly associate the category with convenience anxiety rather than aspiration. 34% of negative sentiment clusters around 'complexity'. Messaging pivot toward simplicity recommended."</div><div class="ic-meta">Emotional pattern &middot; 5 data sources</div></div>
+      <div class="insight-card fade-in"><div class="ic-module">Brand Consistency</div><div class="ic-text">"Recent Q4 campaigns score 61/100 for brand alignment. Tone has shifted 40% toward corporate language &mdash; significantly diverging from the historically conversational voice that drove peak performance."</div><div class="ic-meta">Brand drift detected &middot; Score: 61/100</div></div>
+      <div class="insight-card fade-in"><div class="ic-module">War Room Alert</div><div class="ic-text">"Founder-led storytelling content is outperforming polished brand campaigns 3x across your category. Three competitors have pivoted to this format in 30 days. Strategic window is open."</div><div class="ic-meta">Opportunity &middot; Act within 14 days</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Built for<br/><span class="accent">ambitious marketing teams.</span></h2>
+    <div class="pricing-grid">
+      <div class="price-card fade-in">
+        <div class="pc-tier">Starter</div>
+        <div class="pc-price">$79<span>/mo</span></div>
+        <div class="pc-desc">For solo marketers and early-stage brands.</div>
+        <ul class="pc-features"><li>Brand Brain (1 brand)</li><li>Campaign Intelligence</li><li>Consumer Insight Miner</li><li>10 AI reports/month</li><li>PDF/CSV uploads</li></ul>
+        <a href="pages/onboarding.html" class="btn btn-outline btn-block">Get Started</a>
+      </div>
+      <div class="price-card pc-featured fade-in">
+        <div class="pc-badge">Most Popular</div>
+        <div class="pc-tier">Growth</div>
+        <div class="pc-price">$249<span>/mo</span></div>
+        <div class="pc-desc">For scaling teams that need full intelligence.</div>
+        <ul class="pc-features"><li>Brand Brain (5 brands)</li><li>All 6 core modules</li><li>War Room + live alerts</li><li>AI Deck Builder</li><li>Unlimited reports</li><li>10 integrations</li></ul>
+        <a href="pages/onboarding.html" class="btn btn-primary btn-block">Start Free Trial</a>
+      </div>
+      <div class="price-card fade-in">
+        <div class="pc-tier">Enterprise</div>
+        <div class="pc-price">Custom</div>
+        <div class="pc-desc">For agencies and enterprise marketing orgs.</div>
+        <ul class="pc-features"><li>Unlimited brands</li><li>White-label options</li><li>Custom integrations</li><li>Dedicated AI training</li><li>SLA + priority support</li></ul>
+        <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LOGOS STRIP -->
-  <section class="logos-strip">
-    <p class="logos-label">Integrates with your entire marketing stack</p>
-    <div class="logos-row">
-      <div class="logo-chip">Meta Ads</div>
-      <div class="logo-chip">Google Ads</div>
-      <div class="logo-chip">GA4</div>
-      <div class="logo-chip">LinkedIn</div>
-      <div class="logo-chip">HubSpot</div>
-      <div class="logo-chip">Shopify</div>
-      <div class="logo-chip">Salesforce</div>
-      <div class="logo-chip">Notion</div>
-      <div class="logo-chip">Slack</div>
-      <div class="logo-chip">TikTok Ads</div>
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="glow-cta"></div>
+    <h2 class="cta-title">Ready to think at the<br/><span class="accent">speed of strategy?</span></h2>
+    <p class="cta-sub">Join 2,400+ marketing teams using Astra to turn data into decisions.</p>
+    <a href="pages/onboarding.html" class="btn btn-primary btn-xl">Start Your Analysis</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="logo-mark">+</span><span class="logo-text">Astra</span><p>Your AI Strategic Copilot for Marketing.</p></div>
+    <div class="footer-links">
+      <div class="fl-col"><h5>Product</h5><a href="#">Features</a><a href="#">Brand Brain</a><a href="#">Integrations</a><a href="#pricing">Pricing</a></div>
+      <div class="fl-col"><h5>Company</h5><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Contact</a></div>
+      <div class="fl-col"><h5>Legal</h5><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
     </div>
-  </section>
+  </div>
+  <div class="footer-bottom"><span>2025 Astra AI. All rights reserved.</span><span>Built for modern marketing teams.</span></div>
+</footer>
 
-  <!-- SECTION: STRATEGIC INTELLIGENCE -->
-  <section class="section features-section" id="features">
-    <div class="section-inner">
-      <div class="section-label">Core Capability</div>
-      <h2 class="section-title">Not just what happened.<br/><span class="accent">What it means. What to do next.</span></h2>
-      <p class="section-sub">Most tools stop at metrics. Astra starts at meaning.</p>
-
-      <div class="features-grid">
-        <div class="feature-card fc-large">
-          <div class="fc-icon">⚡</div>
-          <h3>Campaign Intelligence Copilot</h3>
-          <p>Diagnose why campaigns underperform, identify creative fatigue, and get strategic recommendations — not just metric summaries.</p>
-          <div class="fc-example">
-            <div class="fce-label">AI OUTPUT</div>
-            <div class="fce-text">"UGC content is driving 2.3× higher CTR among 25–34 segment. Creative fatigue detected on Studio Set B. Recommend immediate rotation."</div>
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">🧠</div>
-          <h3>Brand Brain</h3>
-          <p>A continuously evolving memory layer that makes Astra feel like a strategist who has worked on your brand for years.</p>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">💬</div>
-          <h3>Consumer Insight Miner</h3>
-          <p>Extract emotional drivers, unmet needs, and audience tensions from reviews, comments, and social conversations.</p>
-        </div>
-        <div class="feature-card fc-large fc-right">
-          <div class="fc-icon">🎯</div>
-          <h3>AI Marketing War Room</h3>
-          <p>A real-time strategic command center that surfaces emerging narratives, competitor signals, and market shifts with strategic implications — not just alerts.</p>
-          <div class="fc-example">
-            <div class="fce-label">WAR ROOM ALERT</div>
-            <div class="fce-text">"Competitor shifting messaging toward 'trust & reliability' — 68% increase in week. Your brand has advantage in authenticity positioning."</div>
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">📊</div>
-          <h3>Brand Consistency Engine</h3>
-          <p>Score every campaign against your brand's strategic identity. Catch tone drift before it erodes positioning.</p>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">📑</div>
-          <h3>AI Deck Builder</h3>
-          <p>Transform intelligence into McKinsey-style executive presentations. From data to boardroom narrative in minutes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: BRAND BRAIN -->
-  <section class="section brain-section" id="brand-brain">
-    <div class="section-inner brain-inner">
-      <div class="brain-left">
-        <div class="section-label">Brand Memory System</div>
-        <h2 class="section-title">The Brand Brain.<br/><span class="accent">Your AI that never forgets.</span></h2>
-        <p class="section-sub">Astra builds a continuously evolving understanding of your brand — tone, history, positioning, audience, creative performance — creating an AI strategist with institutional memory.</p>
-        <ul class="brain-features">
-          <li><span class="bf-dot"></span>Brand tone & vocabulary learning</li>
-          <li><span class="bf-dot"></span>Campaign history & performance patterns</li>
-          <li><span class="bf-dot"></span>Audience psychology mapping</li>
-          <li><span class="bf-dot"></span>Strategic priority tracking</li>
-          <li><span class="bf-dot"></span>Competitive context awareness</li>
-          <li><span class="bf-dot"></span>Creative performance memory</li>
-        </ul>
-        <a href="pages/onboarding.html" class="btn-primary">Build Your Brand Brain →</a>
-      </div>
-      <div class="brain-right">
-        <div class="brain-visual">
-          <div class="brain-center">
-            <div class="bc-icon">✦</div>
-            <div class="bc-label">Brand Brain</div>
-          </div>
-          <div class="brain-orbit orbit-1">
-            <div class="bo-node" style="--angle:0deg">Tone</div>
-            <div class="bo-node" style="--angle:60deg">Voice</div>
-            <div class="bo-node" style="--angle:120deg">Audience</div>
-            <div class="bo-node" style="--angle:180deg">History</div>
-            <div class="bo-node" style="--angle:240deg">Strategy</div>
-            <div class="bo-node" style="--angle:300deg">Creative</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: WORKFLOW -->
-  <section class="section workflow-section" id="workflow">
-    <div class="section-inner">
-      <div class="section-label">Workflow Compression</div>
-      <h2 class="section-title">From raw data to<br/><span class="accent">board-ready strategy.</span></h2>
-      <p class="section-sub">Astra eliminates context-switching and compresses your entire marketing intelligence workflow.</p>
-      <div class="workflow-steps">
-        <div class="ws-step">
-          <div class="ws-num">01</div>
-          <h4>Connect or Upload</h4>
-          <p>Link ad accounts, analytics platforms, or upload CSVs, PDFs, decks, and brand docs.</p>
-        </div>
-        <div class="ws-arrow">→</div>
-        <div class="ws-step">
-          <div class="ws-num">02</div>
-          <h4>AI Synthesizes</h4>
-          <p>Astra processes everything through your Brand Brain, finding patterns humans miss.</p>
-        </div>
-        <div class="ws-arrow">→</div>
-        <div class="ws-step">
-          <div class="ws-num">03</div>
-          <h4>Strategic Output</h4>
-          <p>Receive executive insights, recommendations, decks, and content — instantly.</p>
-        </div>
-        <div class="ws-arrow">→</div>
-        <div class="ws-step">
-          <div class="ws-num">04</div>
-          <h4>Execute & Learn</h4>
-          <p>Apply recommendations. Astra learns from outcomes to sharpen future strategy.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: INSIGHT EXAMPLES -->
-  <section class="section insights-section">
-    <div class="section-inner">
-      <div class="section-label">Intelligence Examples</div>
-      <h2 class="section-title">The kind of insights<br/><span class="accent">your team needs to hear.</span></h2>
-      <div class="insights-grid">
-        <div class="insight-card">
-          <div class="ic-module">Campaign Intelligence</div>
-          <div class="ic-text">"Spend efficiency is declining on Meta primarily due to creative saturation in the 18–24 cohort. The top 3 ads have been active 47+ days. Recommend immediate creative refresh with UGC-first direction."</div>
-          <div class="ic-meta">⚡ Actionable · 3 recommendations attached</div>
-        </div>
-        <div class="insight-card">
-          <div class="ic-module">Consumer Insights</div>
-          <div class="ic-text">"Consumers increasingly associate the category with convenience anxiety rather than aspiration. 34% of negative sentiment clusters around 'complexity' and 'overwhelm'. Messaging pivot toward simplicity recommended."</div>
-          <div class="ic-meta">🧠 Emotional pattern · 5 data sources</div>
-        </div>
-        <div class="insight-card">
-          <div class="ic-module">Brand Consistency</div>
-          <div class="ic-text">"Recent Q4 campaigns score 61/100 for brand alignment. The tone has shifted 40% toward corporate language — significantly diverging from the historically conversational voice that drove peak performance."</div>
-          <div class="ic-meta">⚠ Brand drift detected · Score: 61/100</div>
-        </div>
-        <div class="insight-card">
-          <div class="ic-module">War Room Alert</div>
-          <div class="ic-text">"Founder-led storytelling content is outperforming polished brand campaigns 3× across your category. Three competitors have pivoted to this format in the last 30 days. Strategic window is open."</div>
-          <div class="ic-meta">🎯 Opportunity · Act within 14 days</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: PRICING -->
-  <section class="section pricing-section" id="pricing">
-    <div class="section-inner">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Built for<br/><span class="accent">ambitious marketing teams.</span></h2>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="pc-tier">Starter</div>
-          <div class="pc-price">$79<span>/mo</span></div>
-          <div class="pc-desc">For solo marketers and early-stage brands.</div>
-          <ul class="pc-features">
-            <li>✓ Brand Brain (1 brand)</li>
-            <li>✓ Campaign Intelligence</li>
-            <li>✓ Consumer Insight Miner</li>
-            <li>✓ 10 AI reports/month</li>
-            <li>✓ PDF/CSV uploads</li>
-          </ul>
-          <a href="pages/onboarding.html" class="btn-outline btn-block">Get Started</a>
-        </div>
-        <div class="price-card pc-featured">
-          <div class="pc-badge">Most Popular</div>
-          <div class="pc-tier">Growth</div>
-          <div class="pc-price">$249<span>/mo</span></div>
-          <div class="pc-desc">For scaling teams that need full intelligence.</div>
-          <ul class="pc-features">
-            <li>✓ Brand Brain (5 brands)</li>
-            <li>✓ All 6 core modules</li>
-            <li>✓ War Room + alerts</li>
-            <li>✓ AI Deck Builder</li>
-            <li>✓ Unlimited reports</li>
-            <li>✓ 10 integrations</li>
-          </ul>
-          <a href="pages/onboarding.html" class="btn-primary btn-block">Start Free Trial</a>
-        </div>
-        <div class="price-card">
-          <div class="pc-tier">Enterprise</div>
-          <div class="pc-price">Custom</div>
-          <div class="pc-desc">For agencies and enterprise marketing orgs.</div>
-          <ul class="pc-features">
-            <li>✓ Unlimited brands</li>
-            <li>✓ White-label options</li>
-            <li>✓ Custom integrations</li>
-            <li>✓ Dedicated AI training</li>
-            <li>✓ SLA + priority support</li>
-          </ul>
-          <a href="#" class="btn-outline btn-block">Contact Sales</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FOOTER -->
-  <section class="cta-section">
-    <div class="cta-inner">
-      <div class="glow glow-cta"></div>
-      <h2 class="cta-title">Ready to think at the<br/><span class="accent">speed of strategy?</span></h2>
-      <p class="cta-sub">Join 2,400+ marketing teams using Astra to turn data into decisions.</p>
-      <a href="pages/onboarding.html" class="btn-primary btn-xl">Start Your Analysis →</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-mark">✦</span>
-        <span class="logo-text">Astra</span>
-        <p>Your AI Strategic Copilot for Marketing.</p>
-      </div>
-      <div class="footer-links">
-        <div class="fl-col">
-          <h5>Product</h5>
-          <a href="#">Features</a>
-          <a href="#">Brand Brain</a>
-          <a href="#">Integrations</a>
-          <a href="#">Pricing</a>
-        </div>
-        <div class="fl-col">
-          <h5>Company</h5>
-          <a href="#">About</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
-          <a href="#">Contact</a>
-        </div>
-        <div class="fl-col">
-          <h5>Legal</h5>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Security</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 Astra AI. All rights reserved.</span>
-      <span>Built for modern marketing teams.</span>
-    </div>
-  </footer>
-
-  <script src="js/landing.js"></script>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20));
+window.addEventListener('load',()=>{
+  document.querySelectorAll('#heroChart .chart-bar').forEach((b,i)=>{
+    const h=b.dataset.h;
+    setTimeout(()=>{b.style.transition='height .6s ease';b.style.height=h;},400+i*80);
+  });
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+});
+</script>
 </body>
 </html>
