@@ -4,192 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setup Your Brand — Astra</title>
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/onboarding.css" />
+  <link rel="stylesheet" href="../css/astra.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body class="onboarding-body">
-
   <div class="ob-layout">
-    <!-- LEFT PANEL -->
     <div class="ob-left">
-      <div class="ob-brand">
-        <span class="logo-mark">✦</span>
-        <span class="logo-text">Astra</span>
-      </div>
+      <div class="ob-brand"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
       <div class="ob-pitch">
         <h2>Build your Brand Brain.</h2>
         <p>Astra learns everything about your brand so it can think like a strategist who's been on your team for years.</p>
         <div class="ob-steps">
-          <div class="ob-step active" data-step="1">
-            <div class="obs-num">1</div>
-            <div class="obs-info">
-              <div class="obs-title">Brand Setup</div>
-              <div class="obs-sub">Name, URL, industry</div>
-            </div>
-          </div>
-          <div class="ob-step" data-step="2">
-            <div class="obs-num">2</div>
-            <div class="obs-info">
-              <div class="obs-title">Connect Accounts</div>
-              <div class="obs-sub">Ads, analytics, social</div>
-            </div>
-          </div>
-          <div class="ob-step" data-step="3">
-            <div class="obs-num">3</div>
-            <div class="obs-info">
-              <div class="obs-title">Upload Brand Docs</div>
-              <div class="obs-sub">Guidelines, strategies, reports</div>
-            </div>
-          </div>
-          <div class="ob-step" data-step="4">
-            <div class="obs-num">4</div>
-            <div class="obs-info">
-              <div class="obs-title">AI Initialization</div>
-              <div class="obs-sub">Astra builds your Brand Brain</div>
-            </div>
-          </div>
+          <div class="ob-step active" data-step="1"><div class="obs-num">1</div><div class="obs-info"><div class="obs-title">Brand Setup</div><div class="obs-sub">Name, URL, industry</div></div></div>
+          <div class="ob-step" data-step="2"><div class="obs-num">2</div><div class="obs-info"><div class="obs-title">Connect Accounts</div><div class="obs-sub">Ads, analytics, social</div></div></div>
+          <div class="ob-step" data-step="3"><div class="obs-num">3</div><div class="obs-info"><div class="obs-title">Upload Brand Docs</div><div class="obs-sub">Guidelines, strategies, reports</div></div></div>
+          <div class="ob-step" data-step="4"><div class="obs-num">4</div><div class="obs-info"><div class="obs-title">AI Initialization</div><div class="obs-sub">Astra builds your Brand Brain</div></div></div>
         </div>
       </div>
       <div class="ob-quote">
         <p>"Astra changed how we approach every campaign decision. It's like having a senior strategist who never sleeps."</p>
-        <div class="oq-author">
-          <div class="oq-avatar"></div>
-          <div>
-            <div class="oq-name">Sarah Chen</div>
-            <div class="oq-role">VP Marketing, Momentum</div>
-          </div>
-        </div>
+        <div class="oq-author"><div class="oq-avatar"></div><div><div class="oq-name">Sarah Chen</div><div class="oq-role">VP Marketing, Momentum</div></div></div>
       </div>
     </div>
 
-    <!-- RIGHT PANEL -->
     <div class="ob-right">
-      <!-- STEP 1 -->
       <div class="ob-form active" id="step-1">
-        <div class="obf-header">
-          <div class="obf-step">Step 1 of 4</div>
-          <h1>Tell us about your brand.</h1>
-          <p>This is the foundation of your Brand Brain.</p>
-        </div>
-        <div class="form-group">
-          <label>Brand / Company Name</label>
-          <input type="text" placeholder="e.g. Momentum, Nike, Acme Co." class="form-input" id="brandName" />
-        </div>
-        <div class="form-group">
-          <label>Website URL</label>
-          <input type="url" placeholder="https://yourbrand.com" class="form-input" id="brandUrl" />
-        </div>
+        <div class="obf-header"><div class="obf-step">Step 1 of 4</div><h1>Tell us about your brand.</h1><p>This is the foundation of your Brand Brain.</p></div>
+        <div class="form-group"><label>Brand / Company Name</label><input type="text" placeholder="e.g. Momentum, Nike, Acme Co." class="form-input" id="brandName" /></div>
+        <div class="form-group"><label>Website URL</label><input type="url" placeholder="https://yourbrand.com" class="form-input" id="brandUrl" /></div>
         <div class="form-group">
           <label>Industry / Category</label>
           <select class="form-input form-select" id="industry">
             <option value="">Select industry...</option>
-            <option>Consumer Goods (FMCG)</option>
-            <option>Fashion & Apparel</option>
-            <option>Technology & SaaS</option>
-            <option>E-Commerce & Retail</option>
-            <option>Health & Wellness</option>
-            <option>Financial Services</option>
-            <option>Food & Beverage</option>
-            <option>Travel & Hospitality</option>
-            <option>Media & Entertainment</option>
-            <option>B2B Services</option>
-            <option>Other</option>
+            <option>Consumer Goods (FMCG)</option><option>Fashion &amp; Apparel</option><option>Technology &amp; SaaS</option><option>E-Commerce &amp; Retail</option><option>Health &amp; Wellness</option><option>Financial Services</option><option>Food &amp; Beverage</option><option>Travel &amp; Hospitality</option><option>Media &amp; Entertainment</option><option>B2B Services</option><option>Other</option>
           </select>
         </div>
         <div class="form-group">
           <label>Team Size</label>
           <div class="radio-group">
-            <label class="radio-opt">
-              <input type="radio" name="teamSize" value="solo" /> Solo marketer
-            </label>
-            <label class="radio-opt">
-              <input type="radio" name="teamSize" value="small" /> 2–10 people
-            </label>
-            <label class="radio-opt">
-              <input type="radio" name="teamSize" value="medium" /> 11–50 people
-            </label>
-            <label class="radio-opt">
-              <input type="radio" name="teamSize" value="enterprise" /> 50+ people
-            </label>
+            <label class="radio-opt"><input type="radio" name="teamSize" value="solo" /> Solo marketer</label>
+            <label class="radio-opt"><input type="radio" name="teamSize" value="small" /> 2–10 people</label>
+            <label class="radio-opt"><input type="radio" name="teamSize" value="medium" /> 11–50 people</label>
+            <label class="radio-opt"><input type="radio" name="teamSize" value="enterprise" /> 50+ people</label>
           </div>
         </div>
         <button class="btn-primary btn-lg btn-block" onclick="nextStep(2)">Continue →</button>
       </div>
 
-      <!-- STEP 2 -->
       <div class="ob-form" id="step-2">
-        <div class="obf-header">
-          <div class="obf-step">Step 2 of 4</div>
-          <h1>Connect your accounts.</h1>
-          <p>Integrate your marketing stack. You can skip and connect later.</p>
-        </div>
+        <div class="obf-header"><div class="obf-step">Step 2 of 4</div><h1>Connect your accounts.</h1><p>Integrate your marketing stack. You can skip and connect later.</p></div>
         <div class="integration-grid">
-          <div class="int-section">
-            <div class="is-label">Advertising</div>
-            <div class="int-cards">
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo meta-logo">f</div>
-                <div class="ic-name">Meta Ads</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo google-logo">G</div>
-                <div class="ic-name">Google Ads</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo linkedin-logo">in</div>
-                <div class="ic-name">LinkedIn Ads</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo tiktok-logo">♪</div>
-                <div class="ic-name">TikTok Ads</div>
-                <div class="ic-status">Connect</div>
-              </div>
-            </div>
-          </div>
-          <div class="int-section">
-            <div class="is-label">Analytics</div>
-            <div class="int-cards">
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo ga-logo">GA</div>
-                <div class="ic-name">Google Analytics 4</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo shopify-logo">S</div>
-                <div class="ic-name">Shopify</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo hubspot-logo">HS</div>
-                <div class="ic-name">HubSpot</div>
-                <div class="ic-status">Connect</div>
-              </div>
-            </div>
-          </div>
-          <div class="int-section">
-            <div class="is-label">Social</div>
-            <div class="int-cards">
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo ig-logo">◉</div>
-                <div class="ic-name">Instagram</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo x-logo">𝕏</div>
-                <div class="ic-name">X / Twitter</div>
-                <div class="ic-status">Connect</div>
-              </div>
-              <div class="int-card" onclick="toggleConnect(this)">
-                <div class="ic-logo yt-logo">▶</div>
-                <div class="ic-name">YouTube</div>
-                <div class="ic-status">Connect</div>
-              </div>
-            </div>
-          </div>
+          <div class="int-section"><div class="is-label">Advertising</div><div class="int-cards">
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo meta-logo">f</div><div class="ic-name">Meta Ads</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo google-logo">G</div><div class="ic-name">Google Ads</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo linkedin-logo">in</div><div class="ic-name">LinkedIn Ads</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo tiktok-logo">♪</div><div class="ic-name">TikTok Ads</div><div class="ic-status">Connect</div></div>
+          </div></div>
+          <div class="int-section"><div class="is-label">Analytics</div><div class="int-cards">
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo ga-logo">GA</div><div class="ic-name">Google Analytics 4</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo shopify-logo">S</div><div class="ic-name">Shopify</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo hubspot-logo">HS</div><div class="ic-name">HubSpot</div><div class="ic-status">Connect</div></div>
+          </div></div>
+          <div class="int-section"><div class="is-label">Social</div><div class="int-cards">
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo ig-logo">◉</div><div class="ic-name">Instagram</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo x-logo">𝕏</div><div class="ic-name">X / Twitter</div><div class="ic-status">Connect</div></div>
+            <div class="int-card" onclick="toggleConnect(this)"><div class="ic-logo yt-logo">▶</div><div class="ic-name">YouTube</div><div class="ic-status">Connect</div></div>
+          </div></div>
         </div>
         <div class="form-row">
           <button class="btn-ghost" onclick="nextStep(3)">Skip for now</button>
@@ -197,13 +77,8 @@
         </div>
       </div>
 
-      <!-- STEP 3 -->
       <div class="ob-form" id="step-3">
-        <div class="obf-header">
-          <div class="obf-step">Step 3 of 4</div>
-          <h1>Upload your brand docs.</h1>
-          <p>The more context you give Astra, the smarter it gets.</p>
-        </div>
+        <div class="obf-header"><div class="obf-step">Step 3 of 4</div><h1>Upload your brand docs.</h1><p>The more context you give Astra, the smarter it gets.</p></div>
         <div class="upload-zone" id="uploadZone" ondragover="return false" ondrop="handleDrop(event)">
           <div class="uz-icon">📁</div>
           <div class="uz-title">Drop files here or <span class="uz-link" onclick="document.getElementById('fileInput').click()">browse</span></div>
@@ -215,12 +90,7 @@
         <div class="upload-suggestions">
           <div class="us-label">Suggested uploads:</div>
           <div class="us-chips">
-            <span class="us-chip">Brand Guidelines</span>
-            <span class="us-chip">Tone of Voice</span>
-            <span class="us-chip">Annual Report</span>
-            <span class="us-chip">Audience Personas</span>
-            <span class="us-chip">GTM Plan</span>
-            <span class="us-chip">Campaign Reports</span>
+            <span class="us-chip">Brand Guidelines</span><span class="us-chip">Tone of Voice</span><span class="us-chip">Annual Report</span><span class="us-chip">Audience Personas</span><span class="us-chip">GTM Plan</span><span class="us-chip">Campaign Reports</span>
           </div>
         </div>
         <div class="form-row">
@@ -229,50 +99,29 @@
         </div>
       </div>
 
-      <!-- STEP 4: AI INIT -->
       <div class="ob-form" id="step-4">
-        <div class="obf-header">
-          <div class="obf-step">Step 4 of 4</div>
-          <h1>Initialising your Brand Brain.</h1>
-          <p>Astra is analysing your brand context and building your strategic intelligence layer.</p>
-        </div>
+        <div class="obf-header"><div class="obf-step">Step 4 of 4</div><h1>Initialising your Brand Brain.</h1><p>Astra is analysing your brand context and building your strategic intelligence layer.</p></div>
         <div class="ai-init">
           <div class="ai-init-animation">
-            <div class="aia-ring ring-1"></div>
-            <div class="aia-ring ring-2"></div>
-            <div class="aia-ring ring-3"></div>
+            <div class="aia-ring ring-1"></div><div class="aia-ring ring-2"></div><div class="aia-ring ring-3"></div>
             <div class="aia-center">✦</div>
           </div>
-          <div class="ai-init-log" id="initLog">
-            <div class="log-item active">⚡ Analysing brand identity...</div>
-          </div>
+          <div class="ai-init-log" id="initLog"><div class="log-item active">⚡ Analysing brand identity...</div></div>
         </div>
         <div class="init-complete" id="initComplete" style="display:none">
           <div class="ic-check">✓</div>
           <h3>Brand Brain ready.</h3>
           <p>Astra has built your initial brand intelligence profile. It will continue learning as you use the platform.</p>
           <div class="ic-stats">
-            <div class="ics-item">
-              <div class="ics-val" id="brandName2">—</div>
-              <div class="ics-label">Brand Name</div>
-            </div>
-            <div class="ics-item">
-              <div class="ics-val">0 docs</div>
-              <div class="ics-label">Uploaded</div>
-            </div>
-            <div class="ics-item">
-              <div class="ics-val" id="connectedCount">0</div>
-              <div class="ics-label">Connected</div>
-            </div>
+            <div class="ics-item"><div class="ics-val" id="brandName2">—</div><div class="ics-label">Brand Name</div></div>
+            <div class="ics-item"><div class="ics-val">0 docs</div><div class="ics-label">Uploaded</div></div>
+            <div class="ics-item"><div class="ics-val" id="connectedCount">0</div><div class="ics-label">Connected</div></div>
           </div>
           <a href="dashboard.html" class="btn-primary btn-lg" style="margin-top:24px">Enter Astra →</a>
         </div>
       </div>
-
     </div>
   </div>
-
-  <link rel="stylesheet" href="../css/onboarding.css" />
-  <script src="../js/onboarding.js"></script>
+  <script src="../js/app.js"></script>
 </body>
 </html>

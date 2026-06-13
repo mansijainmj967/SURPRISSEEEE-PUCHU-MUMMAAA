@@ -4,61 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Engine — Astra</title>
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/astra.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     .content-layout { display: grid; grid-template-columns: 320px 1fr; gap: 20px; }
     .content-output { display: flex; flex-direction: column; gap: 16px; }
-    .output-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: all 0.2s;
-    }
+    .output-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.2s; }
     .output-card:hover { border-color: rgba(255,255,255,0.1); }
     .oc-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); }
     .oc-type { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); }
     .oc-body { padding: 18px; font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
     .oc-footer { padding: 12px 18px; border-top: 1px solid var(--border); display: flex; gap: 8px; align-items: center; }
-    .format-btn {
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      background: none;
-      transition: all 0.15s;
-    }
+    .format-btn { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); color: var(--text-secondary); background: none; transition: all 0.15s; }
     .format-btn.active { background: var(--brand-dim); border-color: var(--brand); color: var(--brand); }
     .format-btn:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
-    .ce-input-area {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .ce-textarea {
-      width: 100%;
-      min-height: 120px;
-      background: none;
-      border: none;
-      outline: none;
-      padding: 16px;
-      color: var(--text);
-      font-size: 14px;
-      font-family: var(--font-body);
-      resize: vertical;
-      line-height: 1.6;
-    }
+    .ce-input-area { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .ce-textarea { width: 100%; min-height: 120px; background: none; border: none; outline: none; padding: 16px; color: var(--text); font-size: 14px; font-family: var(--font-body); resize: vertical; line-height: 1.6; }
     .ce-textarea::placeholder { color: var(--text-muted); }
   </style>
 </head>
 <body class="app-body">
-
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo"><span class="logo-mark">✦</span><span class="logo-text">Astra</span></div>
     <div class="sidebar-section">
@@ -82,38 +47,25 @@
       <a href="upload.html" class="nav-item"><span class="ni-icon">📁</span> Upload Center</a>
     </div>
     <div class="sidebar-footer">
-      <div class="user-widget">
-        <div class="uw-avatar">MJ</div>
-        <div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div>
-      </div>
+      <div class="user-widget"><div class="uw-avatar">MJ</div><div class="uw-info"><div class="uw-name">Mansi Jain</div><div class="uw-role">Marketing Lead</div></div></div>
     </div>
   </aside>
 
   <div class="main-wrap">
     <div class="topbar">
       <button class="icon-btn" onclick="toggleSidebar()">☰</button>
-      <span class="topbar-title">Content & Execution Engine</span>
-      <div class="topbar-actions">
-        <button class="btn-primary">Generate All →</button>
-      </div>
+      <span class="topbar-title">Content &amp; Execution Engine</span>
+      <div class="topbar-actions"><button class="btn-primary">Generate All →</button></div>
     </div>
 
     <div class="main-content">
-      <div class="page-header">
-        <div class="ph-left">
-          <h1>Content Engine</h1>
-          <p>Turn insights and uploads into brand-aligned content — instantly</p>
-        </div>
-      </div>
+      <div class="page-header"><div class="ph-left"><h1>Content Engine</h1><p>Turn insights and uploads into brand-aligned content — instantly</p></div></div>
 
       <div class="content-layout" style="margin-bottom:24px">
-        <!-- INPUT PANEL -->
         <div style="display:flex;flex-direction:column;gap:16px">
-          <!-- SOURCE -->
           <div class="ce-input-area">
             <div style="padding:12px 16px;border-bottom:1px solid var(--border);font-size:12px;font-weight:600;color:var(--text-secondary);display:flex;align-items:center;gap:8px">
-              <span>Input</span>
-              <span class="tag tag-brand" style="font-size:10px">Brand Brain Active</span>
+              <span>Input</span><span class="tag tag-brand" style="font-size:10px">Brand Brain Active</span>
             </div>
             <textarea class="ce-textarea" placeholder="Paste a campaign report, strategy doc, webinar transcript, key insight, or brief... Astra will generate content from it." id="contentInput"></textarea>
             <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;align-items:center">
@@ -123,173 +75,76 @@
               <button class="format-btn" onclick="loadSample('consumer')">Consumer Themes</button>
             </div>
           </div>
-
-          <!-- FORMAT SELECTOR -->
           <div class="card">
             <div style="font-size:13px;font-weight:600;margin-bottom:12px">Generate for:</div>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px;transition:background 0.15s" class="format-row" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''">
-                <input type="checkbox" checked style="accent-color:var(--brand)" /> LinkedIn Post (founder tone)
-              </label>
-              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px;transition:background 0.15s" class="format-row" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''">
-                <input type="checkbox" checked style="accent-color:var(--brand)" /> Ad Headline Angles (3 variants)
-              </label>
-              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px;transition:background 0.15s" class="format-row" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''">
-                <input type="checkbox" checked style="accent-color:var(--brand)" /> Executive Memo (internal brief)
-              </label>
-              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px;transition:background 0.15s" class="format-row" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''">
-                <input type="checkbox" style="accent-color:var(--brand)" /> Email Newsletter
-              </label>
-              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px;transition:background 0.15s" class="format-row" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''">
-                <input type="checkbox" style="accent-color:var(--brand)" /> Campaign Narrative (long-form)
-              </label>
-              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px;transition:background 0.15s" class="format-row" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''">
-                <input type="checkbox" style="accent-color:var(--brand)" /> UGC Creator Brief
-              </label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''"><input type="checkbox" checked style="accent-color:var(--brand)" /> LinkedIn Post (founder tone)</label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''"><input type="checkbox" checked style="accent-color:var(--brand)" /> Ad Headline Angles (3 variants)</label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''"><input type="checkbox" checked style="accent-color:var(--brand)" /> Executive Memo (internal brief)</label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''"><input type="checkbox" style="accent-color:var(--brand)" /> Email Newsletter</label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''"><input type="checkbox" style="accent-color:var(--brand)" /> Campaign Narrative (long-form)</label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:8px;border-radius:6px" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background=''"><input type="checkbox" style="accent-color:var(--brand)" /> UGC Creator Brief</label>
             </div>
-            <button class="btn-primary btn-block" style="margin-top:16px" onclick="generateContent()">
-              ✦ Generate Content
-            </button>
+            <button class="btn-primary btn-block" style="margin-top:16px" onclick="generateContent()">✦ Generate Content</button>
           </div>
-
-          <!-- QUICK PROMPTS -->
           <div class="card">
             <div style="font-size:13px;font-weight:600;margin-bottom:10px">Quick Generates</div>
             <div style="display:flex;flex-direction:column;gap:6px">
-              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write a LinkedIn post about our UGC results')">
-                💼 LinkedIn: UGC results win
-              </button>
-              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write 3 ad headline angles for the simplicity narrative')">
-                ⚡ Ad angles: simplicity narrative
-              </button>
-              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write a founder post about why we built this')">
-                👤 Founder story post
-              </button>
-              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write an internal brief about Q2 performance')">
-                📋 Internal performance brief
-              </button>
+              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write a LinkedIn post about our UGC results')">&#128188; LinkedIn: UGC results win</button>
+              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write 3 ad headline angles for the simplicity narrative')">⚡ Ad angles: simplicity narrative</button>
+              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write a founder post about why we built this')">&#128100; Founder story post</button>
+              <button class="nav-item" style="border:1px solid var(--border);padding:8px 12px;font-size:12px" onclick="quickGenerate('Write an internal brief about Q2 performance')">&#128203; Internal performance brief</button>
             </div>
           </div>
         </div>
 
-        <!-- OUTPUT PANEL -->
         <div class="content-output" id="contentOutput">
-          <!-- Default state: show sample outputs -->
           <div class="output-card">
-            <div class="oc-header">
-              <span class="oc-type">LinkedIn Post · Founder Tone</span>
-              <div style="display:flex;gap:6px">
-                <button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Copy</button>
-                <button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Edit</button>
-              </div>
-            </div>
-            <div class="oc-body">
-              <strong style="color:var(--text)">We spent years making things "professional." Turns out that was the problem.</strong>
-              <br/><br/>
-              Last quarter we ran an experiment. We put our polished, expensive studio creative head-to-head against a 47-second video shot on someone's iPhone. No script. No lighting rig. Just an honest conversation about what we do.
-              <br/><br/>
-              The iPhone video won. By 2.3×.
-              <br/><br/>
-              Here's what I think that means for modern marketing: people aren't buying the polish. They're buying the truth. They want to see that a real person built this thing, that it actually works, and that someone who looks like them has already tried it.
-              <br/><br/>
-              The most expensive mistake you can make is optimising for impressive when you should be optimising for relatable.
-              <br/><br/>
-              What's the most "unpolished" piece of content that's ever worked for your brand? 👇
-            </div>
-            <div class="oc-footer">
-              <span class="tag tag-green">On Brand · 94/100</span>
-              <span style="font-size:11px;color:var(--text-muted);margin-left:auto">Est. reach: 8–14K · LinkedIn</span>
-            </div>
+            <div class="oc-header"><span class="oc-type">LinkedIn Post · Founder Tone</span><div style="display:flex;gap:6px"><button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Copy</button><button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Edit</button></div></div>
+            <div class="oc-body"><strong style="color:var(--text)">We spent years making things "professional." Turns out that was the problem.</strong><br/><br/>Last quarter we ran an experiment. We put our polished, expensive studio creative head-to-head against a 47-second video shot on someone's iPhone. No script. No lighting rig. Just an honest conversation about what we do.<br/><br/>The iPhone video won. By 2.3×.<br/><br/>Here's what I think that means for modern marketing: people aren't buying the polish. They're buying the truth. They want to see that a real person built this thing, that it actually works, and that someone who looks like them has already tried it.<br/><br/>The most expensive mistake you can make is optimising for impressive when you should be optimising for relatable.<br/><br/>What's the most "unpolished" piece of content that's ever worked for your brand? 👇</div>
+            <div class="oc-footer"><span class="tag tag-green">On Brand · 94/100</span><span style="font-size:11px;color:var(--text-muted);margin-left:auto">Est. reach: 8–14K · LinkedIn</span></div>
           </div>
-
           <div class="output-card">
-            <div class="oc-header">
-              <span class="oc-type">Ad Headlines · 3 Variants</span>
-              <div style="display:flex;gap:6px">
-                <button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Copy All</button>
-              </div>
-            </div>
+            <div class="oc-header"><span class="oc-type">Ad Headlines · 3 Variants</span><div style="display:flex;gap:6px"><button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Copy All</button></div></div>
             <div class="oc-body">
               <div style="display:flex;flex-direction:column;gap:12px">
-                <div style="background:var(--bg-elevated);border-radius:8px;padding:14px">
-                  <div style="font-size:10px;font-weight:700;color:var(--brand);margin-bottom:6px">ANGLE A · Simplicity</div>
-                  <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px">"Finally, [category] that doesn't need a manual."</div>
-                  <div style="font-size:12px;color:var(--text-muted)">Targets convenience anxiety · Strong for first-time buyers</div>
-                </div>
-                <div style="background:var(--bg-elevated);border-radius:8px;padding:14px">
-                  <div style="font-size:10px;font-weight:700;color:var(--brand);margin-bottom:6px">ANGLE B · Aspiration</div>
-                  <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px">"Look like you've always known what you're doing."</div>
-                  <div style="font-size:12px;color:var(--text-muted)">Hits achievement motivation · Strong for 25–34 segment</div>
-                </div>
-                <div style="background:var(--bg-elevated);border-radius:8px;padding:14px">
-                  <div style="font-size:10px;font-weight:700;color:var(--brand);margin-bottom:6px">ANGLE C · Social Proof</div>
-                  <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px">"The way 47,000 smart marketers actually do it."</div>
-                  <div style="font-size:12px;color:var(--text-muted)">Leverages community trust · Strong for retargeting</div>
-                </div>
+                <div style="background:var(--bg-elevated);border-radius:8px;padding:14px"><div style="font-size:10px;font-weight:700;color:var(--brand);margin-bottom:6px">ANGLE A · Simplicity</div><div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px">"Finally, [category] that doesn't need a manual."</div><div style="font-size:12px;color:var(--text-muted)">Targets convenience anxiety · Strong for first-time buyers</div></div>
+                <div style="background:var(--bg-elevated);border-radius:8px;padding:14px"><div style="font-size:10px;font-weight:700;color:var(--brand);margin-bottom:6px">ANGLE B · Aspiration</div><div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px">"Look like you've always known what you're doing."</div><div style="font-size:12px;color:var(--text-muted)">Hits achievement motivation · Strong for 25–34 segment</div></div>
+                <div style="background:var(--bg-elevated);border-radius:8px;padding:14px"><div style="font-size:10px;font-weight:700;color:var(--brand);margin-bottom:6px">ANGLE C · Social Proof</div><div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px">"The way 47,000 smart marketers actually do it."</div><div style="font-size:12px;color:var(--text-muted)">Leverages community trust · Strong for retargeting</div></div>
               </div>
             </div>
-            <div class="oc-footer">
-              <span class="tag tag-green">All On Brand</span>
-              <button class="ii-btn secondary" style="margin-left:auto">A/B Test Setup →</button>
-            </div>
+            <div class="oc-footer"><span class="tag tag-green">All On Brand</span><button class="ii-btn secondary" style="margin-left:auto">A/B Test Setup →</button></div>
           </div>
-
           <div class="output-card">
-            <div class="oc-header">
-              <span class="oc-type">Executive Memo · Internal</span>
-              <div style="display:flex;gap:6px">
-                <button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Copy</button>
-                <button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Export</button>
-              </div>
-            </div>
-            <div class="oc-body">
-              <strong style="color:var(--text)">TO:</strong> Marketing Leadership<br/>
-              <strong style="color:var(--text)">RE:</strong> Q2 Performance + Q3 Strategic Direction<br/>
-              <strong style="color:var(--text)">DATE:</strong> June 2025<br/><br/>
-              <strong style="color:var(--text)">Summary:</strong> Q2 delivered strong ROAS improvement (4.2×, +18% MoM) driven by a strategic shift toward UGC and authentic content formats. However, we are facing two immediate risks: creative fatigue on Meta Studio Set B and a measurable brand tone drift toward corporate language in our paid campaigns.<br/><br/>
-              <strong style="color:var(--text)">Required Actions:</strong><br/>
-              1. Brief creative team on immediate Studio Set B rotation by [DATE]<br/>
-              2. Conduct brand voice audit on all live campaign copy<br/>
-              3. Develop 4-week founder-led content series for Q3 launch<br/><br/>
-              <strong style="color:var(--text)">Strategic Context:</strong> Competitor analysis indicates a competitor is pivoting messaging toward trust and reliability — historically Momentum's positioning strength. We have a 2–3 week window to reinforce our authenticity narrative before the market narrative shifts.
-            </div>
-            <div class="oc-footer">
-              <span class="tag tag-green">On Brand · 89/100</span>
-              <span style="font-size:11px;color:var(--text-muted);margin-left:auto">Internal format · 280 words</span>
-            </div>
+            <div class="oc-header"><span class="oc-type">Executive Memo · Internal</span><div style="display:flex;gap:6px"><button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Copy</button><button class="ii-btn secondary" style="font-size:11px;padding:4px 10px">Export</button></div></div>
+            <div class="oc-body"><strong style="color:var(--text)">TO:</strong> Marketing Leadership<br/><strong style="color:var(--text)">RE:</strong> Q2 Performance + Q3 Strategic Direction<br/><strong style="color:var(--text)">DATE:</strong> June 2025<br/><br/><strong style="color:var(--text)">Summary:</strong> Q2 delivered strong ROAS improvement (4.2×, +18% MoM) driven by a strategic shift toward UGC and authentic content formats. However, we are facing two immediate risks: creative fatigue on Meta Studio Set B and a measurable brand tone drift toward corporate language in our paid campaigns.<br/><br/><strong style="color:var(--text)">Required Actions:</strong><br/>1. Brief creative team on immediate Studio Set B rotation<br/>2. Conduct brand voice audit on all live campaign copy<br/>3. Develop 4-week founder-led content series for Q3 launch<br/><br/><strong style="color:var(--text)">Strategic Context:</strong> Competitor analysis indicates a competitor is pivoting messaging toward trust and reliability — historically Momentum's positioning strength. We have a 2–3 week window to reinforce our authenticity narrative.</div>
+            <div class="oc-footer"><span class="tag tag-green">On Brand · 89/100</span><span style="font-size:11px;color:var(--text-muted);margin-left:auto">Internal format · 280 words</span></div>
           </div>
         </div>
       </div>
 
       <div class="ai-chat-bar">
         <span class="acb-icon">✦</span>
-        <input class="acb-input" type="text" placeholder="Generate: Write a TikTok UGC brief · Rewrite this headline · Create a campaign narrative · Adapt this post for email" id="contentChat" onkeydown="handleContentChat(event)" />
+        <input class="acb-input" type="text" placeholder="Generate: Write a TikTok UGC brief · Rewrite this headline · Create a campaign narrative" id="contentChat" onkeydown="handleContentChat(event)" />
         <button class="acb-submit" onclick="submitContentChat()">Generate →</button>
       </div>
     </div>
   </div>
 
-  <script src="../js/dashboard.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     function loadSample(type) {
       const samples = {
-        insight: "Key insight from this week's analysis: UGC-led creatives are outperforming polished studio content by 2.3× among urban Gen Z users. Consumers are increasingly responding to authenticity over production value. This aligns with Momentum's historically conversational positioning. Recommended: shift budget toward authentic formats and launch a founder storytelling series.",
-        campaign: "Campaign Performance Summary — June 2025: Meta ROAS 5.1×, Google ROAS 3.9×, LinkedIn ROAS 2.8×. Studio Set B fatigue detected at 47 days. Founder Story post drove 4.2% CTR — best performing creative. UGC Creator Pack A at 3.8% CTR. Total spend $48.2K, 1,847 conversions, CAC down 18% to $26.",
-        consumer: "Consumer Research Themes — June 2025: 34% of negative sentiment clusters around convenience anxiety and complexity overwhelm. 28% of positive sentiment mentions effortless and simple. Key unmet need: guidance and trusted companion positioning. 68% overall positive sentiment, stable. Persona: The Overwhelmed Optimizer (25–34, high-intent, anxiety-driven)."
+        insight: 'Key insight: UGC-led creatives are outperforming polished studio content by 2.3x among urban Gen Z users. Consumers are increasingly responding to authenticity over production value. Recommended: shift budget toward authentic formats and launch a founder storytelling series.',
+        campaign: 'Campaign Performance Summary — June 2025: Meta ROAS 5.1x, Google ROAS 3.9x, LinkedIn ROAS 2.8x. Studio Set B fatigue detected at 47 days. Founder Story post drove 4.2% CTR. UGC Creator Pack A at 3.8% CTR. Total spend $48.2K, 1,847 conversions, CAC down 18% to $26.',
+        consumer: 'Consumer Research Themes: 34% of negative sentiment clusters around convenience anxiety. 28% of positive sentiment mentions effortless and simple. Key unmet need: guidance and trusted companion positioning. 68% overall positive sentiment.'
       };
       document.getElementById('contentInput').value = samples[type];
       document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
     }
-
-    function generateContent() {
-      alert('In the full build, this connects to OpenAI API with your Brand Brain as system context to generate perfectly on-brand content across all selected formats.');
-    }
-
-    function quickGenerate(prompt) {
-      document.getElementById('contentInput').value = prompt;
-    }
-
+    function generateContent() { alert('In the full build, this connects to the Claude API with your Brand Brain as system context to generate perfectly on-brand content.'); }
+    function quickGenerate(prompt) { document.getElementById('contentInput').value = prompt; }
     function handleContentChat(e) { if (e.key === 'Enter') submitContentChat(); }
     function submitContentChat() { generateContent(); }
   </script>
